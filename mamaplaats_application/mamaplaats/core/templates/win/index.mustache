@@ -1,0 +1,89 @@
+<div id="two-cols">
+	<div class="row">
+		<div class="col-sm-8">
+			{{#win}}
+            {{#referrer}}
+                <div class="alert alert-success">
+                    Je bent succesvol geregistreerd. Let op: je bent nog niet ingeschreven voor de winactie, laat een reactie achter om mee te doen.
+                </div>
+            {{/referrer}}
+			<section class="detail-block">
+				<header class="heading-box">
+					<h1>{{#winners_known}}Winnaars Bekend: {{/winners_known}}{{title}}</h1>
+					<div class="meta alt">
+						<span class="author">Door: <a href="/lid/{{author.slug}}">{{author.full_name}}</a></span>
+						<span class="sep">•</span> <time datetime="{{created}}">{{created}}</time>
+						<span class="sep">•</span> <a class="comments" href="#{{link_comments}}">{{comment_count}} reacties</a>
+					</div>
+				</header>
+				<div class="winners-announced">
+					<p class="scaled-image">
+						{{#winners_known}}
+						<img class="stempel" alt="winactie stempel" src="/assets/images/img-stempel01.png" width="135" height="133">
+						{{/winners_known}}
+						<img alt="{{title}}" src="{{thumbnail}}" width="750" height="488">
+					</p>
+					{{{content}}}
+				</div>
+			</section>
+			{{#winners_known}}
+			<section class="w-listing">
+				<h2>Winnaars</h2>
+				<div class="w-area">
+					{{#winners}}
+					<div class="item">
+						<div class="description">
+							<div class="w"><span>W</span></div>
+							<h2>Winnaar</h2>
+							<h4>{{title}}</h4>
+						</div>
+						<div class="photo">
+							<a class="photo-wrap" href="/lid/{{slug}}">
+								<b><img alt="image description" src="{{avatar_path}}" width="202" height="194"></b>
+								<span class="caption">{{full_name}}</span>
+							</a>
+						</div>
+						<!--<div class="info">
+							<a class="comments" href="#">953 reacties</a>
+						</div>-->
+					</div>
+					{{/winners}}
+				</div>
+			</section>
+			{{/winners_known}}
+			{{/win}}
+			{{> widget_share_buttons}}
+
+			{{>reply_box}}
+
+			{{#win.comment_count}}
+			<div id="comments" class="comment-box">
+				<div class="heading-box">
+					<em class="qty">{{win.comment_count}} Reacties</em>
+					<h3>Reacties</h3>
+				</div>
+				<div class="section">
+					<ol class="comments">
+						{{#comments}}
+							{{>replies}}
+						{{/comments}}
+					</ol>
+				</div>
+			</div>
+			{{/win.comment_count}}
+
+			{{> widget_newsletter_large}}
+		</div>
+		<div class="col-sm-4">
+            {{#is_desktop}}
+                <div class="side-holder">
+                    {{> widget_social}}
+                    {{> widget_top_sidebar_banner}}
+                    {{> widget_newsletter}}
+                    {{& widgets}}
+                    {{> widget_facebook}}
+                </div>
+            {{/is_desktop}}
+		</div>
+	</div>
+</div>

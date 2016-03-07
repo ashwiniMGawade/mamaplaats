@@ -1,0 +1,13 @@
+{{#expert_list}}
+<article class="item simple">
+	<figure class="photo">
+		<a class="photo-wrap" href="/expert/{{expert.slug}}"><b><img alt="{{media.title}}" src="{{media.path}}"></b></a>
+	</figure>
+	<h4><a href="/expert/{{expert.slug}}">{{expert.title}}</a></h4>
+	<p class="info">
+		<a href="/lid/{{user.slug}}">{{user.full_name}}</a> -
+		<a class="comments" href="/expert/{{expert.slug}}#{{expert.link_comments}}">{{expert.comment_count}}</a>
+	</p>
+	<p>{{expert.excerpt}}</p>
+</article>
+{{/expert_list}}

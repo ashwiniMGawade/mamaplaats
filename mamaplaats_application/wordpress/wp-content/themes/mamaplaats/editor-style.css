@@ -1,0 +1,193 @@
+@font-face {
+	font-family: 'BertholdAkzidenzGroteskBERg';
+	src: url('voordeelclub/fonts/berthold-akzidenz-grotesk-be-condensed-webfont.eot');
+	src: url('voordeelclub/fonts/berthold-akzidenz-grotesk-be-condensed-webfont.eot?#iefix') format('embedded-opentype'),
+	url('voordeelclub/fonts/berthold-akzidenz-grotesk-be-condensed-webfont.woff') format('woff'),
+	url('voordeelclub/fonts/berthold-akzidenz-grotesk-be-condensed-webfont.ttf') format('truetype'),
+	url('voordeelclub/fonts/berthold-akzidenz-grotesk-be-condensed-webfont.svg#BertholdAkzidenzGroteskBERg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'market-regularregular';
+	src: url('voordeelclub/fonts/market-regular-webfont.eot');
+	src: url('voordeelclub/fonts/market-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('voordeelclub/fonts/market-regular-webfont.woff') format('woff'),
+	url('voordeelclub/fonts/market-regular-webfont.ttf') format('truetype'),
+	url('voordeelclub/fonts/market-regular-webfont.svg#market-regularregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ZapfDingbatsRegular';
+	src: url('../fonts/zapfdingbats-webfont.eot');
+	src: url('../fonts/zapfdingbats-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/zapfdingbats-webfont.woff') format('woff'),
+		url('../fonts/zapfdingbats-webfont.ttf') format('truetype'),
+		url('../fonts/zapfdingbats-webfont.svg#ZapfDingbatsRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'DINProBlack';
+	src: url('../fonts/dinpro-black-webfont.eot');
+	src: url('../fonts/dinpro-black-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/dinpro-black-webfont.woff') format('woff'),
+		url('../fonts/dinpro-black-webfont.ttf') format('truetype'),
+		url('../fonts/dinpro-black-webfont.svg#DINProBlack') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DINProBold';
+	src: url('../fonts/dinpro-bold-webfont.eot');
+	src: url('../fonts/dinpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/dinpro-bold-webfont.woff') format('woff'),
+		url('../fonts/dinpro-bold-webfont.ttf') format('truetype'),
+		url('../fonts/dinpro-bold-webfont.svg#DINProBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DINProLight';
+	src: url('../fonts/dinpro-light-webfont.eot');
+	src: url('../fonts/dinpro-light-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/dinpro-light-webfont.woff') format('woff'),
+		url('../fonts/dinpro-light-webfont.ttf') format('truetype'),
+		url('../fonts/dinpro-light-webfont.svg#DINProLight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'DINProRegular';
+	src: url('../fonts/dinpro-regular-webfont.eot');
+	src: url('../fonts/dinpro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/dinpro-regular-webfont.woff') format('woff'),
+		url('../fonts/dinpro-regular-webfont.ttf') format('truetype'),
+		url('../fonts/dinpro-regular-webfont.svg#DINProRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DINProMedium';
+	src: url('../fonts/dinpro-medium-webfont.eot');
+	src: url('../fonts/dinpro-medium-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/dinpro-medium-webfont.woff') format('woff'),
+		url('../fonts/dinpro-medium-webfont.ttf') format('truetype'),
+		url('../fonts/dinpro-medium-webfont.svg#DINProMedium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.row-fluid [class*="span"] {
+	display: block;
+	float: left;
+	width: 100%;
+	min-height: 30px;
+	margin-left: 2.127659574468085%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.row-fluid [class*="span"]:first-child {
+	margin-left: 0;
+}
+
+.row-fluid .span6 {
+	width: 48.93617021276595%;
+}
+
+.mamaplaats-well{
+	display:block;
+	min-height: 20px;
+	padding: 5px;
+	margin-bottom: 10px;
+	background-color: #fff;
+	border: 1px solid #e3e3e3;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	border-spacing:0;
+	border-collapse:collapse;
+}
+
+.mamaplaats-well thead th{
+	text-align: left;
+	font-family: BertholdAkzidenzGroteskBERg;
+	font-size: 20px;
+	font-weight:normal;
+	color:#333;
+	padding: 10px 0;
+}
+
+.mamaplaats-well .row-fluid{
+	position:relative;
+}
+
+.mamaplaats-well .img-container{
+	vertical-align: top;
+	border-right: 1px solid #FF9824;
+	padding-right: 10px;
+	width:105px;
+}
+
+.mamaplaats-well .txt-container{
+	vertical-align: top;
+	padding-left:10px;
+}
+
+.mamaplaats-well .txt-container ul{
+	margin:0;
+	padding:0;
+	list-style-type: none;
+}
+
+.mamaplaats-well .txt-container p{
+	text-align: left;
+}
+
+.mamaplaats-well .txt-container li{
+	padding: 0 0 0 10px;
+	background-image: url(images/arrow-right.png);
+	background-repeat: no-repeat;
+	background-position: 0px 5px;
+	list-style-image: none;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 10px;
+}
+
+.mamaplaats-well .txt-container li a{
+	line-height:5px;
+	font-size:10px;
+}
+
+.blanco-h1{
+	font-family: BertholdAkzidenzGroteskBERg;
+	color: #fd539b;
+	font-size: 34px;
+	line-height: 34px;
+	font-weight: normal;
+}
+
+.blanco-subheadmenu{
+	font-size: 18px;
+	line-height: 30px;
+	font-family: BertholdAkzidenzGroteskBERg;
+}
+
+.clear{
+	clear:both;
+}

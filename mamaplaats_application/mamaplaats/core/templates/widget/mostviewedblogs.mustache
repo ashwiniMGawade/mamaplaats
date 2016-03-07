@@ -1,0 +1,22 @@
+<div class="top-blogs">
+	<div class="heading-box">
+		<h3>Top 3 Blogs</h3>
+	</div>
+	<div class="listing">
+		{{#most_viewed_blogs}}
+		<div class="item">
+			<div class="photo">
+				<a href="/blog/{{blog.slug}}">
+					<span class="photo-wrap"><img alt="{{blog.title}}" src="{{media.path}}" width="112" height="110"></span>
+					<span class="num">{{blog.position}}.</span>
+				</a>
+			</div>
+			<div class="description">
+				<h4><a href="/blog/{{blog.slug}}">{{blog.title}}</a></h4>
+				<p>{{blog.excerpt}} <a href="/blog/{{blog.slug}}">&gt;</a></p>
+			</div>
+		</div>
+		{{/most_viewed_blogs}}
+	</div>
+</div>
+{{> discount_block}}

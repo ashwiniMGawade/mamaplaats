@@ -1,0 +1,25 @@
+{{>email_header}}
+<h1 style="color:#202020 !important;display:block;font-family:Arial;font-size:26px;font-style:normal;font-weight:bold;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left;">
+    {{title}}
+</h1>
+{{#user}}
+<table border="0" cellpadding="10" cellspacing="0" style="width: 100%">
+    <tr style="border-bottom: 1px solid #CCCCCC;">
+        <td style="width: 100px;">
+            <img src="{{avatar}}" />
+        </td>
+        <td>
+            <h4 style="color:#111111 !important;display:block;font-family:Arial;font-size:14px;font-style:normal;font-weight:bold;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left;">
+                {{follower_name}}
+            </h4>
+            <div style="color: #555555;font-family: Arial;font-size: 14px;">
+                {{user_details}}<br>
+            </div>
+            <p>Volg jij {{follower_name}} al? <a href="{{user_link}}">Klik hier en volg</a></p>
+            <p>Benieuwd?<a href="{{following_blog_url}}"> Bekijk de blogs van {{follower_name}}</a></p>
+        </td>
+    </tr>
+</table>
+{{/user}}
+
+{{>email_footer}}

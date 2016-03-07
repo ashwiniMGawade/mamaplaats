@@ -1,0 +1,388 @@
+form label{
+	margin-top:4px;
+	margin-right: 8px;
+	display: block;
+	float:left;
+}
+form div.rowElem{
+	clear:both;
+	padding:4px 0px;
+}
+
+/* -------------
+ * Buttons
+ * ------------- */
+button {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	overflow: visible;
+	font-family: Arial;
+}
+
+*:first-child+html button[type]{width: 1;} /* IE7 */
+
+button span {
+	background: transparent url(../img/btn_right.gif) no-repeat right top;
+	display: block;
+	float: left;
+	padding: 0px 4px 0px 0px; /* sliding doors padding */
+	margin: 0px;
+	height: 33px;
+}
+
+button span span {
+	background: transparent url(../img/btn_left.gif) no-repeat top left;
+	color: #333;
+	padding: 8px 4px 0px 8px;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 13px;
+	display: block;
+	text-decoration: none;
+	height: 33px;
+}
+.txtai{margin-left: 10px;}
+.txtai a{text-decoration: underline}
+.txtai a:hover{color:#FD539B}
+.wth95px{width: 95px;}
+.wth90px{width: 90px;}
+.mrgrmin5px{margin-right: -6px;}
+.aramr16px{ margin: 13px;}
+.mrl3px{margin-left: 0.08em;
+}
+/*hover*/
+button_hover span span { background-position: left -33px ; }
+button_hover span { background-position: right -33px ; }
+
+/*clicked*/
+button_click span span { background-position: left -66px ; }
+button_click span { background-position: right -66px ; }
+
+/* IE 6 */
+* html button { height:33px; }
+* button span span { height: 25px; }
+/* IE 7 */
+*+ html button { height:33px; }
+*+ button span span { height: 25px; }
+
+
+/* -------------
+ * Inputs
+ * ------------- */
+:focus{
+    outline: none;
+}
+
+
+input{
+    border: 0px;
+    margin-left: -4px;
+    line-height: 20px;
+    font-size: 14px;
+    height: 38px;
+    outline: none;
+    float: left;
+    padding-left:8px;
+    padding-right: -8px;
+}
+
+input.user_login, input.user_email{
+	background: transparent url(../img/input/225x38.png) no-repeat left top;
+	width: 214px;
+    
+}
+input.user_login:focus, input.user_email:focus{
+	background: transparent url(../img/input/225x38_focus.png) no-repeat left top;
+    
+}
+
+input.first_name, input.last_name,  input.coupon, input.street, input.city{
+	background: transparent url(../img/input/170x38.png) no-repeat left top;
+	width: 170px;
+    
+}
+input.first_name:focus, input.last_name:focus, input.coupon:focus, input.street:focus, input.city:focus{
+	background: transparent url(../img/input/170x38_focus.png) no-repeat left top;
+}
+
+input.middle_name, input.zip{
+	background: transparent url(../img/input/103x38.png) no-repeat left top;
+	width: 103px;
+    
+}
+input.middle_name:focus, input.zip:focus{
+	background: transparent url(../img/input/103x38_focus.png) no-repeat left top;
+	width: 103px; 
+}
+
+input.childname{
+	background: transparent url(../img/input/103x38.png) no-repeat left top;
+	width: 95px;
+    
+}
+input.childname:focus{
+	background: transparent url(../img/input/103x38_focus.png) no-repeat left top;
+	width: 95px; 
+}
+
+input.house_number{
+	background: transparent url(../img/input/103x38.png) no-repeat left top;
+	width: 30px;
+    
+}
+input.house_number:focus{
+	background: transparent url(../img/input/103x38_focus.png) no-repeat left top;
+	
+}
+select{
+    overflow: hidden;	
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    overflow:hidden;
+    margin-left: -3px;
+    position:relative;
+    padding: 0px 15px 5px; 
+    border: 0px transparent;
+    
+}
+
+select.birthdateday, select.birthdatemonth, select.birthdateyear{
+    width: 155px;
+    height: 38px;
+    background: url(../img/select_big.png)   0px 0px no-repeat;
+}
+
+select.birthdateday:focus, select.birthdatemonth:focus, select.birthdateyear:focus{
+    background: url(../img/select_big.png) 0px -42px;
+}
+
+@-moz-document url-prefix() {
+select { padding-top: 8px;
+    height: 30px; }
+}
+
+select.select-81x28{
+    width: 85px;
+    height: 37px;
+    padding: 6px 10px 6px; 
+    margin-right: 3px;
+    background: url(../img/select-81x28.png)   -4px 0px no-repeat;
+}
+
+select.select-81x28:focus{
+    background: url(../img/select-81x28.png) -4px -42px;
+}
+
+select.pregnant, select.amount_children, select.select_small{
+    width: 114px;
+    height: 37px;
+    background: url(../img/select_small.png)   0px 0px no-repeat;
+}
+
+select.pregnant:focus, select.amount_children:focus, select.select_small:focus{
+    background: url(../img/select_small.png) 0px -42px;
+}
+
+
+#childbirthdate select{
+    width: 80px;
+}
+select:focus{
+    outline: none;
+    background: transparent url(../img/input/103x38_focus.png) no-repeat left top;
+	
+}
+
+
+#gender label {
+ vertical-align: middle;
+}
+/* common settings checkbox and radiobutton */
+
+#gender input[type="radio"]{
+ -khtml-appearance: none;
+ background: url('../img/radio.gif') no-repeat;
+ width: 18px;
+ height: 18px;
+ vertical-align: middle;
+ display: block;
+ margin: 6px;
+}
+
+label{
+    font-size: 13px;
+    color: #2C2C2C;
+    text-decoration: none;
+    line-height: 20px;
+}
+
+label :hover{
+    color: #2C2C2C;
+    text-decoration: underline;
+}
+
+label a{
+    color: #2C2C2C;
+}
+
+#gender input[type="radio"]{
+ background-position-x: right;
+}
+
+#gender input[type="radio"]:checked{
+ background-position-y: -19px;
+ border: 0px;
+}
+
+#gender input[type=radio] + label{
+    float: left;
+    margin: 4px;
+}
+
+#gender input[type=radio]:checked + label{
+}
+
+#gender{
+    float: left;
+    display: block;
+    margin: -3px;
+}
+
+input[type="checkbox"]{
+ -khtml-appearance: none;
+ background: url('../img/checkbox.gif') no-repeat;
+ width: 18px;
+ height: 18px;
+ vertical-align: middle;
+ display: block;
+ margin: 6px;
+}
+
+input[type="checkbox"]{
+ background-position-x: right;
+}
+
+input[type="checkbox"]:checked{
+ background-position-y: -19px;
+ border: 0px;
+}
+
+input[type="checkbox"] + label{
+    float: left;
+    margin: 4px;
+    margin-top: 6px;
+}
+
+input[type="checkbox"]:checked + label{
+}
+
+#gift input[type=radio] + label{
+    border: 1px solid transparent;
+    width: 102px;
+    height: 102px;
+    padding: 0 0 0 0px;
+    display: block;
+    clear: left;
+    float: left;
+    cursor: pointer;
+}
+
+#gift input[type=radio]:checked + label{
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border: 1px solid #ffb00a;
+    box-shadow: 0 0 5px #ffb00a;
+    -webkit-box-shadow: 0 0 5px #ffb00a; 
+    -moz-box-shadow: 0 0 5px #ffb00a;     
+}
+ 
+#gift input[type=radio]#one + label{
+     background: url('../img/gift_dvd.gif') 0 0px no-repeat;
+}
+
+#gift input[type=radio]#two + label{
+     background: url('../img/gif_ster.png') 0 0px no-repeat;
+}
+
+#gift input[type=radio]#tree + label{
+     background: url('../img/gif_scherm.png') 0 0px no-repeat;
+}
+
+#gift input[type=radio]#four + label{
+     background: url('../img/four.png') 0 0px no-repeat;
+}
+
+
+#gift input[type=radio].one, input[type=radio].two, input[type=radio].tree, input[type=radio].four{
+     display:none;
+ }
+ #gift .lable{
+     margin-right: 0px;
+     margin-left: 0px;
+     margin-top: 45px;
+     margin-bottom: 45px; 
+ }
+#account input[type=radio] + label{
+    border: 1px solid transparent;
+    width: 300px;
+    height: 239px;
+    padding: 0 0 0 0px;
+    clear: left;
+    cursor: pointer;
+}
+
+#account input[type=radio]#regular + label{
+     background: url('../img/lid1.png') 1px 4px no-repeat;
+}
+
+#account input[type=radio]#regular:checked + label{
+     background: url('../img/lid1.png') 0 -249px no-repeat;
+}
+ 
+#account input[type=radio]#coupon_writer + label{
+     background: url('../img/lid2.png') 0 0px no-repeat;
+}
+
+#account input[type=radio]#coupon_writer:checked + label{
+     background: url('../img/lid2.png') 0 -249px no-repeat;
+}
+ 
+#account input[type=radio]#coupon_pay + label{
+     background: url('../img/lid3.png') 0 0px no-repeat;
+}
+
+#account input[type=radio]#coupon_pay:checked + label{
+     background: url('../img/lid3.png') 0 -249px no-repeat;
+}
+ 
+input[type=radio]#regular, input[type=radio]#coupon_writer, input[type=radio]#coupon_pay{
+     display:none;
+}
+
+.error, #error{
+    margin-left: 50px;
+    padding-top: 10px;
+    padding-top: 10px;
+    list-style: none;
+    color: red;
+    font-weight: bolder;
+}
+
+.txtai{
+    display: block;
+    width: 300px;
+}
+.txtai a{
+    margin-left: 15px;
+}
+/* firefox fix */
+
+@-moz-document url-prefix() {
+
+}

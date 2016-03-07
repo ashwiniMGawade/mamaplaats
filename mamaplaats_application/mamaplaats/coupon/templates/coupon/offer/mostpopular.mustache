@@ -1,0 +1,21 @@
+<div class="row">
+	{{> pregnancy_calander}}
+</div>
+<div id="inner">
+    <div class="clearfix"></div>
+	<header class="heading-box">
+        <h1>20 meest populaire kortingscodes en acties</h1>
+	</header>
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="popular-codes">
+				{{#popular_offers}}{{> coupon_offer}}{{/popular_offers}}
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="inner-sidebar">
+				{{& widgets}}
+			</div>
+		</div>
+	</div>
+</div>

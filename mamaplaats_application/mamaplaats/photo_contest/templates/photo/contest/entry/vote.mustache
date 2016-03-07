@@ -1,0 +1,49 @@
+<div class="content photocontest">
+	<h1>Stem op deze foto</h1>
+	{{#entry}}
+	<div class="contest-photo">
+		<a href="{{single_url}}" title="{{title}}"><img src="{{photo_url}}" alt="{{title}}" /></a>
+		<div class="contest-info">
+			<div class="contest-author"><span>Door:</span> {{username}}</div>
+			<div class="contest-votes"><span>Stemmen:</span> {{amount_votes}}</div>
+		</div>
+	</div>
+	{{/entry}}
+	<div class="clear"></div>
+	<br />
+	{{#errors}}
+	<ul class="message err">
+		{{#messages}}
+		<li>{{error}}</li>
+		{{/messages}}
+	</ul>
+	{{/errors}}
+	{{#success}}
+	<ul class="message succ">
+		<li>{{success}}</li>
+	</ul>
+	{{/success}}
+	{{^success}}
+	<form action="" method="post" enctype="multipart/form-data">
+		<div class="photo-form">
+			<label for="vote_firstname">Voornaam * <small>Vul hier je voornaam in</small></label>
+			<input id="vote_firstname" class="text" type="text" name="firstname" value="{{form.firstname}}" />
+			<label for="vote_lastname">Achternaam * <small>Vul hier je achternaam in</small></label>
+			<input id="vote_lastname" class="text" type="text" name="lastname" value="{{form.lastname}}" />
+			<label for="vote_email">Email * <small>Vul hier je email in</small></label>
+			<input id="vote_email" class="text" type="text" name="email" value="{{form.email}}" />
+			<label class="captcha">
+				Captcha * <small>Vul de letters in de foto in het veld in</small><br/>
+				<input class="text" type="text" name="captcha" /> {{{captcha}}}
+			</label>
+
+			<label class="newsletter">
+				<input type="checkbox" name="newsletter" value="1" {{#form.newsletter}}checked="checked"{{/form.newsletter}} />
+				Ja, ik ontvang graag de nieuwsbrief van Mamaplaats (Voordeelclub)
+			</label>
+
+			<input class="button" type="submit" value="Stem" />
+		</div>
+	</form>
+	{{/success}}
+</div>

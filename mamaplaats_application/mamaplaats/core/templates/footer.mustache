@@ -1,0 +1,48 @@
+	</div> {{! end .container }}
+
+	<footer id="footer">
+		<div class="container">
+			<div class="footer-box">
+				<div class="row">
+					<div class="col-sm-4">
+						<strong class="logo"><a href="#">MamaPlaats</a></strong>
+						<span class="copyright">Copyright &copy; Mamaplaats.nl</span>
+					</div>
+					<div class="col-sm-8">
+						{{> widget_social}}
+					</div>
+				</div>
+			</div>
+			<div class="footer-lists">
+				<div class="row">
+					{{#menu}}
+					<div class="col-sm-2">
+						{{#menu_block}}
+						<h3>{{text}}</h3>
+						<ul>
+							{{#sub_menu}}
+							<li><a href="{{path}}">{{text}}</a></li>
+							{{/sub_menu}}
+						</ul>
+						{{/menu_block}}
+					</div>
+					{{/menu}}
+
+				</div>
+			</div>
+			<div class="partners-box">
+				<h4>Partners</h4>
+				<ul>
+					{{#partners}}
+					<li><a href="{{url}}" rel="nofollow" target="_blank"><img src="{{image}}" width="82" height="41" alt="{{title}}"></a></li>
+					{{/partners}}
+				</ul>
+			</div>
+		</div> {{! end .container }}
+
+        <!-- VMG NL Young Family Media mamaplaats.nl mamaplaats.nl inpagevideo-->
+        <div id="inPageVideo"></div>
+        <script  type="text/javascript" async src="//nl.vmg.host/adServ/placement/id/2249"></script>
+        <!-- end  VMG NL -->
+	</footer>
+</div> {{! end #page }}

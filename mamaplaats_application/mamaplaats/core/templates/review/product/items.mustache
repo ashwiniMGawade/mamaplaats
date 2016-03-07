@@ -1,0 +1,12 @@
+{{#products}}
+<article class="item">
+	<figure class="photo">
+		<a class="photo-wrap" href="/review/product/{{slug}}">
+			{{#average_rating}}<span class="stempel"><span>{{average_rating}}</span></span>{{/average_rating}}
+			<b><img alt="{{title}}" src="{{image_url}}" width="260" height="242"></b>
+		</a>
+	</figure>
+	<h4><a href="/review/product/{{slug}}">{{title}}</a></h4>
+	<p>{{description}}</p>
+</article>
+{{/products}}

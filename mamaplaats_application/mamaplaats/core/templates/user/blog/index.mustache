@@ -1,0 +1,120 @@
+<div class="data-form">
+	<header class="heading-box">
+		<h1>Blog Schrijven</h1>
+	</header>
+	{{^profile_complete}}
+	<div class="alert alert-info">
+		Voordat je een blog kan schrijven is het nodig dat je eerst een <a href="/user/update/personal_info">Profiel Foto</a> en iets
+		<a href="/user/update/own_detail">Over Jezelf</a> toevoegen zodat andere moeders dit onder je blog kunnen zien.
+	</div>
+	{{/profile_complete}}
+	{{#profile_complete}}
+	<form action="" method="post" enctype="multipart/form-data">
+			{{#is_published}}
+			<div class="alert alert-success">
+				Uw Blog is op dit moment gepubliceerd. Andere gebruikers kunnen deze nu op de site zien.
+			</div>
+			{{/is_published}}
+			{{^is_published}}
+			{{#blog.id}}
+			<div class="alert alert-info">
+				Je blog is opgeslagen als concept. Je moet alle velden invoeren om je blog kunnen publiceren.
+			</div>
+			{{/blog.id}}
+			{{/is_published}}
+			{{#has_messages}}
+			<div class="alert alert-{{type}}">
+				{{#messages}}{{message}}<br />{{/messages}}
+			</div>
+			{{/has_messages}}
+			<div class="form-item">
+				<label for="title">Titel van je blog * <small>Tussen 20 en 55 tekens</small></label>
+				<input type="text" name="title" id="title" placeholder="Een duidelijke en unieke titel voor je blog" value="{{blog.title}}" maxlength="55">
+			</div>
+
+			<div class="form-item">
+				<label for="category">Selecteer een categorie</label>
+				<div class="select-wrap">
+					<select id="parent-category" name="parent_category_id">
+                        <option value="">Selecteer een categorie</option>
+						{{#parent_categories}}
+						<option value="{{value}}"
+							{{#selected}}selected{{/selected}}
+							{{#disabled}}disabled{{/disabled}}>{{& text}}</option>
+						{{/parent_categories}}
+					</select>
+				</div>
+			</div>
+
+            <div class="form-item">
+                <label for="category">Selecteer een sub-categorie</label>
+                <div class="select-wrap">
+                    <select id="category" name="category_id">
+                        <option value="">Selecteer een sub-categorie</option>
+                        {{#sub_categories}}
+                            {{value}}
+                            <option value="{{value}}"
+                                {{#selected}}selected{{/selected}}
+                                {{#disabled}}disabled{{/disabled}}>{{& text}}</option>
+                        {{/sub_categories}}
+                    </select>
+                </div>
+            </div>
+
+			<div class="form-item">
+				<label for="excerpt">Inleiding * <small>Tussen 70 en 140 tekens</small></label>
+				<textarea class="textarea_count" name="excerpt" id="excerpt" placeholder="Een duidelijke en korte inleiding waarover je blog gaat" maxlength="140">{{blog.excerpt}}</textarea>
+			</div>
+
+			<div class="form-item">
+				<label for="redactor_blog">Je blog * <small>Min. 200 woorden</small></label>
+				<textarea id="redactor_blog" name="content" data-blog-id="{{blog.id}}">{{{blog.content}}}</textarea>
+			</div>
+
+			<div class="row form-item">
+				<div class="col-sm-8">
+					<div class="form-item">
+						<label>Selecteer bijpassende foto</label>
+						<input id="blog-image-upload" class="file-ignore" type="file" name="file">
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-item">
+						<label>Jouw huidige foto</label>
+						<span class="span12">
+							{{#blog.thumbnail}}
+							<img src="{{blog.thumbnail}}">
+							{{/blog.thumbnail}}
+							{{^blog.thumbnail}}
+							Nog geen foto
+							{{/blog.thumbnail}}
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="row form-item">
+				<div class="col-sm-4">
+					<div class="form-item blog-form-btns">
+						<button class="btn" type="submit" name="status" value="publish">Opslaan en Publiceren</button>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-item blog-form-btns">
+						{{#is_draft}}
+                            <a href="/user/blog/delete/{{blog.id}}" class="btn" onclick="return confirm('Weet je zeker dat je \'{{blog.title}}\' wil verwijderen?');">Verwijder</a>
+						{{/is_draft}}
+                        {{#is_published}}
+						<a href="/blog/{{blog.slug}}" class="btn" target="_blank">Blog Bekijken</a>
+                        {{/is_published}}
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-item blog-form-btns">
+						<button class="btn" type="submit" name="status" value="draft">Als Concept Opslaan</button>
+					</div>
+				</div>
+			</div>
+	</form>
+	{{/profile_complete}}
+</div>

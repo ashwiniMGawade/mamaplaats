@@ -1,0 +1,21 @@
+{{>email_header}}
+
+{{#content}}
+	<div style="color: #555555;font-family: Arial;font-size: 14px;line-height: 150%;text-align: left;">Beste {{first_name}},<br>
+		<br>
+		Je hebt een account aangemaakt op Mamaplaats.<br />
+		<br />
+		Als je dit account wilt activeren klik dan op onderstaande knop:<br /><br />
+		<a href="{{activation_url}}" style="font-size: 13px;line-height: 20px;font-family: Times,serif;text-transform: uppercase;	border: 0px none;padding: 10px 16px;border-radius: 0px;cursor: pointer;background: none repeat scroll 0% 0% #B78645;color: #FFF;text-decoration: none;white-space: normal;">
+			Activeer mijn account nu
+		</a><br />
+		<br />
+		Als je deze email niet hebt aangevraagd dan kun je deze gewoon negeren. Er zal geen verdere actie worden ondernomen.
+		<br /><br />
+		Met vriendelijke groet,<br />
+		Mamaplaats,<br />
+		<a href="http://www.mamaplaats.nl">www.mamaplaats.nl</a>
+	</div>
+{{/content}}
+
+{{>email_footer}}

@@ -1,0 +1,53 @@
+<div id="two-cols">
+	<div class="row">
+		<div class="col-sm-8">
+			<section class="blogger-block">
+				<header class="heading-box">
+					<h1>Bloggers</h1>
+				</header>
+				<nav class="sort-nav">
+					<ul>
+						{{#alphabet}}
+						<li {{#selected}}class="active"{{/selected}}><a href="/leden/{{value}}">{{text}}</a></li>
+						{{/alphabet}}
+					</ul>
+				</nav>
+				<div class="blog-list">
+					{{#blogger_list}}
+					<div class="blogger">
+						<div class="holder">
+							<div class="photo">
+								<a class="photo-wrap" href="/lid/{{slug}}">
+									<b><img alt="{{full_name}}" src="{{avatar}}" width="140" height="120"></b>
+									<!--<span class="title">supermama</span>-->
+								</a>
+							</div>
+							<h3><a href="/lid/{{slug}}">{{full_name}}</a></h3>
+							<div class="info">
+								<a href="/lid/{{slug}}" class="comments">{{comment_count}} reacties</a>
+								<a href="/lid/{{slug}}" class="followers">{{follower_count}} volgers</a>
+							</div>
+							<p>{{biography}} <a href="/lid/{{slug}}">Bekijk volledig profiel</a></p>
+
+							<button data-follow-id="{{id}}" class="btn follow">
+								{{#following}}Wordt Gevolgd{{/following}}{{^following}}Volgen{{/following}}
+							</button>
+						</div>
+					</div>
+					{{/blogger_list}}
+				</div>
+			</section>
+			{{> widget_newsletter_large}}
+		</div>
+		<div class="col-sm-4">
+        {{#is_desktop}}
+            <div class="side-holder">
+                {{> widget_social}}
+                {{> widget_newsletter}}
+                {{& widgets}}
+                {{> widget_facebook}}
+            </div>
+        {{/is_desktop}}
+		</div>
+	</div>
+</div>

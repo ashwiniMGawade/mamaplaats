@@ -1,0 +1,37 @@
+<header class="heading-box">
+	<h1>Stuur een privé bericht</h1>
+</header>
+{{> messages}}
+<header class="heading-box">
+	<h3>Ontvanger Bericht</h3>
+</header>
+<div>
+	<form id="user_search" method="get">
+		<input id="recipient" type="text" name="search-term" value="{{conversation.user.display_name}}" placeholder="Zoek een moeder op voornaam, achternaam of gebruikersnaam" autocomplete="off">
+	</form>
+	<div id="result"></div>
+</div>
+<header class="heading-box">
+	<h3>Schrijf een nieuw bericht</h3>
+</header>
+<div class="msg-box">
+	<form action="" method="post">
+		<fieldset>
+			<input id="recipient_id" name="recipient_id" type="hidden" value="{{conversation.user.id}}">
+			<textarea name="content" placeholder="JOUW BERICHT *" rows="5" cols="50">{{conversation.msg_body}}</textarea>
+			<div class="row form-item">
+			    <div class="col-sm-4">
+			        <div class="form-item blog-form-btns">
+                        <button class="btn" type="submit">verstuur</button>
+                    </div>
+			    </div>
+
+			    <div class="col-sm-4 col-sm-offset-4">
+                    <div class="form-item blog-form-btns">
+                        <button class="btn" name="draft" value="draft" type="submit">Opslaan als concept</button>
+                    </div>
+                </div>
+			</div>
+		</fieldset>
+	</form>
+</div>

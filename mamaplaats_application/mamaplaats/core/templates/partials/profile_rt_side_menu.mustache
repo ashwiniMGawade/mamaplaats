@@ -1,0 +1,20 @@
+{{#user_info}}
+    <a href="#" class="mp-logo">
+        <img src="{{avatar}}" alt="{{full_name}}" width="158" height="30">
+    </a>
+{{/user_info}}
+{{#menu}}
+    <nav class="ad-menu">
+        <strong class="title">{{text}}</strong>
+        <div class="list-group">
+            {{#sub_menu}}
+                <a href="{{path}}" class="list-group-item {{#active}}active{{/active}}">
+                    {{text}}
+                    {{#count}}
+                        <span class="amount">({{count}})</span>
+                    {{/count}}
+                </a>
+            {{/sub_menu}}
+        </div>
+    </nav>
+{{/menu}}

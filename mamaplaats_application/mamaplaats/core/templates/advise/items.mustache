@@ -1,0 +1,13 @@
+{{#advise_list}}
+<article class="item simple">
+	<figure class="photo">
+		<a class="photo-wrap" href="/advies/{{advise.slug}}"><b><img alt="{{advise.title}}" src="{{media.path}}"></b></a>
+	</figure>
+	<h4><a href="/advies/{{advise.slug}}">{{advise.title}}</a></h4>
+	<p class="info">
+		<a href="/lid/{{user.slug}}">{{user.full_name}}</a> -
+		<a class="comments" href="/advies/{{advise.slug}}#{{advise.link_comments}}">{{advise.comment_count}}</a>
+	</p>
+	<p>{{advise.excerpt}}</p>
+</article>
+{{/advise_list}}

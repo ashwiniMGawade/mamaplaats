@@ -1,0 +1,63 @@
+<div class="row">
+	{{> pregnancy_calander}}
+</div>
+<div id="review">
+	<section class="blog-masonry">
+        <div class="clearfix"></div>
+		<header class="heading-box">
+            <!--<div class="float-new-blog">class="advise-heading"-->
+                {{> widget_social}}
+            <!--</div>-->
+            <h1>aanmelden reviews</h1>
+		</header>
+		<div class="grid-box alt">
+			{{#review_products}}
+			<article class="item">
+				<figure class="photo">
+					<a class="photo-wrap" href="/review/product/{{slug}}">
+						<b><img alt="{{title}}" src="{{image_url}}" width="260" height="216"></b>
+					</a>
+				</figure>
+				<h4><a href="/review/product/{{slug}}">{{title}}</a></h4>
+				<p>{{description}}</p>
+				{{#status_link}}<a class="btn small {{^url}}grey disabled{{/url}}" href="{{url}}">{{tag}}</a>{{/status_link}}
+
+			</article>
+			{{/review_products}}
+		</div>
+		{{^review_products}}
+		<div class="alert alert-info">
+            Op dit moment zoeken wij geen testmoeders. Wil je er snel bij zijn als er een nieuw testpanel start? Schrijf
+			je dan <a href="#newsletter_large">hier</a> in voor de nieuwsbrief.
+		</div>
+		{{/review_products}}
+	</section>
+	<section class="blog-masonry">
+		<header class="heading-box">
+			<h1>Zie enkele van onze afgeronde reviews</h1>
+		</header>
+		<div class="grid-box">
+			{{#reviewed_products}}
+			<article class="item">
+				<figure class="photo">
+					<a class="photo-wrap" href="/review/product/{{slug}}">
+						{{#average_rating}}<span class="stempel"><span>{{average_rating}}</span></span>{{/average_rating}}
+						<b><img alt="{{title}}" src="{{image_url}}" width="260" height="242"></b>
+					</a>
+				</figure>
+				<h4><a href="/review/product/{{slug}}">{{title}}</a></h4>
+				<p>{{description}}</p>
+			</article>
+			{{/reviewed_products}}
+		</div>
+	</section>
+	<div class="info-block">
+		<div class="row">
+			<div class="col-sm-4">
+			</div>
+			<div class="col-sm-8">
+				{{> widget_newsletter_large}}
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,55 @@
+   <div class="col-md-7 col-xs-6 col-sm-6 calender-block pregnancy-calender-black-box-container">
+       <h2 class="title">Zwangerschapskalender</h2>
+        <ul>
+            {{#pregnancy_calendar}}
+                <li>
+                    <a href="{{basepath}}{{url}}" id="box">&nbsp;</a>
+                    <div class="preview-detail left-zero">
+                        <em class="up-aarow left-zero">&nbsp;</em>
+                        <p>{{title}}</p>
+                        <div class="preview-img">
+                            <a href="{{basepath}}{{url}}">
+                                <img src="{{basepath}}assets/images/zwangerschapskalender/{{image}}.jpg"/>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            {{/pregnancy_calendar}}
+        </ul>
+    </div>
+    <div class="col-md-5 col-xs-6 col-sm-6 calender-block nopadding-left pregnancy-calender-golden-box-container">
+        <h2 class="title text-right">Ontwikkeling kind</h2>
+        <ul class="pull-right" style="padding-right: 5px;">
+            {{#after_birth_calendar}}
+                <li>
+                    <a class="golden" href="{{basepath}}{{url}}" title="{{title}}" id="child_growth_box">&nbsp;</a>
+                    <div class="preview-detail right-zero">
+                        <em class="up-aarow right-zero">&nbsp;</em>
+                        <p>{{title}}</p>
+                        <div class="preview-img">
+                            <a href="{{basepath}}{{url}}">
+                                <img src="{{basepath}}assets/images/advies_na_zwangerschap/{{image}}.jpg"/>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            {{/after_birth_calendar}}
+        </ul>
+    </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+         $('span#box').hover( function () {
+             var li_postiion    = $(this).parent().index();
+             if(li_postiion > 3)
+             {
+                $('.preview-detail').css('left', '-115px');
+                $('em.up-aarow').css('left', '46%');
+             }
+             else
+             {
+                 $('.preview-detail').css('left', '0');
+                 $('em.up-aarow').css('left', '0');
+             }
+         });
+    });
+</script>

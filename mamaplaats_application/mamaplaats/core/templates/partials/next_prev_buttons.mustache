@@ -1,0 +1,21 @@
+<div class="next-prev-arw">
+    {{#previous_blog}}
+        <a
+           class="prev-arw arw"
+           href="{{previous_blog.post_name}}"
+           onclick="_gaq.push(['_trackEvent', 'buttons', 'click previous article', 'an article can be expert, advise or blog'])"
+        >
+            <span>{{previous_blog.post_title}}</span>
+        </a>
+    {{/previous_blog}}
+    {{#next_blog}}
+        <a
+            class="next-arw arw"
+            href="{{next_blog.post_name}}"
+            onclick="_gaq.push(['_trackEvent', 'buttons', 'click next article', 'an article can be expert, advise or blog'])"
+        >
+            <span>{{next_blog.post_title}}</span>
+        </a>
+    {{/next_blog}}
+
+</div>

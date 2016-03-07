@@ -1,0 +1,51 @@
+<div class="row">
+	{{> pregnancy_calander}}
+</div>
+<div id="inner">
+    <div class="clearfix"></div>
+
+	<header class="heading-box">
+        <h1>Alle winkels</h1>
+	</header>
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="popular-list">
+				<ul>
+					{{#popular_shops}}
+					<li><a href="/korting/winkel/{{slug}}"><img alt="{{name}}" src="{{image}}" width="98" height="88"></a></li>
+					{{/popular_shops}}
+				</ul>
+			</div>
+			<div class="items-list">
+				<div class="heading">
+					<ul class="alphabet">
+						{{#characters}}
+						<li {{#selected}}class="active"{{/selected}}><a href="/korting/winkels?character={{character}}">{{character}}</a></li>
+						{{/characters}}
+					</ul>
+				</div>
+				{{#coupon_shops}}
+				<div class="group {{#selected}}active{{/selected}}">
+					<div class="heading">
+						<h3>{{character}}</h3>
+					</div>
+					<div class="listing">
+						<div class="horizontal-align">
+							<ul>
+								{{#shops}}
+								<li><a href="/korting/winkel/{{slug}}">{{name}}</a></li>
+								{{/shops}}
+							</ul>
+						</div>
+					</div>
+				</div>
+				{{/coupon_shops}}
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="inner-sidebar">
+				{{& widgets}}
+			</div>
+		</div>
+	</div>
+</div>

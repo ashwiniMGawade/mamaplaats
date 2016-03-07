@@ -1,0 +1,20 @@
+<div class="latest-comments">
+	<div class="heading-box">
+		<h3>Laatste reacties</h3>
+	</div>
+	<div class="listing">
+		{{#latest_comments}}
+		<div class="unit">
+			<div class="photo">
+				<a class="photo-wrap" href="/lid/{{author_slug}}">
+					<b><img alt="{{author_name}}" src="{{avatar}}"></b>
+				</a>
+			</div>
+			<div class="description">
+				<p class="content"><a href="/blog/{{blog_slug}}">{{content}}</a></p>
+				<p class="posted"><a href="/blog/{{blog_slug}}">{{time_ago}} geleden.</a></p>
+			</div>
+		</div>
+		{{/latest_comments}}
+	</div>
+</div>

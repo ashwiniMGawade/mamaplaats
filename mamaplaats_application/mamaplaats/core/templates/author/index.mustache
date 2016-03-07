@@ -1,0 +1,64 @@
+{{#author}}
+<div id="two-cols">
+	<div class="row">
+		<div class="col-sm-8">
+			<section class="blog-masonry">
+				<header class="heading-box">
+					<h1>Bloggers</h1>
+				</header>
+				<div class="blogger alt">
+					<div class="holder">
+						<div class="photo">
+							<a class="photo-wrap" href="#">
+								<b><img alt="{{full_name}}" src="{{avatar}}" width="140" height="120"></b>
+								<!--<span class="title">supermama</span>-->
+							</a>
+						</div>
+						<h3>{{full_name}}</h3>
+						<div class="info">
+							<!--<a href="#" class="comments">{{comment_count}} reacties</a>-->
+							<!--<a href="#" class="followers">{{follower_count}} volgers</a>-->
+						</div>
+						<ul class="info-list">
+							<li>Mamaplaats blogger sinds: {{registration_date}}</li>
+							<!--<li>Woonplaats: Leiden</li>-->
+						</ul>
+						<a href="#" data-follow-id="{{id}}" class="btn follow check_follow">Volgen</a>
+					</div>
+					<p>{{biography}}</p>
+				</div>
+				<header class="heading-box">
+					<h1>Blogs van {{display_name}}</h1>
+				</header>
+				<div class="grid-box">
+					{{#blog_list}}
+					<article class="item">
+						<figure class="photo">
+							<a class="photo-wrap" href="/blog/{{blog.slug}}"><b><img alt="{{blog.title}}" src="{{media.path}}" width="230" height="140"></b></a>
+						</figure>
+						<h4><a href="/blog/{{blog.slug}}">{{blog.title}}</a></h4>
+						<p class="info"><a href="/lid/{{author.slug}}">{{author.full_name}}</a> - <time datetime="{{blog.created}}">{{blog.created_formatted}}</time></p>
+						<p>{{blog.excerpt}}</p>
+					</article>
+					{{/blog_list}}
+				</div>
+				{{#show_load_more}}
+				<a href="#" onclick="return load_more.author_blog('{{author.slug}}', 15)" class="load-more">Meer blog berichten van {{full_name}} bekijken</a>
+				{{/show_load_more}}
+			</section>
+			{{> widget_newsletter_large}}
+		</div>
+		<div class="col-sm-4">
+            {{#is_desktop}}
+                <div class="side-holder">
+                    {{> widget_social}}
+                    {{> widget_newsletter}}
+                    {{> widget_top_sidebar_banner}}
+                    {{& widgets}}
+                    {{> widget_facebook}}
+                </div>
+            {{/is_desktop}}
+		</div>
+	</div>
+</div>
+{{/author}}

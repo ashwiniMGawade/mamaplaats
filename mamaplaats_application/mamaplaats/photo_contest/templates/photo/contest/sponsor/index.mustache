@@ -1,0 +1,20 @@
+
+<div class="content photocontest full">
+
+	<div class="sponsor-page">
+		<h1>{{contest.sponsor_title}}</h1>
+		<img class="sponsor-image" src="{{contest.example_photo}}" />
+		{{{contest.sponsor_page}}}
+
+		<div class="sponsor-reward-list">
+			<h2>Prijzen voor de Fotowedstrijd '{{contest.title}}'</h2>
+			{{#rewards}}
+			<div class="sponsor-reward">
+				<img class="sponsor-image" src="{{photo_url}}" />
+				<h3>{{title}}</h3>
+				{{description}}
+			</div>
+			{{/rewards}}
+		</div>
+	</div>
+</div>

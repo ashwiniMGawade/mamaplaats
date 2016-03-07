@@ -1,0 +1,27 @@
+<form action="" method="get">
+	<div class="filter-photos">
+		<input type="hidden" name="amount" value="{{page_amount}}" />
+		<div class="photos-per-page">
+			Foto's per pagina:
+			{{#page_amounts}}
+			<a {{#selected}}class="active"{{/selected}} href="?{{text}}">{{value}}</a> |
+			{{/page_amounts}}
+		</div>
+		<div class="photos-order-by">
+			Sorteer op:
+			<select name="order_by" onchange="form.submit()">
+				{{#orders}}
+				<option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</option>
+				{{/orders}}
+			</select>
+		</div>
+		<div class="photos-page">
+			Pagina:
+			<select name="page" onchange="form.submit()">
+				{{#pages}}
+				<option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</option>
+				{{/pages}}
+			</select>
+		</div>
+	</div>
+</form>

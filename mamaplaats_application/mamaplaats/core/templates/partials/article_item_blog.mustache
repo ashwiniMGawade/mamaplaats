@@ -1,0 +1,13 @@
+<article class="item simple">
+	<figure class="photo">
+		<a class="photo-wrap" href="/blog/{{blog.slug}}"><b><img alt="{{blog.title}}" src="{{media.path}}" width="260" height="242"></b></a>
+	</figure>
+	<h3 class="category"><a href="/blog/{{blog.slug}}">blog</a></h3>
+	<h4><a href="/blog/{{blog.slug}}">{{blog.title}}</a></h4>
+	<p class="info">
+		<a href="/lid/{{user.slug}}">{{user.full_name}}</a> -
+		<time datetime="{{blog.created}}">{{blog.created_formatted}}</time> -
+		<a class="comments" href="/blog/{{blog.slug}}#comments">{{blog.comment_count}}</a>
+	</p>
+	<p>{{blog.excerpt}}</p>
+</article>

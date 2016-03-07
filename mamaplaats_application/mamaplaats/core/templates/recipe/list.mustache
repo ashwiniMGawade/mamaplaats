@@ -1,0 +1,29 @@
+<div class="row">
+	{{> pregnancy_calander}}
+</div>
+<div id="advies">
+    <div class="clearfix"></div>
+	{{& featured_section}}
+	<header class="heading-box">
+		<h1>{{title}}</h1>
+	</header>
+	<section class="blog-masonry">
+		<div class="grid-box">
+			{{#recipe_list}}
+			<article class="item simple">
+				<figure class="photo">
+					<a class="photo-wrap" href="/blog/{{blog.slug}}"><b><img alt="{{blog.title}}" src="{{media.path}}"></b></a>
+				</figure>
+				<h4><a href="/blog/{{blog.slug}}">{{blog.title}}</a></h4>
+				<p class="info">
+					<a href="/lid/{{user.slug}}">{{user.full_name}}</a> -
+					<time datetime="{{blog.created}}">{{blog.created_formatted}}</time> -
+					<a class="comments" href="/blog/{{blog.slug}}#{{blog.link_comments}}">{{blog.comment_count}}</a>
+				</p>
+				<p>{{blog.excerpt}}</p>
+			</article>
+			{{/recipe_list}}
+		</div>
+		<a href="#" onclick="return load_more.blogs('{{category_slug}}', 15)" class="lazy-load-more">Klik hier om meer berichten te laden</a>
+	</section>
+</div>

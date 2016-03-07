@@ -1,0 +1,20 @@
+<div class="content photocontest full">
+	{{#active_contest}}
+	<div class="sponsor-list">
+		<h2>Sponsor huidige fotowedstrijd '{{title}}'</h2>
+		<div class="sponsor-image"><a href="{{basepath}}fotowedstrijd/{{id}}/sponsor"><img src="{{sponsor_photo}}" /></a></div>
+		<div class="sponsor-title">{{sponsor_title}}</div>
+		<div class="sponsor-description">{{sponsor_short}}</div>
+		<a class="read-more" href="{{basepath}}fotowedstrijd/{{id}}/sponsor">Lees Meer</a>
+	</div>
+	{{/active_contest}}
+	{{#next_contest}}
+	<div class="sponsor-list">
+		<h2>Sponsor volgende fotowedstrijd '{{title}}'</h2>
+		<div class="sponsor-image"><a href="{{basepath}}fotowedstrijd/{{id}}/sponsor"><img src="{{sponsor_photo}}" /></a></div>
+		<div class="sponsor-title">{{sponsor_title}}</div>
+		<div class="sponsor-description">{{sponsor_short}}</div>
+		<a class="read-more" href="{{basepath}}fotowedstrijd/{{id}}/sponsor">Lees Meer</a>
+	</div>
+	{{/next_contest}}
+</div>

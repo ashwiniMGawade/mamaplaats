@@ -1,0 +1,20 @@
+<div class="popular-categories-box">
+	<div class="heading-box">
+		<h2>Populairste Categorieen</h2>
+		<h4>En de bijbehorende populairste acties, kortingscodes en gratis acties!</h4>
+	</div>
+	<ul class="tabset">
+		{{#popular_coupon_categories}}
+		<li>
+			<a class="item" href="/korting/categorie/{{slug}}">
+				<span class="icon coupon-icon-{{icon}}"></span>
+				<div class="description">
+					<h3>{{name}}</h3>
+					<p>{{coupon_offer_count}} codes beschikbaar</p>
+				</div>
+			</a>
+		</li>
+		{{/popular_coupon_categories}}
+	</ul>
+	<a href="/korting/categorien" class="view-all">Bekijk&nbsp;alle categorieen</a>
+</div>

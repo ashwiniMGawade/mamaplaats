@@ -1,0 +1,23 @@
+<div class="blogger">
+    <div class="holder">
+        <div class="photo">
+            <a class="photo-wrap" href="/lid/{{slug}}">
+                <b><img alt="{{full_name}}" src="{{avatar}}" width="140" height="120"></b>
+                <!--<span class="title">supermama</span>-->
+            </a>
+        </div>
+        <h3>
+            <a href="/lid/{{slug}}">
+                {{full_name}}
+                {{^full_name}}
+                    &nbsp;
+                {{/full_name}}
+            </a>
+        </h3>
+        <div class="info">
+            <a href="javascript:void(0);" class="comments link-to-text">{{comments_count}} reacties</a> <a href="javascript:void(0);" class="followers link-to-text">{{followers_count}} volgers</a>
+        </div>
+        <p>{{biography}} <a href="/lid/{{slug}}">Bekijk volledig profiel</a></p>
+        <a href="#" data-follow-id="{{id}}" class="btn follow grey btn-with-stars">Wordt Gevolgd</a>
+    </div>
+</div>

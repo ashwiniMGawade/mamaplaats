@@ -1,0 +1,36 @@
+{{#coupon_category}}
+<div id="inner">
+	<div class="row click-out">
+		<div class="col-sm-8">
+			<div class="intro-box">
+				<span class="icon coupon-icon-{{icon}}"></span>
+				<div class="description">
+					<h1>{{title}}</h1>
+					{{{description}}}
+				</div>
+			</div>
+			<div class="popular-codes alt">
+				<div class="heading-box">
+					<h1>Kortingscodes, acties en gratis</h1>
+				</div>
+				{{#coupon_offers}}
+					{{> coupon_offer}}
+				{{/coupon_offers}}
+				{{^coupon_offers}}
+					<div class="alert alert-info">
+						Er zijn op dit moment geen kortingscodes beschikbaar binnen deze categorie
+					</div>
+				{{/coupon_offers}}
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="inner-sidebar">
+				{{>widget_newsletter_box}}
+				{{>widget_social}}
+
+				{{& widgets}}
+			</div>
+		</div>
+	</div>
+</div>
+{{/coupon_category}}

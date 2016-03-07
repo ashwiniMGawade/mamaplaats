@@ -1,0 +1,26 @@
+<header class="heading-box">
+	<h1>Tijdlijn</h1>
+</header>
+<div class="timeline-list">
+	{{^timeline}}
+	<p>Er zijn geen tijdslijn updates</p>
+	{{/timeline}}
+	{{#timeline}}
+	<article class="item">
+		<div class="photo">
+			<a href="/lid/{{user.slug}}" class="photo-wrap">
+				<b><img src="{{user.avatar}}" width="100" height="86" alt="{{user.full_name}}"></b>
+			</a>
+		</div>
+		<div class="description">
+			<div class="wrap">
+				<time datetime="{{activity.date}}">{{activity.date}}</time>
+				<strong class="title"><a href="/lid/{{user.slug}}">{{user.full_name}}</a></strong>
+			</div>
+			<p>{{activity.content}}</p>
+			<a href="{{activity.path}}">Ga naar … </a>
+		</div>
+	</article>
+	{{/timeline}}
+</div>
+<!--<a href="#" class="load-more">Meer laden</a>-->

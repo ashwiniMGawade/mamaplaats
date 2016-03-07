@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>{{title}} - Mamaplaats</title>
+
+	<meta name="description" content="{{description}}">
+	<meta name="google-site-verification" content="gRSSrnhSZ29fXY7xSg9LSJXwH_sVDnxXzEdXstXqZv0" />
+	{{> social_meta}}
+
+	<link rel="shortcut icon" href="/favicon.ico?v=2" />
+	<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic%7CQuattrocento:400,700%7CPT+Serif:400,400italic,700italic,700" rel="stylesheet">
+
+	{{#options.css_files}}
+	<link href="{{.}}?v={{version}}" rel="stylesheet">
+	{{/options.css_files}}
+
+	{{#options.less_files}}
+	<link href="{{.}}?v={{version}}" rel="stylesheet/less">
+	{{/options.less_files}}
+
+	{{#options.load_less}}
+	<script src="/assets/js/less-1.5.0.min.js?v={{version}}"></script>
+	{{/options.load_less}}
+
+	{{#show_advertisement_popup}}
+        <script type="text/javascript">
+            var ad_popup_status = '{{status}}';
+            var ad_popup_url = '{{url}}';
+            var ad_popup_image = '{{image}}';
+        </script>
+	{{/show_advertisement_popup}}
+
+	{{#options.js_files}}
+	<script src="{{.}}?v={{version}}&x=v3"></script>
+	{{/options.js_files}}
+
+	<!--[if lt IE 9]><script src="/assets/js/ie.js"></script><![endif]-->
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-26166105-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <script>
+        var _prum = [['id', '5628a1f1abe53d7457487e76'],
+                     ['mark', 'firstbyte', (new Date()).getTime()]];
+        (function() {
+            var s = document.getElementsByTagName('script')[0]
+              , p = document.createElement('script');
+            p.async = 'async';
+            p.src = '//rum-static.pingdom.net/prum.min.js';
+            s.parentNode.insertBefore(p, s);
+        })();
+    </script>
+
+</head>
+<body>
+	<!--[if lt IE 9]>
+	<div id="browser-unsupported">
+		<strong>Je browser wordt helaas niet ondersteund</strong>
+		We raden je aan om
+		<a rel="nofollow" target="_blank" href='http://chrome.com/'>Chrome</a>,
+		<a rel="nofollow" target="_blank" href='http://getfirefox.com'>FireFox</a>, of
+		<a rel="nofollow" target="_blank" href='http://windows.microsoft.com/nl-nl/internet-explorer/download-ie'>Internet Explorer 8 of hoger</a>
+		te installeren voor een betere ervaring.
+	</div>
+	<![endif]-->
+
+	<div class="page-container">
+{{&header}}
+{{>content}}
+{{&footer}}
+	</div>
+    <div class="cookie-wall navbar-fixed-bottom">
+        <div class="cookie-wall-container">
+            <div class="row">
+                <div class="col-md-9">
+                    Deze website maakt gebruik van cookies. <a href="http://yfm.nl/cookiebeleid-privacystatement" target="_blank">Klik hier</a> voor ons Privacy- en cookiebeleid. Door hiernaast op akkoord te klikken of door gebruik te blijven maken van deze website geeft u aan akkoord te zijn met het gebruik van cookies.
+                </div>
+                <div class="col-md-3">
+                    <a href="javascript:void(0);" class="btn" id="accept_cookie">Ja, ik accepteer de cookies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div id="fb-root"></div>
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '602658293139325',
+				status     : true,
+				xfbml      : true
+			});
+		};
+
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+</body>
+</html>

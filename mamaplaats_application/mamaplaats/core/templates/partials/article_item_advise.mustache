@@ -1,0 +1,12 @@
+<article class="item simple">
+	<figure class="photo">
+		<a class="photo-wrap" href="/advies/{{advise.slug}}"><b><img alt="{{advise.title}}" src="{{media.path}}" width="260" height="242"></b></a>
+	</figure>
+	<h3 class="category"><a href="/advies/{{advise.slug}}">Advies</a></h3>
+	<h4><a href="/advies/{{advise.slug}}">{{advise.title}}</a></h4>
+	<p class="info">
+		<a href="/lid/{{user.slug}}">{{user.full_name}}</a> -
+		<a class="comments" href="/advise/{{advise.slug}}#comments">{{advise.comment_count}}</a>
+	</p>
+	<p>{{advise.excerpt}}</p>
+</article>

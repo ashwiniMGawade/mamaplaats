@@ -1,0 +1,22 @@
+<div class="popular-activities-box">
+	<div class="heading-box">
+		<h2>Populair</h2>
+		<h4>De meeste populaire aanbiedingen</h4>
+	</div>
+	<div class="popular-listing">
+		<ul>
+			{{#popular_coupon_offers}}
+			<li>
+				<a class="item" href="/korting/winkel/{{coupon_shop_slug}}#show_offer_{{id}}">
+					<img class="photo" alt="{{coupon_shop_name}}" src="{{image}}" width="58" height="58">
+					<div class="description">
+						<h3>{{coupon_shop_name}}</h3>
+						<p>{{description}}</p>
+					</div>
+				</a>
+			</li>
+			{{/popular_coupon_offers}}
+		</ul>
+		<a class="view-all" href="/korting/nieuwste">Bekijk alle acties</a>
+	</div>
+</div>

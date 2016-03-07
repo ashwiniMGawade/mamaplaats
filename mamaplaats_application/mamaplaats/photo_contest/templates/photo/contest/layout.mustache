@@ -1,0 +1,27 @@
+<div class="contest-container">
+	<div class="content-header">
+		<div class="header-left">
+			<div class="title">Fotowedstrijd</div>
+			<div class="subtitle">{{title}}</div>
+			<ul class="tabs">
+				{{#menu}}
+				<li {{#active}}class="active"{{/active}}><a href="{{url}}">{{text}}</a></li>
+				{{/menu}}
+			</ul>
+		</div>
+		<div class="header-right">
+			{{#sponsor}}
+			<a href="/fotowedstrijd/{{sponsor_id}}/sponsor"><img src="{{sponsor_photo}}" alt="{{sponsor_title}}" /></a>
+			{{/sponsor}}
+		</div>
+	</div>
+	<div class="content-wide">
+		{{#widgets}}
+		<div class="menu-left">
+		{{{content}}}
+		</div>
+		{{/widgets}}
+		{{{content}}}
+	</div>
+	<div class="clear"></div>
+</div>

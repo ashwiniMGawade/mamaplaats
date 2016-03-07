@@ -1,0 +1,122 @@
+<section class="write-review">
+	<header class="heading-box">
+		<h1>Schrijf een review</h1>
+	</header>
+	{{#has_messages}}
+	<div class="alert alert-{{type}}">
+		{{#messages}}{{& message}}<br />{{/messages}}
+	</div>
+	{{/has_messages}}
+	<form action="" method="post">
+		{{#review}}
+
+		<div class="form-item">
+			<label for="title">Review titel</label>
+			<input id="title" name="title" type="text" value="{{title}}" placeholder="Geef een titel aan deze review.">
+		</div>
+
+		<div class="form-item">
+			<label for="information">Informatie</label>
+			<textarea class="redactor_review" id="information" name="information" cols="60" rows="6" placeholder="Vertel ons en onze lezers wat meer over je zelf. Wie ben je? Waarom heb je je opgegeven voor deze review? etc.">{{information}}</textarea>
+		</div>
+
+		{{#review_sections}}
+		<header class="heading-box"><h3>{{question}}</h3></header>
+		<div class="form-item large">
+			<input name="sections[{{id}}][id]" value="{{id}}" type="hidden">
+			<input name="sections[{{id}}][review_product_section_id]" value="{{review_product_section_id}}" type="hidden">
+			<label for="review_section_{{id}}"></label>
+			<textarea class="redactor_review" id="review_section_{{id}}" name="sections[{{id}}][content]" cols="60" rows="10" placeholder="{{question}}">{{content}}</textarea>
+		</div>
+		<div class="media-box">
+			<h3>Foto's en Video's</h3>
+			<div class="media-uploads">
+				{{#media}}
+				<div class="media-group">
+					<div class="photo">
+						<img alt="{{title}}" src="{{thumbnail}}" width="132" height="133">
+					</div>
+					<div class="description">
+						<div class="name">{{title}} <a class="remove" data-media-id="{{id}}" href="#"><i class="glyphicon glyphicon-remove"></i></a></div>
+						<div class="form-item">
+							<input name="media[{{id}}][id]" value="{{id}}" type="hidden">
+							<input name="media[{{id}}][title]" value="{{title}}" type="text" placeholder="titel van de foto of video">
+						</div>
+						<div class="form-item">
+							<input name="media[{{id}}][description]" value="{{description}}" type="text" placeholder="Beschrijving van de foto of video">
+						</div>
+					</div>
+				</div>
+				{{/media}}
+			</div>
+			<div class="media-info">
+				<input id="fileupload_{{id}}" data-review-id="{{review_id}}" data-review-section-id="{{id}}" title="Foto & Video toevoegen" type="file" name="files[]" multiple>
+			</div>
+		</div>
+		{{/review_sections}}
+
+		<div class="overview-box">
+			<h3>Cijfers</h3>
+			{{#review_ratings}}
+			<div class="rating">
+				<input type="hidden" name="ratings[{{id}}][id]" value="{{id}}">
+				<input type="hidden" name="ratings[{{id}}][review_product_rating_id]" value="{{review_product_rating_id}}">
+				<input id="r1" type="text" name="ratings[{{id}}][rating]" value="{{rating}}">
+				<label for="r1">{{rating_title}}</label>
+			</div>
+			{{/review_ratings}}
+			<div class="result">
+				<span class="amount">{{rating_overal}}</span>
+				<span class="mark">Uitkomst</span>
+			</div>
+		</div>
+
+		<div class="form-row">
+			<div id="positive_remarks" class="column">
+				<h3>Pluspunten <em>(Maximaal 5)</em></h3>
+				<div data-bind="foreach: remarks">
+					<div class="form-item">
+						<input type="hidden" data-bind="value: id, attr:{name:'remarks[pos'+$index()+'][id]'}">
+						<input type="hidden" data-bind="value: type, attr:{name:'remarks[pos'+$index()+'][type]'}">
+						<input type="text" maxlength="24" data-bind="value: remark, attr:{name:'remarks[pos'+$index()+'][remark]'}">
+					</div>
+				</div>
+				<a data-bind="click: addRemark" href="#">Pluspunt toevoegen</a>
+			</div>
+			<div id="negative_remarks" class="column">
+				<h3>Minpunten <em>(Maximaal 5)</em></h3>
+				<div data-bind="foreach: remarks">
+					<div class="form-item">
+						<input type="hidden" data-bind="value: id, attr:{name:'remarks[neg'+$index()+'][id]'}">
+						<input type="hidden" data-bind="value: type, attr:{name:'remarks[neg'+$index()+'][type]'}">
+						<input type="text" maxlength="24" data-bind="value: remark, attr:{name:'remarks[neg'+$index()+'][remark]'}">
+					</div>
+				</div>
+				<a data-bind="click: addRemark" href="#">Minpunt toevoegen</a>
+			</div>
+		</div>
+		<div class="recommend-box">
+			<h3>Aanbevelen</h3>
+			<p>Zou jij dit product aanbevelen bij anderen?</p>
+			<div class="form-controls">
+				<input name="will_recommend" value="1" id="c1" type="radio" {{#will_recommend}}checked="checked"{{/will_recommend}}>
+				<label for="c1">Ja, aanbevelen</label>
+			</div>
+			<div class="form-controls">
+				<input name="will_recommend" value="0" id="c2" type="radio" {{^will_recommend}}checked="checked"{{/will_recommend}}>
+				<label for="c2">Nee, niet aanbevelen</label>
+			</div>
+		</div>
+		{{/review}}
+		<div class="btn-box">
+			<button name="finished" value="0" class="btn large">Verstuur review</button>
+			<div class="form-controls">
+				<input name="finished" value="0" type="hidden">
+				<input id="c3" name="finished" value="1" type="checkbox">
+				<label for="c3">Controleer mijn review</label>
+			</div>
+		</div>
+	</form>
+</section>
+<script type="text/javascript">var initial_remarks = {{& remarks}};</script>
+<script type="text/javascript" src="/assets/js/mamaplaats/ko.review_remarks.js"></script>

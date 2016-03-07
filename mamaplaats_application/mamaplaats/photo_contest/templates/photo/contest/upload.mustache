@@ -1,0 +1,52 @@
+<div class="content photocontest">
+	<div class="body">
+		{{#errors}}
+		<ul class="message err">
+			{{#messages}}
+			<li>{{error}}</li>
+			{{/messages}}
+		</ul>
+		{{/errors}}
+		{{#logged_in}}
+		<h1>Stuur jouw foto in</h1>
+		{{#success}}
+		<ul class="message succ">
+		<li>{{{success}}}</li>
+		</ul>
+		{{/success}}
+		{{^success}}
+		{{#page_body}}
+		<p class="intro">{{{page_body}}}</p>
+		{{/page_body}}
+		
+		
+		<form action="" method="post" enctype="multipart/form-data">
+			<div class="photo-form">
+				<label for="photo_title">Titel <small>Wat is de titel van je foto?</small></label>
+				<input id="photo_title" class="text" type="text" name="title" value="{{form.title}}" />
+				<label for="photo_description">Omschrijving <small>Waarom is deze foto zo leuk / bijzonder?</small></label>
+				<textarea id="photo_description" class="textarea" name="description">{{form.description}}</textarea>
+				<label for="photo_file">Foto <small>Selecteer hier de foto die je wilt uploaden</small></label>
+				<input id="photo_file" type="file" name="image" />
+				<input class="button" type="submit" value="Upload Foto" />
+			</div>
+		</form>
+		{{/success}}
+		{{/logged_in}}
+		{{^logged_in}}
+		<h1>Je moet mamaplaats lid zijn om je foto te kunnen plaatsen</h1>
+		<p>
+			Om mee te kunnen doen met de fotowedstrijd. Moet je lid zijn van Mamaplaats.
+			Maak een account aan of log in als je al een account hebt.
+		</p>
+	
+		<a href="/gebruiker/registreer/" class="register_button"></a>
+		<a href="/gebruiker/aanmelden/" class="login_button"></a>
+		{{/logged_in}}
+	</div>
+	<div class="rightbar">
+		{{#banner_code}}
+			{{{ banner_code }}}
+		{{/banner_code}}
+	</div>
+</div>

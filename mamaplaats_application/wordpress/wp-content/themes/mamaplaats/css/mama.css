@@ -1,0 +1,55 @@
+/**************************************************
+Mamaplaats Mama Stylesheet
+Target: Screen
+Author: Martijn Schornagel - www.momono.nl
+**************************************************/
+#header {
+	height: 115px;
+	background: url(/kohana/assets/img/template/header-white.png) repeat-x;
+}
+ul.mainnav > li.current-menu-item > a, ul.mainnav > li.current-menu-parent > a {
+	color: #a0fbb1;
+	background: url(../images/bg-selected.png) left top repeat-x;
+	text-shadow:#444 0px 1px 0px;
+}
+ul.mainnav > li > ul.sub-menu {
+	background: url(/kohana/assets/img/template/header-white.png) 10px repeat-x;
+}
+.register-banner a {
+	background: url(../images/button-inschrijven-groen.png);
+}
+h2.label {
+	background: url(/kohana/assets/img/template/sprite_pink.png) no-repeat -395px -173px;
+	text-indent: -32697px;
+	height: 117px;
+	width: 117px;
+	float: left;
+	margin-left: 12px;
+	margin-top: 4px;
+	margin-bottom: 20px;
+}
+h1.post-head {
+	color: #000;
+	font: 500 18px/20px "Helvetica Neue", Arial, sans-serif;
+	text-decoration: none;
+	margin-bottom: 4px;
+}
+h2.post-head {
+	color: #000;
+	font: 500 18px/20px "Helvetica Neue", Arial, sans-serif;
+	text-decoration: none;
+	margin-bottom: 4px;
+}
+h3.theme-head {
+	font-size: 14px;
+	margin-bottom: 6px;
+	text-decoration: none;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #000;
+}
+h3.post-head a {
+	color: #000;
+	font: 600 14px "Helvetica Neue", Arial, sans-serif;
+	text-decoration: none;
+}

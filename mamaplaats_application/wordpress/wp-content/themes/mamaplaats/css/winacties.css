@@ -1,0 +1,40 @@
+/**************************************************
+Mamaplaats Mama Stylesheet
+Target: Screen
+Author: Martijn Schornagel - www.momono.nl
+**************************************************/
+h2.label {
+	text-indent: -32697px;
+	height: 117px;
+	width: 0;
+	float: left;
+	margin-left: 12px;
+	margin-top: 4px;
+	margin-bottom: 20px;
+}
+h1.post-head {
+	font: 500 18px/20px "Helvetica Neue", Arial, sans-serif;
+	text-decoration: none;
+	margin-bottom: 4px;
+}
+h1.category-head {
+	font: bold 14px "Helvetica Neue", Arial, sans-serif;
+	text-decoration: none;
+    padding: 0;
+}
+h2.post-head {
+	font: 500 18px/20px "Helvetica Neue", Arial, sans-serif;
+	text-decoration: none;
+	margin-bottom: 4px;
+}
+h3.theme-head {
+	font-size: 14px;
+	margin-bottom: 6px;
+	text-decoration: none;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+h3.post-head a {
+	font: 600 14px "Helvetica Neue", Arial, sans-serif;
+	text-decoration: none;
+}

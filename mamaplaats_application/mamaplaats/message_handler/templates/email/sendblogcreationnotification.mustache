@@ -1,0 +1,26 @@
+{{>email_header}}
+
+    {{#blog}}
+        <h1 style="color:#202020 !important;display:block;font-family:Arial;font-size:26px;font-style:normal;font-weight:bold;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left;">
+            {{blog_title}}
+        </h1>
+        <table border="0" cellpadding="10" cellspacing="0" style="width: 100%">
+            <tr style="border-bottom: 1px solid #CCCCCC;">
+                <td style="width: 100px;">
+                    <img src="{{avatar}}" />
+                </td>
+                <td>
+                    <h4 style="color:#111111 !important;display:block;font-family:Arial;font-size:14px;font-style:normal;font-weight:bold;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left;">
+                        {{author_name}}
+                    </h4>
+                    <div style="color: #555555;font-family: Arial;font-size: 14px;">
+                        {{blog_content}}<br>
+                    </div>
+                    <a href="{{blog_url}}">Ga naar de blog</a><br>
+                    <a href="{{user_blog}}">Bekijk alle blogs van {{author_name}}</a>
+                </td>
+            </tr>
+        </table>
+    {{/blog}}
+
+{{>email_footer}}

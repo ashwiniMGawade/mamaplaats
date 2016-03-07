@@ -1,0 +1,145 @@
+<div id="account">
+	<section class="registration-block">
+		<header class="heading-box">
+			{{> widget_social}}
+			<h1>{{page_title}}</h1>
+		</header>
+		<div class="col-set">
+			<div class="col-1">
+			 <img src="{{left_panel_image}}"/>
+			</div>
+			<div class="col-2">
+				{{#user}}
+				<form class="form-inline validate-form" action="" method="post">
+					{{> messages}}
+					{{^success}}
+					<h3>Persoonsgegevens</h3>
+					<div class="form-row">
+						<div class="column">
+							<div class="form-item">
+								<label for="i1">Voornaam</label>
+								<input class="required" id="i1 first_name" type="text" name="first_name" placeholder="Voornaam" value="{{first_name}}">
+							</div>
+						</div>
+						<div class="column">
+							<div class="form-item">
+								<label for="i2">Achternaam</label>
+								<input class="required" id="i2 last_name" type="text" name="last_name" placeholder="Achternaam" value="{{last_name}}">
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="column">
+							<div class="form-item">
+								<label for="i3">Email adres</label>
+								<input class="required-email" id="i3 email" type="email" name="email" placeholder="Emailadres" value="{{email}}">
+							</div>
+						</div>
+						<div class="column">
+							<div class="form-item">
+								<label for="i4">Wachtwoord</label>
+								<input class="required" id="i4 password" type="password" name="password" placeholder="Wachtwoord" value="{{password}}">
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="column">
+							<div class="form-item">
+								<label for="i3">Username</label>
+								<input class="required" id="i5 display_name" type="text" name="display_name" placeholder="Gebruikersnaam" value="{{display_name}}">
+							</div>
+						</div>
+						{{#phone_number_field.display}}
+						<div class="column">
+							<div class="form-item">
+								<label>Telefoonnummer *</label>
+                                <input class="required-number" maxlength="10" id="i6 phone_number" type="text" name="phone_number" placeholder="Telefoonnummer" value="{{phone_number}}">
+								<div id="phone-format-error" class="custom-validation-error" style="display: none">Vul een geldig telefoonnummer in</div>
+							</div>
+						</div>
+						{{/phone_number_field.display}}
+						{{^phone_number_field.display}}
+                            <div class="column w4">
+                                <div class="form-item">
+                                    <label>Geslacht</label>
+                                    <div class="select-wrap">
+                                        <select name="gender">
+											{{#genders}}
+                                                <option value="{{value}}" {{#selected}}selected="selected" {{/selected}}>{{text}}</option>
+											{{/genders}}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+						{{/phone_number_field.display}}
+					</div>
+					<div class="form-row">
+						<div class="column">
+							<label for="i5">Geboortedatum</label>
+							<div class="wrap">
+								<div class="column w3">
+									<div class="form-item">
+										<input id="i6" name="birthdate[day]" type="text" value="{{birthdate.day}}" placeholder="DD">
+									</div>
+								</div>
+								<div class="column w3">
+									<div class="form-item">
+										<input name="birthdate[month]" type="text" value="{{birthdate.month}}" placeholder="MM">
+									</div>
+								</div>
+								<div class="column w3">
+									<div class="form-item">
+										<div class="select-wrap">
+											<select name="birthdate[year]">
+												{{#birthdate_years}}
+												<option value="{{text}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</option>
+												{{/birthdate_years}}
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						{{#phone_number_field.display}}
+                        <div class="column w4">
+                            <div class="form-item">
+                                <label>Geslacht</label>
+                                <div class="select-wrap">
+                                    <select name="gender">
+										{{#genders}}
+                                            <option value="{{value}}" {{#selected}}selected="selected" {{/selected}}>{{text}}</option>
+										{{/genders}}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+						{{/phone_number_field.display}}
+					</div>
+					<div class="check-row">
+                        <div class="check-item">
+                            <input id="c2 tos" name="tos" type="checkbox" {{#tos}}checked="checked"{{/tos}}>
+                            <label for="c2">Ja, ik ontvang graag wekelijks nieuwsbrieven van Mamaplaats met actuele onderwerpen op het gebied van moeders en kinderen. Tevens ga ik akkoord met de  <a href="/algemene-voorwaarden/">algemene voorwaarden.</a></label>
+                        </div>
+						{{#slug}}
+                            <div class="check-item">
+                                <input name="newsletter_group" value="0" type="hidden">
+                                <input id="c3 newsletter" type="checkbox" value="1" name="newsletter_group" {{#newsletter_group}}checked="checked"{{/newsletter_group}}>
+                                <label for="c3">{{{opt_text}}}</label>
+                            </div>
+						{{/slug}}
+						{{#phone_number_field.text}}
+                        <div class="check-item">
+                            <label for="c4">* {{{phone_number_field.text}}}</label>
+                        </div>
+						{{/phone_number_field.text}}
+					</div>
+					<div class="set">
+						<button class="btn" type="submit">Registreren</button>
+					</div>
+					{{/success}}
+				</form>
+				{{/user}}
+			</div>
+		</div>
+	</section>
+</div>

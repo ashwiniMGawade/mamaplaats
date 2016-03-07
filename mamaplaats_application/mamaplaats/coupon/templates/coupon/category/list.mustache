@@ -1,0 +1,31 @@
+<div class="row">
+	{{> pregnancy_calander}}
+</div>
+<div id="inner">
+    <div class="clearfix"></div>
+	<header class="heading-box">
+        <h1>Alle categorieen</h1>
+	</header>
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="categories-list">
+				<ul>
+					{{#categories}}
+					<li>
+						<a href="/korting/categorie/{{slug}}">
+							<span class="icon coupon-icon-{{icon}}"></span>
+							<span class="title">{{name}}</span>
+							<span class="txt">{{coupon_offer_count}} codes beschikbaar</span>
+						</a>
+					</li>
+					{{/categories}}
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="inner-sidebar">
+				{{& widgets}}
+			</div>
+		</div>
+	</div>
+</div>

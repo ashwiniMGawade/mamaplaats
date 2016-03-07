@@ -1,0 +1,23 @@
+<section class="blog-masonry">
+    <header class="heading-box">
+        <h1>{{title}}</h1>
+    </header>
+    <div id="blog_list" class="grid-box">
+		{{#blog_list}}
+            <article class="item">
+                <figure class="photo">
+                    <a class="photo-wrap" href="/blog/{{blog.slug}}">
+                        <b><img alt="{{media.title}}" src="{{media.path}}" width="230" height="140"></b>
+                    </a>
+                </figure>
+                <h4><a href="/blog/{{blog.slug}}">{{blog.title}}</a></h4>
+                <p class="info">
+                    <a href="/lid/{{user.slug}}">{{user.full_name}}</a> -
+                    <time datetime="{{blog.created}}">{{blog.created_formatted}}</time>
+                </p>
+                <p>{{blog.excerpt}}</p>
+            </article>
+		{{/blog_list}}
+    </div>
+    <a href="#" onclick="return load_more.follwoing(15)" class="lazy-load-more">Klik hier om meer berichten te laden</a>
+</section>

@@ -1,0 +1,55 @@
+<div class="row">
+	{{> pregnancy_calander}}
+</div>
+
+{{#show_script}}
+    <script>(function(e){var t=document,n=t.createElement("script");n.async=!0,n.defer=!0,n.src=e,t.getElementsByTagName("head")[0].appendChild(n)})("//c.flx1.com/1-7124.js?id=7124&m=1")</script>
+    <img src="https://n01d05.cumulus-cloud.com/trackers/tag.php?t=img&cid=2821497405&chid=31446&ts=[timestamp]" border="0" width="1" height="1" style="position:absolute; top:0x; left:0px; z-index:1;">
+
+    <script>(function(e){var t=document,n=t.createElement("script");n.async=!0,n.defer=!0,n.src=e,t.getElementsByTagName("head")[0].appendChild(n)})("//c.flx1.com/1-7124.js?id=7124&m=1")</script>
+    <img src="https://n01d05.cumulus-cloud.com/trackers/tag.php?t=img&cid=2821497405&chid=31446&ts=[timestamp]" border="0" width="1" height="1" style="position:absolute; top:0x; left:0px; z-index:1;">
+
+    <script>(function(e){var t=document,n=t.createElement("script");n.async=!0,n.defer=!0,n.src=e,t.getElementsByTagName("head")[0].appendChild(n)})("//c.flx1.com/1-7124.js?id=7124&m=1")</script>
+    <img src="https://n01d05.cumulus-cloud.com/trackers/tag.php?t=img&cid=2821497405&chid=31446&ts=[timestamp]" border="0" width="1" height="1" style="position:absolute; top:0x; left:0px; z-index:1;">
+
+    <script>(function(e){var t=document,n=t.createElement("script");n.async=!0,n.defer=!0,n.src=e,t.getElementsByTagName("head")[0].appendChild(n)})("//c.flx1.com/1-7124.js?id=7124&m=1")</script>
+    <img src="https://n01d05.cumulus-cloud.com/trackers/tag.php?t=img&cid=2821497405&chid=31446&ts=[timestamp]" border="0" width="1" height="1" style="position:absolute; top:0x; left:0px; z-index:1;">
+{{/show_script}}
+
+<div id="advies">
+	<div class="featured-section-blocks">
+        <div class="clearfix"></div>
+		<header class="heading-box">
+            <!--<div class="float-new-blog">-->
+			    {{> widget_social}}
+            <!--</div>-->
+            <h1>Top expert adviezen van Mamaplaats</h1>
+		</header>
+	</div>
+	{{& featured_section}}
+	<header class="heading-box">
+		<h1>Expert advies</h1>
+	</header>
+	<section class="blog-masonry">
+		<div class="grid-box">
+			{{#expert_list}}
+			<article class="item simple">
+				<figure class="photo">
+					<a class="photo-wrap" href="/expert/{{expert.slug}}"><b><img alt="{{media.title}}" src="{{media.path}}" width="260" height="140"></b></a>
+				</figure>
+				<h4><a href="/expert/{{expert.slug}}">{{expert.title}}</a></h4>
+				<p class="info">
+					<a href="/lid/{{user.slug}}">{{user.full_name}}</a> -
+					<time datetime="{{expert.created}}">{{expert.created_formatted}}</time>
+					<a class="comments" href="/expert/{{expert.slug}}#{{expert.link_comments}}">{{expert.comment_count}}</a>
+				</p>
+				<p>{{expert.excerpt}}</p>
+			</article>
+			{{/expert_list}}
+		</div>
+        <div class="col-md-6 col-md-offset-3">
+            <a href="#" onclick="return load_more.expert_list('{{category_slug}}', 16)" class="load-more">Laad meer berichten</a>
+        </div>
+	</section>
+
+</div>

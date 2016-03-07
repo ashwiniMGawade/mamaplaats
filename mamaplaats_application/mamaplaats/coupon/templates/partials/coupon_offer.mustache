@@ -1,0 +1,31 @@
+<div id="offer_{{id}}" class="item">
+	<div class="photo">
+		<img alt="image description" src="{{image}}" width="98" height="90">
+
+		<!--
+		{{#is_coupon}}<div class="info discount-code"><span>kortings code</span></div>{{/is_coupon}}
+		{{#is_free}}<div class="info free"><span>gratis</span></div>{{/is_free}}
+		{{#is_offer}}<div class="info action"><span>actie</span></div>{{/is_offer}}
+		-->
+	</div>
+	<div class="description">
+		<p class="dates">
+			Toegevoegd op {{start_date}} <span class="sep">|</span>
+			Verloopt op {{end_date}}
+		</p>
+		<p class="call-to-action">Pak hier je voordeel</p>
+
+		<h2><a rel="nofollow" target="_blank" {{#open_url}}data-open-url="{{open_url}}"{{/open_url}} href="{{url}}">{{title}}</a></h2>
+		<h3>{{description}}</h3>
+
+		<div class="group">
+			<a rel="nofollow" target="_blank" {{#open_url}}data-open-url="{{open_url}}"{{/open_url}} href="{{url}}" class="btn">Pak deze actie &amp; ga naar de shop</a>
+			{{#is_coupon}}<a class="code" rel="nofollow" target="_blank" {{#open_url}}data-open-url="{{open_url}}"{{/open_url}} href="{{url}}">{{coupon_code}}</a>{{/is_coupon}}
+			{{#is_free}}<div class="more">Bekijk meer van <a href="/korting/winkel/{{coupon_shop_slug}}">{{coupon_shop_name}}</a></div>{{/is_free}}
+			{{#is_offer}}<div class="more">Bekijk meer van <a href="/korting/winkel/{{coupon_shop_slug}}">{{coupon_shop_name}}</a></div>{{/is_offer}}
+		</div>
+	</div>
+	{{#is_coupon}}
+	<div class="lightbox-info" data-image="{{image}}" data-title="{{title}}" data-start="{{start_date}}" data-end="{{end_date}}" data-coupon="{{coupon_code}}" data-url="{{url}}" data-shop="{{coupon_shop_name}}"></div>
+	{{/is_coupon}}
+</div>

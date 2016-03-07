@@ -1,0 +1,28 @@
+<div class="content photocontest">
+	<h1>Stem op jouw favoriete foto</h1>
+	<h2>Iedere week wordt er een weekprijs verloot onder de nieuwe stemmers!</h2>
+
+	{{>filter}}
+	<div class="listing-photos">
+		{{#entries}}
+		<div class="listing-photo">
+			<a href="{{single_url}}" title="{{title}}"><img src="{{photo_url}}" alt="{{title}}"></a>
+			<div class="listing-info">
+				<div class="listing-votes"><span>stemmen:</span> {{amount_votes}}</div>
+				<h2 class="listing-title"><a href="{{single_url}}">{{title_short}}</a></h2>
+				<div class="listing-place"><span>Plaats:</span> {{rank}}</div>
+			</div>
+			<div class="photo-vote-box">
+				{{^vote_hidden}}<a href="{{basepath}}fotowedstrijd/stem/foto/{{id}}" class="photo-vote {{#voted}}voted{{/voted}}"></a>{{/vote_hidden}}
+			</div>
+			<div class="photo-share">
+				<a href="{{basepath}}fotowedstrijd/deel/foto/{{id}}" class="email"></a>
+				<a href="#" class="twitter" onclick="share_media('twr', '{{single_url}}', '{{share_text}}', 'mamaplaats')"></a>
+				<a href="#" class="facebook" onclick="share_media('fb', '{{single_url}}', '{{share_text}}', '{{photo_url}}')"></a>
+				<a href="#" class="hyves" onclick="share_media('hvs', '{{single_url}}', '{{share_text}}')"></a>
+			</div>
+		</div>
+		{{/entries}}
+	</div>
+	{{>filter}}
+</div>

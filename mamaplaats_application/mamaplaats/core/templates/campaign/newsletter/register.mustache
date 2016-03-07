@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vul je gegevens aan en ontvang direct de kortingscode voor 15% korting bij C&A.</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap -->
+	<link href="/kohana/assets/css/vendor/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="/kohana/assets/css/vendor/bootstrap.datepicker.css" rel="stylesheet" media="screen">
+	<style type="text/css">
+		.page-body {
+			background: url(/media/images/header_cena.jpg) no-repeat;
+			border-bottom: 1px solid #fb5199;
+			border-left: 1px solid #fb5199;
+			border-right: 1px solid #fb5199;
+			padding: 140px 20px 20px 20px;
+			margin-top: 40px;
+		}
+
+		.btn-pink-mamaplaats {
+			background-color: hsl(335, 64%, 62%) !important;
+			background-repeat: repeat-x;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e89abb", endColorstr="#dc6093");
+			background-image: -khtml-gradient(linear, left top, left bottom, from(#e89abb), to(#dc6093));
+			background-image: -moz-linear-gradient(top, #e89abb, #dc6093);
+			background-image: -ms-linear-gradient(top, #e89abb, #dc6093);
+			background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e89abb), color-stop(100%, #dc6093));
+			background-image: -webkit-linear-gradient(top, #e89abb, #dc6093);
+			background-image: -o-linear-gradient(top, #e89abb, #dc6093);
+			background-image: linear-gradient(#e89abb, #dc6093);
+			border-color: #dc6093 #dc6093 hsl(335, 64%, 58.5%);
+			color: #fff !important;
+			text-shadow: 0 1px 1px rgba(255, 255, 255, 0.23);
+			-webkit-font-smoothing: antialiased;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span8 offset2">
+				<div class="row-fluid">
+					<div class="span12 page-body">
+						{{#success}}
+						<div class="alert alert-success">
+							Heel erg bedankt voor het controleren van je gegevens.<br /><br />
+
+							Hierbij jouw gratis kortingscode van 15% te verzilveren in de online webshop van C&A:<br>
+							<strong>Code: mama15</strong><br><br>
+							Geldig tot 1 Februari 2014
+						</div>
+						{{/success}}
+						{{^success}}
+						{{#has_errors}}
+						<div class="alert alert-error">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							{{#errors}}
+								{{error}}<br />
+							{{/errors}}
+						</div>
+						{{/has_errors}}
+						<form class="form-inline" action="" method="post">
+						{{#user}}
+						Beste {{first_name}}, <br /><br />
+
+						Zijn je gegevens hier onder correct ingevuld? Controleer je gegevens en ontvang direct de kortingscode voor 15% korting bij C&A.
+						<fieldset>
+							<legend>Persoonlijke Gegevens</legend>
+							<div class="row-fluid">
+								<div class="span4">
+									<label for="first_name">Voornaam</label>
+									<input class="span12" type="text" name="first_name" id="first_name" placeholder="Voornaam" value="{{first_name}}">
+								</div>
+								<div class="span4">
+									<label for="middle_name">Tussenvoegsel</label>
+									<input class="span12" type="text" name="middle_name" id="middle_name" placeholder="Tussenvoegsel" value="{{middle_name}}">
+								</div>
+								<div class="span4">
+									<label for="last_name">Achternaam</label>
+									<input class="span12" type="text" name="last_name" id="last_name" placeholder="Achternaam" value="{{last_name}}">
+								</div>
+							</div>
+							<br />
+							<div class="row-fluid">
+								<div class="span4">
+									<label for="user_email">Emailadres</label>
+									<input class="span12" type="text" name="user_email" id="user_email" placeholder="Emailadres" value="{{user_email}}">
+								</div>
+								<div class="span4">
+									<label for="new_birthdate">Geboortedatum</label>
+									<input class="span12 datepicker_db" type="text" name="birthdate" id="new_birthdate" placeholder="yyyy-mm-dd" value="{{birthdate}}">
+								</div>
+								<div class="span4">
+									<label for="middle_name">Geslacht</label>
+									<div class="span12">
+									{{#genders}}
+									<label class="checkbox inline">
+										<input type="radio" name="gender" value="{{value}}" {{#selected}}checked="checked"{{/selected}}> {{text}}
+									</label>
+									{{/genders}}
+									</div>
+								</div>
+							</div>
+							<br />
+						</fieldset>
+						<fieldset>
+							<legend>Gezinssituatie</legend>
+							<div class="row-fluid">
+								<div class="span4">
+									<label for="is_pregnant">Ben je Zwanger?</label>
+									<div class="select-wrap">
+										<select id="is_pregnant" class="span12">
+											{{#is_pregnant}}
+											<option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</option>
+											{{/is_pregnant}}
+										</select>
+									</div>
+								</div>
+								<div id="is_pregnant_field" class="span4">
+									<label for="preg_due_date">Uitgerekend op</label>
+									<input class="span12 datepicker_db" type="text" name="pregnancy_due_date" id="preg_due_date" placeholder="Uitgerekend op" value="{{pregnancy_due_date}}">
+								</div>
+							</div>
+							<br />
+							<strong>Heb je Kinderen?</strong> <a data-bind="click: addChild" class="btn btn-mini btn-pink-mamaplaats" href="#"><i class="icon-user icon-white"></i> Toevoegen</a>
+							<div class="row-fluid">
+								<div class="span4"><label>Voornaam</label></div>
+								<div class="span4"><label>Geboortedatum</label></div>
+								<div class="span4"><label>Geslacht</label></div>
+							</div>
+							<div data-bind="foreach: children">
+								<div class="row-fluid" style="margin-bottom: 10px;">
+									<div class="span4">
+										<input type="hidden" data-bind="value: id, attr:{name:'children['+$index()+'][id]'}">
+										<input class="span12" type="text" data-bind="value: first_name, attr:{name:'children['+$index()+'][first_name]'}" placeholder="Voornaam">
+									</div>
+									<div class="span4"><input class="span12 datepicker_db" type="text" data-bind="value: birthdate, attr:{name:'children['+$index()+'][birthdate]'}" placeholder="yyyy-mm-dd"></div>
+									<div class="span4">
+										<div class="select-wrap">
+											<select class="span10" data-bind="value: gender, attr:{name:'children['+$index()+'][gender]'}">
+												{{#child_genders}}
+												<option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</option>
+												{{/child_genders}}
+											</select>
+										</div>
+										<a data-bind="click: $root.removeChild" href="#"><i class="icon-remove"></i></a>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+						<br /><br />
+						<button class="btn btn-pink-mamaplaats" type="submit">Ja, mijn gegevens zijn correct</button>
+						{{/user}}
+						</form>
+						{{/success}}
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/kohana/assets/js/vendor/jquery-1.9.1.min.js"></script>
+	<script src="/kohana/assets/js/vendor/bootstrap.min.js"></script>
+	<script src="/kohana/assets/js/vendor/bootstrap.datepicker.js"></script>
+	<script src="/kohana/assets/js/vendor/knockout.min.js"></script>
+	<script src="/kohana/assets/js/core.js"></script>
+	<script type="text/javascript">var initial_children = {{& children}};</script>
+	<script type="text/javascript" src="/kohana/assets/js/knockout/user_children.js"></script>
+</body>
+</html>

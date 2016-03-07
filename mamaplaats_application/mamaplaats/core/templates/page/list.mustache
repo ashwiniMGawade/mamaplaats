@@ -1,0 +1,78 @@
+
+<!--
+deze template heb ik even van blog lijst gepakt
+- Lennart
+-->
+
+<div id="blog-main">
+	<div class="row">
+		<div class="col-sm-12">
+			<section class="blog-masonry">
+				<header class="heading-box">
+					<h1>Top adviezen van Mamaplaats</h1>
+				</header>
+				<div>
+					<form id="page_list_search" method="get">
+						<label>Zoek een advies</label>
+						<input type="text" name="search-term" placeholder="Vul zoek term in" autocomplete="off">
+						<button class="btn" type="submit">Zoeken</button>
+					</form>
+				</div>
+				<div id="result">
+
+				</div>
+				<div class="grid-box">
+					{{#page_list}}
+						<article class="item">
+							<figure class="photo">
+								<a class="photo-wrap" href="/{{page.slug}}"><img alt="{{page.slug}}" src="{{media.url}}" width="230" height="140"></a>
+							</figure>
+							<h4><a href="/{{page.slug}}">{{page.title}}</a></h4>
+							<p class="info"><a href="#">{{user.display_name}}</a> - <time datetime="{{page.created}}">{{page.created}}</time></p>
+							<p>{{page.excerpt}}</p>
+						</article>
+					{{/page_list}}
+				</div>
+				<a href="#" class="lazy-load-more">Klik hier om meer berichten te laden</a>
+			</section>
+			{{> widget_newsletter_large}}
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		// Events
+		var submit_delay;
+		$('#page_list_search').on('keyup', 'input', function () {
+			var term = $(this).val();
+			var category = '{{category_slug}}';
+
+			clearTimeout(submit_delay);
+			submit_delay = setTimeout(function() {
+				get_item_list_by_term(term, category);
+			}, 500);
+		})
+
+	});
+
+	function get_item_list_by_term(term, category) {
+
+		if (term.length > 2) {
+			$.ajax({
+				url: '/page/predictive-search',
+				data: {'term': term, 'category' : category},
+				dataType: 'json'
+			}).done(function(data) {
+				var html = '<ul>';
+				$(data).each(function(i, e)
+				  html += '<li><img src="'+e.media.path+'" width="100" height="100"> '
+						 +e.page.title+' <b>geschreven door:</b> '+e.user.display_name+' op '+e.page.created+'</li>'
+				);
+				html += '</ul>'
+				$('#result').html(html)
+
+			});
+		}
+	}
+</script>

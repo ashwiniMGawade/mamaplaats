@@ -1,0 +1,11 @@
+<article class="item simple">
+	<figure class="photo">
+		<a class="photo-wrap" href="review/product/{{review_product.slug}}">
+			<span class="stempel"><span>{{review_product.average_rating}}</span></span>
+			<b><img alt="{{review_product.title}}" src="{{review_product.image_url}}"></b>
+		</a>
+	</figure>
+	<h3 class="category"><a href="/review/producten">Review</a></h3>
+	<h4><a href="review/product/{{review_product.slug}}">{{review_product.title}}</a></h4>
+	<p>{{review_product.description}}</p>
+</article>

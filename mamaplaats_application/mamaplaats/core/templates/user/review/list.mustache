@@ -1,0 +1,28 @@
+<section class="blog-masonry">
+	<header class="heading-box">
+		<h1>Testpanels</h1>
+	</header>
+	<div class="sign-box">
+		<div class="grid-box">
+			{{#review_products}}
+			<article class="item">
+				<figure class="photo">
+					<a class="photo-wrap" href="{{#status_link}}{{url}}{{/status_link}}">
+						<b><img alt="{{title}}" src="{{image_url}}" width="232" height="303"></b>
+					</a>
+				</figure>
+				<h4><a href="{{#status_link}}{{url}}{{/status_link}}">{{title}}</a></h4>
+				<p>{{description}}</p>
+				{{#status_link}}
+				<a class="btn small {{^url}}grey disabled{{/url}}" href="{{url}}">{{tag}}</a>
+				{{/status_link}}
+			</article>
+			{{/review_products}}
+			{{^review_products}}
+			<div class="alert alert-info col-md-11">
+			    {{get_records_not_found_message}}
+			</div>
+			{{/review_products}}
+		</div>
+	</div>
+</section>

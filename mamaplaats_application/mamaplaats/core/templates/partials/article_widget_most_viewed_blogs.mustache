@@ -1,0 +1,28 @@
+<article class="item">
+    <div class="create-btn-block">
+        <a href="{{basepath}}user/blog/index" class="blogbtn">Schrijf je eigen blog</a>
+    </div>
+    <div class="top-blogs">
+		<div class="heading-box">
+			<h3>Top 3 meest gelezen blogs!</h3>
+		</div>
+		<div class="listing">
+			{{#most_viewed_blogs}}
+			<div class="unit">
+				<div class="photo">
+					<a href="/blog/{{blog.slug}}">
+						<span class="photo-wrap">
+							<b><img alt="{{blog.title}}" src="{{media.path}}" width="66" height="65"></b>
+						</span>
+						<span class="num">{{blog.position}}.</span>
+					</a>
+				</div>
+				<div class="description">
+					<h4><a href="/blog/{{blog.slug}}">{{blog.title}}</a></h4>
+					<p>{{blog.excerpt}} <a href="/blog/{{blog.slug}}">&gt;</a></p>
+				</div>
+			</div>
+			{{/most_viewed_blogs}}
+		</div>
+	</div>
+</article>

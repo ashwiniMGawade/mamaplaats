@@ -1,0 +1,31 @@
+{{>email_header}}
+
+	{{#blogs}}
+		<h1 style="color:#202020 !important;display:block;font-family:Arial;font-size:26px;font-style:normal;font-weight:bold;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left;">
+			{{blog.title}}
+		</h1>
+
+		{{#comments}}
+
+		<table border="0" cellpadding="10" cellspacing="0" style="width: 100%">
+			<tr style="border-bottom: 1px solid #CCCCCC;">
+				<td style="width: 100px;">
+					<img src="{{avatar}}" />
+				</td>
+				<td>
+					<h4 style="color:#111111 !important;display:block;font-family:Arial;font-size:14px;font-style:normal;font-weight:bold;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left;">
+						Reactie van {{author_name}}
+					</h4>
+					<div style="color: #555555;font-family: Arial;font-size: 14px;">
+					{{content}}<br>
+					</div>
+					<a href="{{url}}">Bekijk en reageer nu!</a>
+				</td>
+			</tr>
+		</table>
+
+		{{/comments}}
+
+		<br/><br/>
+	{{/blogs}}
+{{>email_footer}}

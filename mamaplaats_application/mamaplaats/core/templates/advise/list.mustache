@@ -1,0 +1,58 @@
+<div class="row">
+	{{> pregnancy_calander}}
+</div>
+<div id="advies">
+	<div class="featured-section-blocks">
+        <div class="clearfix"></div>
+		<header class="heading-box">
+            <!--<div class="float-new-blog">-->
+                {{> widget_social}}
+            <!--</div>-->
+			<h1>{{title}}</h1>
+		</header>
+	</div>
+	<form id="advise_search_form" class="find-advice-form" action="#">
+		<fieldset>
+			<h2>Zoek & vind advies</h2>
+			<div class="field autocompelte">
+				<div class="inp-wrap">
+					<input type="search" placeholder="Zoek hier je advies" autocomplete="off">
+				</div>
+				<div id="advise_search_results" class="autocompelte-drop"></div>
+			</div>
+			<em>Zoek een advies door hierboven je zoekterm in te vullen.</em>
+		</fieldset>
+	</form>
+	<section class="blog-masonry">
+		<div class="grid-box">
+			{{#advise_list}}
+			<article class="item simple">
+				<figure class="photo">
+					<a class="photo-wrap" href="/advies/{{advise.slug}}"><b><img alt="{{advise.title}}" src="{{media.path}}" width="260" height="140"></b></a>
+				</figure>
+				<h4><a href="/advies/{{advise.slug}}">{{advise.title}}</a></h4>
+				<p class="info">
+					<a href="/lid/{{user.slug}}">{{user.full_name}}</a> -
+					<a class="comments" href="/advies/{{advise.slug}}#{{advise.link_comments}}">{{advise.comment_count}}</a>
+				</p>
+				<p>{{advise.excerpt}}</p>
+			</article>
+			{{/advise_list}}
+		</div>
+        <div class="col-md-6 col-md-offset-3">
+            <a href="#" onclick="return load_more.advise('{{category_slug}}', 15)" class="load-more">Laad meer berichten</a>
+        </div>
+	</section>
+	<div class="info-block">
+		<div class="row">
+			<div class="col-sm-4">
+			</div>
+			<div class="col-sm-8">
+				{{> widget_newsletter_large}}
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+ var advise_category = '{{category_slug}}';
+</script>

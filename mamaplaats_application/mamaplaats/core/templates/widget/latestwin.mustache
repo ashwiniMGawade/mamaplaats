@@ -1,0 +1,20 @@
+<div class="latest-win">
+	<div class="heading-box">
+		<h3>Laatste Winacties <a href="/win">Alle Winacties</a></h3>
+	</div>
+	<div class="listing">
+		{{#latest_win}}
+		<div class="item">
+			<div class="photo">
+				<a class="photo-wrap" href="/win/{{win.slug}}">
+					<img alt="{{win.title}}" src="{{media.path}}" width="132" height="132">
+				</a>
+			</div>
+			<div class="description">
+				<h4><a href="/win/{{win.slug}}">{{win.title}}</a></h4>
+				<p>{{win.excerpt}} <a href="/win/{{win.slug}}">&gt;</a></p>
+			</div>
+		</div>
+		{{/latest_win}}
+	</div>
+</div>

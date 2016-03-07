@@ -1,0 +1,44 @@
+<header class="heading-box">
+	<div class="btns">
+		<a href="/conversation/new" class="btn">nieuw bericht</a>
+		<button class="btn alt" onclick="document.getElementById('message_list').submit();">verwijderen</button>
+	</div>
+	<h1>{{getTitle}}</h1>
+</header>
+<div class="check-list">
+	<form id="message_list" method="post">
+        {{#conversation_list}}
+		<fieldset>
+			<label class="item alt">
+				<input type="checkbox" name="partner_ids[]" value="{{conversation_partner.id}}" >
+				<span class="photo">
+					<a href="/conversation/index/{{conversation_partner.id}}{{#last_message.draft}}?type=draft{{/last_message.draft}}" class="photo-wrap">
+						<b><img src="{{conversation_partner.avatar}}" width="70" height="70" alt="{{conversation_partner.full_name}}"></b>
+					</a>
+				</span>
+				<span class="description">
+					<span class="wrap">
+						<time datetime="{{last_message.created}}">{{last_message.created_formatted}}</time>
+						<strong class="title">
+							<a href="/conversation/index/{{conversation_partner.id}}{{#last_message.draft}}?type=draft{{/last_message.draft}}">
+								{{conversation_partner.full_name}}
+								{{# conversation.new_count}}
+								<span class="amount">{{conversation.new_count}}</span>
+								{{/ conversation.new_count}}
+							</a>
+						</strong>
+					</span>
+					<span class="text">{{last_message.content}}</span>
+				</span>
+			</label>
+		</fieldset>
+        {{/conversation_list}}
+	</form>
+</div>
+
+{{^conversation_list}}
+    <div class="alert alert-info">
+        Je hebt op dit moment geen berichten. Wil je een <a class="alert-link" href="/conversation/new">Nieuw bericht schrijven</a>?
+    </div>
+{{/conversation_list}}
+<!--<a class="load-more" href="#">Meer berichten laden</a>-->

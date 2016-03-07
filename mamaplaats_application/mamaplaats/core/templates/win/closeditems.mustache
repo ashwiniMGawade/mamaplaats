@@ -1,0 +1,18 @@
+		{{#closed_win}}
+		<div class="item">
+			<div class="description">
+				<div class="w"><span>W</span></div>
+				<h2>Winnaar</h2>
+				<h4>{{win.title}}</h4>
+			</div>
+			<div class="photo">
+				<a class="photo-wrap" href="/win/{{win.slug}}">
+					<b><img alt="{{win.title}}" src="{{media.path}}" width="202" height="194"></b>
+					<span class="caption">{{win.winners}}</span>
+				</a>
+			</div>
+			<div class="info">
+				<a class="comments" href="/win/{{win.slug}}#{{win.link_comments}}">{{win.comment_count}} reacties</a>
+			</div>
+		</div>
+		{{/closed_win}}

@@ -1,0 +1,89 @@
+<div id="two-cols">
+	<div class="row">
+		<div class="col-sm-8">
+			{{#advise}}
+			<section class="detail-block">
+                {{>next_prev_buttons}}
+				<header class="heading-box">
+					<h1>{{title}}</h1>
+					<div class="meta">
+						<span class="author">Door: <a href="/lid/{{author.slug}}">{{author.full_name}}</a></span>
+						<span class="sep">•</span> <a href="#{{link_comments}}" class="comments">{{comment_count}} reacties</a>
+					</div>
+				</header>
+				<p class="scaled-image">
+					<img width="750" height="488" src="{{thumbnail}}" alt="{{title}}">
+				</p>
+				{{#excerpt}}<p class="sub-heading">{{excerpt}}</p>{{/excerpt}}
+				{{{content}}}
+
+				<!--<div class="read-more">Meer lezen over - <a href="#">Symptomen en problemen tijdens zwangerschap</a></div>-->
+			</section>
+			{{/advise}}
+			{{> widget_share_buttons}}
+			{{#author}}
+			<div class="blogger">
+				<div class="photo">
+					<a class="photo-wrap" href="/lid/{{slug}}"><b><img alt="{{full_name}}" src="{{avatar}}" width="140" height="120"></b></a>
+				</div>
+				<h3><a href="/lid/{{slug}}">{{full_name}}</a></h3>
+				<div class="info">
+					<!--<a href="#" class="comments">953 reacties</a>-->
+					<!--<a href="#" class="followers">700 volgers</a>-->
+				</div>
+				<p>{{biography}}</p>
+				<a href="#" data-follow-id="{{id}}" class="btn follow check_follow">Volgen</a>
+			</div>
+			{{/author}}
+			<div class="related-articles">
+				<div class="heading-box">
+					<h3>Advies: ook leuk om te lezen</h3>
+				</div>
+				<div class="holder">
+					{{#related}}
+					<article class="post">
+						<div class="photo">
+							<a href="/advies/{{advise.slug}}" class="photo-wrap">
+								<img alt="{{advise.title}}" src="{{image.path}}" width="228" height="213">
+							</a>
+						</div>
+						<div class="info">
+							<h4><a href="/advies/{{advise.slug}}">{{advise.title}}</a></h4>
+							<p>{{advise.excerpt}} <a href="/advies/{{advise.slug}}">&gt;</a></p>
+						</div>
+					</article>
+					{{/related}}
+				</div>
+			</div>
+            {{>next_prev_buttons}}
+			{{>reply_box}}
+			{{#advise.comment_count}}
+			<div id="comments" class="comment-box">
+				<div class="heading-box">
+					<em class="qty">{{advise.comment_count}} Reacties</em>
+					<h3>Reacties</h3>
+				</div>
+				<div class="section">
+					<ol class="comments">
+						{{#comments}}
+							{{>replies}}
+						{{/comments}}
+					</ol>
+				</div>
+			</div>
+			{{/advise.comment_count}}
+		</div>
+		<div class="col-sm-4">
+            {{#is_desktop}}
+			<div class="side-holder">
+				{{> widget_social}}
+                {{> new_blog}}
+                {{> widget_top_sidebar_banner}}
+				{{> widget_newsletter}}
+				{{& widgets}}
+				{{> widget_facebook}}
+			</div>
+            {{/is_desktop}}
+		</div>
+	</div>
+</div>

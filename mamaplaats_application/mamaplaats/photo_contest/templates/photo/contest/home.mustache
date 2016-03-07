@@ -1,0 +1,58 @@
+{{#active_contest}}
+<div class="contest-container">
+	<div class="content-header big">
+		<div class="header-text">
+			<h1 class="title">Fotowedstrijd</h1>
+			<h2 class="subtitle">{{title}}</h2>
+			<div class="short-description">{{description}}</div>
+			<a class="vote-button" href="/fotowedstrijd/bekijk">Stem en win</a>
+			<a class="terms" href="/fotowedstrijd/{{id}}/voorwaarden">Uitleg en voorwaarden</a>
+		</div>
+		<div class="header-image">
+			<a href="/fotowedstrijd/bekijk"><img src="{{example_photo}}" alt="" /></a>
+		</div>
+	</div>
+	<div class="content-wide active-contest-container">
+		{{#rewards}}
+		<div class="{{type}}-reward">
+			<div class="{{type}}-reward-image"><img src="{{photo_url}}" alt="" /></div>
+			<div class="{{type}}-reward-info">
+				<h3 class="{{type}}-reward-title">{{menu_title}}</h3>
+				<div class="{{type}}-reward-description">{{description}}</div>
+			</div>
+		</div>
+		{{/rewards}}
+		<div class="sponsor-photo">
+			<a href="/fotowedstrijd/{{id}}/sponsor"><img src="{{sponsor_photo}}" alt="" /></a>
+			<span>Deze fotowedstrijd word mogelijk gemaakt door</span>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+{{/active_contest}}
+
+{{#next_contest}}
+<div class="next-contest-container">
+	<div class="next-contest-top">
+		<div class="title">Nieuwe Fotowedstrijd</div>
+		<h2 class="subtitle">{{title}}</h2>
+	</div>
+	<div class="next-contest-image">
+		<a href="/fotowedstrijd/meedoen"><img src="{{example_photo}}" alt="" /></a>
+	</div>
+	<div class="next-contest-info">
+		<div class="short-description">{{description}}</div>
+		<a class="upload-button" href="/fotowedstrijd/meedoen">Stuur Foto in</a>
+	</div>
+	{{#rewards}}
+	<div class="next-contest-reward">
+		<div class="{{type}}-reward"></div>
+		<img src="{{photo_url}}" alt="" />
+	</div>
+	{{/rewards}}
+</div>
+<div class="next-sponsor-photo">
+	<a href="/fotowedstrijd/{{id}}/sponsor"><img src="{{sponsor_photo}}" alt="" /></a>
+	<span>Deze fotowedstrijd word mogelijk gemaakt door</span>
+</div>
+{{/next_contest}}

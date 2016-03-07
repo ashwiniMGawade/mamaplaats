@@ -1,0 +1,20 @@
+<div id="home">
+	<section class="blog-masonry">
+		<header class="heading-box">
+			<h1>Zoek resultaten voor '{{search}}'</h1>
+		</header>
+		<div class="grid-box">
+			{{#search_results}}
+				{{#is_blog}}{{> article_item_blog}}{{/is_blog}}
+				{{#is_advise}}{{> article_item_advise}}{{/is_advise}}
+				{{#is_win}}{{> article_item_win}}{{/is_win}}
+				{{#is_review_product}}{{> article_item_review_product}}{{/is_review_product}}
+			{{/search_results}}
+		</div>
+		{{^search_results}}
+		<div class="alert alert-warning">
+			We hebben helaas geen zoekresultaten voor de term '{{search}}' kunnen vinden.
+		</div>
+		{{/search_results}}
+	</section>
+</div>

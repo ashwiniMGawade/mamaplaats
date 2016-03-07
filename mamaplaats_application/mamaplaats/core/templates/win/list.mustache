@@ -1,0 +1,77 @@
+<div class="row">
+	{{> pregnancy_calander}}
+</div>
+<div id="winacties">
+	<section class="win-listing">
+        <div class="clearfix"></div>
+		<header class="heading-box">
+            <!--<div class="float-new-blog brdmrg-none">-->
+            <!--</div>-->
+			<h1>Winacties</h1>
+		</header>
+		<div class="row">
+			{{#open_win}}
+			<div class="col-sm-3">
+				<div class="description">
+					<div class="win"><span>Win</span></div>
+					<h4>{{win.title}}</h4>
+				</div>
+				<div class="photo">
+					<a class="photo-wrap" href="/win/{{win.slug}}">
+						<b><img alt="{{win.title}}" src="{{media.path}}" width="259" height="242"></b>
+					</a>
+				</div>
+				<div class="info">
+					<span class="date">Nog {{win.end_date}}</span>
+					<a class="comments" href="/win/{{win.slug}}#{{win.link_comments}}">{{win.comment_count}} reacties</a>
+				</div>
+				<a class="btn alt" href="/win/{{win.slug}}">Doe mee &amp; win &nbsp;&rarr;</a>
+			</div>
+			{{/open_win}}
+		</div>
+		{{^open_win}}
+            <div class="alert alert-info">
+                Op dit moment lopen er geen winacties. Wil je er snel bij zijn als er een nieuwe winactie start? Schrijf
+                je dan <a href="#newsletter_large">hier</a> in voor de nieuwsbrief.
+            </div>
+		{{/open_win}}
+	</section>
+	<section class="w-listing">
+	<header class="heading-box">
+		<h2>Gesloten winacties</h2>
+	</header>
+	<div id="closed_win_items" class="w-area">
+		{{#closed_win}}
+		<div class="item">
+			<div class="description">
+				<div class="w"><span>W</span></div>
+				<h2>Winnaar</h2>
+				<h4>{{win.title}}</h4>
+			</div>
+			<div class="photo">
+				<a class="photo-wrap" href="/win/{{win.slug}}">
+					<b><img alt="{{win.title}}" src="{{media.path}}" width="202" height="194"></b>
+					<span class="caption">{{win.winners}}</span>
+				</a>
+			</div>
+			<div class="info">
+				<a class="comments" href="/win/{{win.slug}}#{{win.link_comments}}">{{win.comment_count}} reacties</a>
+			</div>
+		</div>
+		{{/closed_win}}
+	</div>
+    <div class="col-md-6 col-md-offset-3">
+        <a href="#" onclick="return load_more.win(15)" class="load-more">Laad meer winacties</a>
+    </div>
+	</section>
+	<div class="info-block">
+		<div class="row">
+            <div class="col-sm-4">
+            </div>
+			<div class="col-sm-8">
+				{{> widget_newsletter_large}}
+			</div>
+
+		</div>
+	</div>
+</div>

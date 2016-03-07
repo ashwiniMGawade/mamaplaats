@@ -1,0 +1,109 @@
+<div id="reply_box_container">
+	<div id="reply_box" class="comment-form">
+		<div class="heading-box">
+			<h3>Plaats een reactie</h3>
+		</div>
+
+
+		{{#reply_as_user}}
+		<form id="post_comment" name="post_comment" method="POST" class="validate-form">
+			<input id="comment_parent_id" type="hidden" name="comment[parent_id]" value="">
+			<input id="comment_item_id" type="hidden" name="comment[item_id]" value="{{comment_item_id}}">
+			<div class="inp-wrap">
+				<textarea class="required" d="comment_content" name="comment[content]" cols="50" rows="4" placeholder="JOUW REACTIE *"></textarea>
+			</div>
+			<button style="display: none;" id="comment-reset-button" onclick="return comment_form.reset()" class="btn">annuleren</button>
+			<button class="btn">verstuur</button>
+		</form>
+		{{/reply_as_user}}
+
+		{{#reply_as_guest}}
+		<form id="post_comment" name="post_comment" method="POST" class="validate-form">
+			<input id="comment_parent_id" type="hidden" name="comment[parent_id]" value="">
+			<input id="comment_item_id" type="hidden" name="comment[item_id]" value="{{comment_item_id}}">
+			<div class="inp-wrap">
+				<textarea id="comment_content" name="comment[content]" class="required" cols="50" rows="4" placeholder="JOUW REACTIE *"></textarea>
+			</div>
+			<div class="inp-wrap">
+				<input class="required-email" id="comment_email" name="comment[email]" type="email" placeholder="JE EMAIL *">
+			</div>
+			<div class="inp-wrap">
+				<input id="comment_author" name="comment[author]" class="required" type="text" placeholder="JE NAAM *">
+			</div>
+			<div>
+			<input type="checkbox" name="comment[register_newletter]" id="register_newletter"><span>Schrijf mij in voor de nieuwsbrief</span>
+			</div>
+			<button style="display: none;" id="comment-reset-button" onclick="return comment_form.reset()" class="btn">annuleren</button>
+			<button class="btn submit-form-btn">verstuur</button>
+            <button class="btn model-popup-form" data-toggle="modal" data-target="#myModal" style="display: none">verstuur</button>
+		</form>
+		{{/reply_as_guest}}
+
+		{{#reply_as_guest_not_allowed}}
+		<div class="alert alert-info">
+			Om te kunnen reageren, moet je ingelogd zijn.
+			<a class="alert-link" href="/guest/register">Registeer een account</a> of
+			<a class="alert-link" href="/user/login">log in bij Mamaplaats</a>.
+		</div>
+		{{/reply_as_guest_not_allowed}}
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id="close-modal-popup"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <!--<h4 class="modal-title" id="myModalLabel">Modal title</h4>-->
+            </div>
+            <div class="modal-body">
+                Bedankt voor je inschrijving. Er is een bevestigingsmail verstuurd naar je e-mailadres.<br/>
+                Als je geen verificatie mail ontvangen hebt ben je al bij ons bekend
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary popup-btn">GA VERDER</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div id="reply_box_container">
+	<div id="reply_box">
+		<br />
+		Plaats een reactie
+		<hr /><hr />
+		{{#has_messages}}
+			{{#messages}}{{message}}<br />{{/messages}}
+		{{/has_messages}}
+
+		{{#reply_as_user}}
+			Ingelogd als: {{display_name}}
+			<form id="post_comment" name="post_comment" method="POST">
+				<input id="comment_parent_id" type="hidden" name="comment[parent_id]" value="">
+				<input id="comment_item_id" type="hidden" name="comment[item_id]" value="{{comment_item_id}}">
+				<label for="comment_content"></label>
+				<textarea id="comment_content" name="comment[content]" rows="4" cols="50" placeholder="JOUW REACTIE *"></textarea>
+				<br/>
+				<input type="submit" id="comment_submit" name="comment_submit" value="Verstuur">
+			</form>
+		{{/reply_as_user}}
+
+		{{#reply_as_guest}}
+			<form id="post_comment" name="post_comment" method="POST">
+				<input id="comment_parent_id" type="hidden" name="comment[parent_id]" value="">
+				<input id="comment_item_id" type="hidden" name="comment[item_id]" value="{{comment_item_id}}">
+				<label for="comment_content"></label>
+				<textarea id="comment_content" name="comment[content]" rows="4" cols="50" placeholder="JOUW REACTIE *"></textarea>
+				<br/>
+				<label for="comment_email"></label>
+				<input id="comment_email" name="comment[email]" type="email" placeholder="JE EMAIL *" />
+				<br/>
+				<label for="comment_author"></label>
+				<input id="comment_author" name="comment[author]" type="text" placeholder="JE NAAM *" />
+				<br />
+				<input type="submit" id="comment_submit" name="comment_submit" value="Verstuur"> (<a onclick="return addComment.resetForm()" href="#">annuleer reactie</a>)
+			</form>
+		{{/reply_as_guest}}
+	</div>
+</div>
+<br />-->

@@ -1,0 +1,13 @@
+<div class="photocontest-box">
+	<h3>Top 5 Foto's</h3>
+	{{#top_entries}}
+	<div class="contest-photo {{#top}}top{{/top}}">
+		<a href="{{basepath}}fotowedstrijd/bekijk/foto/{{id}}" title="{{title}}"><img src="{{photo_url}}" alt="{{title}}" /></a>
+		<div class="contest-place">{{rank}}</div>
+		<div class="contest-info">
+			<div class="contest-author"><span>Door:</span> {{username}}</div>
+			<div class="contest-votes"><span>Stemmen:</span> {{amount_votes}}</div>
+		</div>
+	</div>
+	{{/top_entries}}
+</div><!--end box-->

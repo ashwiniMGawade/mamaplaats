@@ -1,0 +1,26 @@
+<div class="content photocontest">
+	<h1>Uw stem is toegevoegd</h1>
+	{{#entry}}
+	<div class="contest-photo">
+		<a href="{{single_url}}" title="{{title}}"><img src="{{photo_url}}" alt="{{title}}" /></a>
+		<div class="contest-info">
+			<div class="contest-author"><span>Door:</span> {{username}}</div>
+			<div class="contest-votes"><span>Stemmen:</span> {{amount_votes}}</div>
+		</div>
+	</div>
+	{{/entry}}
+	<div class="clear"></div>
+	<br />
+	{{#errors}}
+	<ul class="message err">
+		{{#messages}}
+		<li>{{error}}</li>
+		{{/messages}}
+	</ul>
+	{{/errors}}
+	{{#success}}
+	<ul class="message succ">
+		<li>{{success}}</li>
+	</ul>
+	{{/success}}
+</div>

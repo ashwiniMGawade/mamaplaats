@@ -1,0 +1,325 @@
+{{#user}}
+<div class="data-form">
+	<form action="" method="post" enctype="multipart/form-data">
+		<fieldset>
+			{{#has_messages}}
+			<div class="alert alert-{{type}}">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				{{#messages}}{{message}}<br />{{/messages}}
+			</div>
+			{{/has_messages}}
+
+			{{#page}}
+				{{#personal_info}}
+				<header class="heading-box">
+					<h1>Persoonsgegevens</h1>
+				</header>
+				<div class="personal-data">
+					<div class="data-column">
+						<div class="data-row">
+							<div class="column">
+								<div class="form-item">
+									<label for="f1">Email</label>
+									<input type="email" name="email" id="f1 email" placeholder="Emailadres" value="{{email}}">
+								</div>
+							</div>
+						</div>
+						<div class="data-row">
+							<div class="column w2">
+								<div class="form-item">
+									<label for="f2">Voornaam</label>
+									<input type="text" name="first_name" id="f2 first_name" placeholder="Voornaam" value="{{first_name}}">
+								</div>
+							</div>
+							<div class="column w2">
+								<div class="form-item">
+									<label for="f3">Tussenvoegsel</label>
+									<input type="text" name="middle_name" id="f3 middle_name" placeholder="Tussenvoegsel" value="{{middle_name}}">
+								</div>
+							</div>
+							</div>
+						<div class="data-row">
+							<div class="column w2">
+								<div class="form-item">
+									<label for="f4">Achternaam</label>
+									<input type="text" name="last_name" id="f4 last_name" placeholder="Achternaam" value="{{last_name}}">
+								</div>
+							</div>
+							<div class="column w2">
+								<div class="form-item">
+									<label for="f4">Gebruikersnaam</label>
+									<input type="text" name="display_name" id="f4 display_name" placeholder="Gebruikersnaam" value="{{display_name}}">
+								</div>
+							</div>
+						</div>
+						<div class="data-row">
+							<div class="column w4">
+								<label for="f5">Geboortedatum</label>
+								<div class="wrap">
+									<div class="column w5">
+										<div class="form-item">
+											<input type="text" id="f5" name="birthdate[day]" value="{{birthdate.day}}" placeholder="DD">
+										</div>
+									</div>
+									<div class="column w5">
+										<div class="form-item">
+											<input type="text" name="birthdate[month]" value="{{birthdate.month}}" placeholder="MM">
+										</div>
+									</div>
+									<div class="column w5">
+										<div class="select-wrap">
+											<select name="birthdate[year]">
+												{{#birthdate_year_select}}
+												<option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</option>
+												{{/birthdate_year_select}}
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="column w2">
+								<label for="s2">Geslacht</label>
+								<div class="select-wrap">
+									<select name="gender" id="s2">
+										{{#genders}}
+										<option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</option>
+										{{/genders}}
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="file-column">
+						<div class="photo">
+							<img src="{{avatar}}?time={{time}}" width="230" height="150" alt="{{full_name}}">
+						</div>
+						<input type="file" name="avatar" title="upload profiel foto" onchange="uploadAvatar(this)">
+					</div>
+				</div>
+				{{/personal_info}}
+
+				{{#change_password}}
+				<header class="heading-box">
+					<h1>Wachtwoord wijzigen</h1>
+				</header>
+				<div class="personal-data">
+					<div class="data-column">
+						<div class="data-row">
+							<div class="column">
+								<div class="form-item">
+									<input type="password" id="f6" name="old_password" value="" placeholder="Huidig wachtwoord">
+								</div>
+							</div>
+					   </div>
+					   <div class="data-row">
+							<div class="column">
+								<div class="form-item">
+									<input type="password" name="new_password" value="" placeholder="Nieuw wachtwoord">
+								</div>
+							</div>
+					   </div>
+					   <div class="data-row">
+							<div class="column">
+								<div class="form-item">
+									<input type="password" name="confirm_password" value="" placeholder="Herhaal wachtwoord">
+								</div>
+							</div>
+					   </div>
+					</div>
+				</div>
+				{{/change_password}}
+
+				{{#family_situation}}
+				<header class="heading-box">
+					<h1>Gezinssituatie</h1>
+				</header>
+				<div class="family-data">
+					<div class="data-row">
+						<div class="column w4">
+							<label for="has_children">Heb je kinderen?</label>
+							<div class="select-wrap small">
+								<select id="has_children" name="has_children" class="span12" onchange="toggle_display('children', this); toggle_display('add_child', this)">
+									{{#children_select}}
+									<option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</option>
+									{{/children_select}}
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="children_list data-row" data-bind="foreach: children">
+						<div class="column w5">
+							<label for="f7">Voornaam van je kind</label>
+							<input type="hidden" data-bind="value: id, attr:{name:'children['+$index()+'][id]'}">
+							<div class="form-item">
+								<input id="f7" type="text" placeholder="Voornaam kind" data-bind="value: first_name, attr:{name:'children['+$index()+'][first_name]'}">
+							</div>
+						</div>
+						<div class="column w3">
+							<label for="f8">Geboortedatum</label>
+							<div class="wrap">
+								<div class="column w4">
+									<div class="form-item">
+										<input id="f8" type="text" placeholder="DD" data-bind="value: birthdate.day, attr:{name:'children['+$index()+'][birthdate][day]'}">
+									</div>
+								</div>
+								<div class="column w4" >
+									<div class="form-item">
+										<input type="text" placeholder="MM" data-bind="value: birthdate.month, attr:{name:'children['+$index()+'][birthdate][month]'}">
+									</div>
+								</div>
+								<div class="column w4" >
+									<div class="select-wrap" >
+										<select data-bind="value: birthdate.year, attr:{name:'children['+$index()+'][birthdate][year]'}">
+											{{#birthdate_year_select}}
+												<option value="{{value}}">{{text}}</option>
+											{{/birthdate_year_select}}
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column w6">
+							<label for="s5">Geslacht</label>
+							<div class="select-wrap">
+								<select id="s5" data-bind="value: gender, attr:{name:'children['+$index()+'][gender]'}">
+									<option value="1">jongen</option>
+									<option value="2">meisje</option>
+								</select>
+							</div>
+						</div>
+						<div class="column w1">
+							<a data-bind="click: $root.removeChild" href="#children">X</a>
+						</div>
+					</div>
+					<div id="add_child" class="children_list data-row">
+						<a data-bind="click: addChild" class="btn-link">kind toevoegen</a>
+					</div>
+					<div class="btn-box"></div>
+				</div>
+
+				<div class="family-data">
+					<div class="data-row">
+						<div class="column w2">
+							<label for="is_pregnant">Ben je zwanger</label>
+							<div class="select-wrap">
+								<select id="is_pregnant" name="is_pregnant">
+									{{#pregnant_select}}
+										<option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</option>
+									{{/pregnant_select}}
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="data-row">
+						<div id="pregnancy_date" class="column w3" >
+							<label for="f6">Uitgerekend op</label>
+							<div class="wrap">
+								<div class="column w4">
+									<div class="form-item">
+										<input type="text" id="f6" name="pregnancy_due_date[day]" value="{{pregnancy_due_date.day}}" placeholder="DD">
+									</div>
+								</div>
+								<div class="column w4">
+									<div class="form-item">
+										<input type="text" name="pregnancy_due_date[month]" value="{{pregnancy_due_date.month}}" placeholder="MM">
+									</div>
+								</div>
+								<div class="column w4">
+									<div class="select-wrap">
+										<select name="pregnancy_due_date[year]">
+											{{#pregnancy_year_select}}
+												<option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</option>
+											{{/pregnancy_year_select}}
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{/family_situation}}
+
+				{{#own_detail}}
+				<header id="biography" class="heading-box">
+					<h1>Over Jezelf</h1>
+				</header>
+				<div class="biography-data">
+					<div class="data-column">
+						<div class="data-row">
+							<div class="column">
+								<div class="form-item">
+									<textarea class="height-250" name="biography" cols="60" rows="10" placeholder="Schrijf hier iets over jezelf.">{{biography}}</textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{/own_detail}}
+
+				{{#newsletter_settings}}
+				<header class="heading-box">
+					<h1>Nieuwsbrief instellingen</h1>
+				</header>
+				<div class="news-data">
+					<div class="check-wrap">
+						<input type="checkbox" name="newsletter_subscription" {{#newsletter}}checked="checked"{{/newsletter}}>
+						<label for="newsletter">Ja ik wil mij graag inschrijven voor de Mamaplaats nieuwsbrief<br />
+                            <p class="subscribe-newsletter-subtitle">Ontvang wekelijks nieuwsbrieven van Mamaplaats met actuele onderwerpen op het gebied van moeders en kinderen</p>
+						</label>
+					</div>
+					<input type="hidden" name="update_page" value="">
+				</div>
+				{{/newsletter_settings}}
+
+				{{#interest}}
+				<header class="heading-box">
+					<h1>Interesses opgeven</h1>
+				</header>
+				<div class="interests-box">
+					<p>Vul hier je interesses in zodat wij jou zo gericht mogelijk kunnen informeren over dingen die leuk zijn voor jou en je kind!</p>
+					<ul>
+						{{#interests}}
+						<li>
+							<input class="default" id="c{{id}}" name="interests[]" type="checkbox" value="{{id}}" {{#selected}}checked{{/selected}}>
+							<label for="c{{id}}" class="{{image}}">
+								<span>{{title}} {{#sub_title}}<span>{{sub_title}}</span>{{/sub_title}}</span>
+							</label>
+						</li>
+						{{/interests}}
+					</ul>
+					<input type="hidden" name="update_page" value="">
+				</div>
+				{{/interest}}
+
+				<div class="btn-box">
+					<button class="btn large">Profiel bijwerken</button>
+				</div>
+
+			{{/page}}
+		</fieldset>
+	</form>
+</div>
+{{/user}}
+
+<script type="text/javascript">var initial_children = {{& children}};</script>
+<script type="text/javascript" src="/assets/js/mamaplaats/ko.user_children.js"></script>
+<script type="text/javascript">
+	function toggle_display(field_name, obj)
+	{
+		field = document.getElementById(field_name);
+
+		if (obj.value == 1)
+		{
+			field.style.display = '';
+		}
+		else
+		{
+			field.style.display = 'none';
+		}
+	}
+
+	function uploadAvatar(obj) {
+		return obj.form.submit();
+	}
+
+</script>

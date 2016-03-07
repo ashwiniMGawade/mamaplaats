@@ -1,0 +1,20 @@
+<div class="expert-advies">
+	<div class="heading-box">
+		<h3>Advies: ook leuk om te lezen</h3>
+	</div>
+	<div class="listing">
+		{{#related_expert_advice}}
+		<div class="item">
+			<div class="photo">
+				<a class="photo-wrap" href="/advise/{{advise.slug}}">
+					<img alt="{{advise.title}}" src="{{media.path}}" width="132" height="132">
+				</a>
+			</div>
+			<div class="description">
+				<h4><a href="/advise/{{advise.slug}}">{{advise.title}}</a></h4>
+				<p>{{advise.excerpt}} <a href="/advise/{{advise.slug}}">&gt;</a></p>
+			</div>
+		</div>
+		{{/related_expert_advice}}
+	</div>
+</div>

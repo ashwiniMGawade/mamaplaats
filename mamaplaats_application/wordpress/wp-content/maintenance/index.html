@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Babyplaats</title>
+		<script type="text/javascript" src="jquery-1.6.4.min.js"></script>
+		<script type="text/javascript">
+			var baby = "mama";
+			
+			$(function () {
+				$('#babyplaats').click(function () {
+					window.location = "http://" + "shop" + ".baby" + "plaats" + ".nl";
+				});
+				
+				$('#new').click(function () {
+					window.location = "http://" + "www." + baby + "plaats" + ".nl";
+				});
+			});
+		</script>
+		<style type="text/css">
+			body {
+				background: url("bg-body.png") repeat-x fixed 0 0 #E8ECEF;
+			}
+			
+			.wrapper {
+				width: 900px;
+				padding-top: 100px;
+				margin: 0 auto;
+			}
+			
+			#babyplaats {
+				background: url('split-old.png');
+				width: 377px;
+				height: 652px;
+				float: left;
+				cursor: pointer;
+			}
+			
+			#new {
+				background: url('split-new.png');
+				width: 377px;
+				height: 652px;
+				float: right;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="babyplaats"></div>
+			<div id="new"></div>
+		</div>
+	</body>
+</html>

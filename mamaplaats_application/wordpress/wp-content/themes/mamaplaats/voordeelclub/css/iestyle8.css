@@ -1,0 +1,105 @@
+select{
+    margin: 0;
+    padding: 0;
+    margin-right:9px;
+    width: 130px;
+    background-image: none;
+    border: 1px #d7d7d7 solid;
+}
+select:focus{
+    margin: 0;
+    padding: 0;
+    background-image: none;
+}
+input[type=radio]#regular, input[type=radio]#coupon_writer, input[type=radio]#coupon_pay{
+     display: block;
+}
+
+#gift input[type=radio].one, input[type=radio].two, input[type=radio].tree{
+     display:block;
+ }
+ 
+input[type=radio], input[type="checkbox"]{
+      display:block;
+     background-image: none;
+}
+
+ input[type="text"]{
+     margin-top: 5px;
+     padding-top: 10px;
+ }
+ 
+pre{
+         max-height: none\9;
+}
+
+select.birthdateday, select.birthdatemonth, select.birthdateyear{
+    width: 130px;
+    height: 20px;
+    background: none 0px 0px no-repeat;
+}
+
+select.birthdateday:focus, select.birthdatemonth:focus, select.birthdateyear:focus{
+    background: none 0px 0px no-repeat;
+}
+
+select.pregnant, select.amount_children, select.select_small{
+    width: 114px;
+    height: 20px;
+    background: none 0px 0px no-repeat;
+    border: 1px #d7d7d7 solid;
+}
+
+select.pregnant:focus, select.amount_children:focus, select.select_small:focus{
+    background: none 0px 0px no-repeat;
+}
+
+#childbirthdate select{
+    width: 80px;
+    margin-left: 3px;
+    background: none 0px 0px no-repeat;
+}
+select:focus{
+    outline: none;
+    background: none 0px 0px no-repeat;
+}
+
+input.username, input.password{
+    margin: 0px;
+    padding: 0px;
+    width: 209px;
+    height: 20px;
+    background: none 0px 0px no-repeat;
+    border: 1px #d7d7d7 solid;
+    
+}
+
+.txbg217{
+    background: none 0px 0px no-repeat;
+}
+
+input.username, input.textbox{
+    width: 209px;
+}
+
+.buttons{
+    width: 50px;
+}
+
+#wpmem_reg, #wpmem_login {
+    width: 200px;
+}
+
+select { 
+ padding:8px 10px;  -webkit-appearance: none;  }
+
+
+select.birthdateday, select.birthdatemonth, select.birthdateyear{
+    width: 170px;
+    height: 37px;
+    background: url(../img/input/170x38_focus.png)   0px 0px no-repeat;
+}
+
+select.birthdateday:focus, select.birthdatemonth:focus, select.birthdateyear:focus{
+}
+

@@ -1,0 +1,58 @@
+{{#coupon_shop}}
+<div id="inner">
+	<div class="row click-out">
+		<div class="col-sm-8">
+			<div class="intro-box">
+				<img class="photo" alt="image description" src="{{image}}" width="180" height="180">
+				<div class="description">
+					<h1>{{title}}</h1>
+					{{{description}}}
+				</div>
+			</div>
+			<div class="popular-codes alt">
+				<div class="heading-box">
+					<h1>Kortingscodes, acties en gratis</h1>
+				</div>
+				{{#coupon_offers}}
+					{{> coupon_offer}}
+				{{/coupon_offers}}
+				{{^coupon_offers}}
+					<div class="alert alert-info">
+						Er zijn op dit moment geen kortingscodes beschikbaar voor deze winkel
+					</div>
+					<br>
+				{{/coupon_offers}}
+			</div>
+
+			<div class="popular-codes alt">
+				<div class="heading-box">
+					<h1>Soortgelijke Winkels</h1>
+				</div>
+				{{#related_offers}}
+					{{> coupon_offer}}
+				{{/related_offers}}
+				{{^related_offers}}
+					<div class="alert alert-info">
+						Er zijn op dit moment geen soortgelijke winkels beschikbaar voor deze winkel
+					</div>
+				{{/related_offers}}
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="inner-sidebar">
+				{{>widget_newsletter_box}}
+				{{>widget_social}}
+
+				<!--<div class="over-box">
+					<div class="heading-box">
+						<h2>Over {{name}}</h2>
+					</div>
+					{{{about}}}
+				</div>-->
+
+				{{& widgets}}
+			</div>
+		</div>
+	</div>
+</div>
+{{/coupon_shop}}

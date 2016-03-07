@@ -1,0 +1,11 @@
+<header class="heading-box">
+	<h1>Jij volgt deze moeders</h1>
+</header>
+<div class="blog-list">
+	{{#following}}
+	 {{> blog_following_suggestions}}
+	{{/following}}
+	{{^following}}
+	<div class="alert alert-info">Je volgt op dit moment niemand.</div>
+	{{/following}}
+</div>

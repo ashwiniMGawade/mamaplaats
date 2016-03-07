@@ -1,0 +1,144 @@
+<div id="two-cols">
+	<div class="row">
+		<div class="col-sm-8">
+			{{#review}}
+			<section class="detail-block">
+				<header class="heading-box">
+					<h1>{{title}}</h1>
+					<div class="meta alt">
+						<span class="author">Door: <a href="/lid/{{user.slug}}">{{user.full_name}}</a></span>
+						<span class="sep">•</span> <time datetime="{{published}}">{{published_formatted}}</time>
+						<!--<span class="sep">•</span> <a href="#" class="comments">26 reacties</a>-->
+					</div>
+				</header>
+				<div class="info-box">
+					<div class="holder">
+						<div class="photo">
+							<img alt="{{user.full_name}}" src="{{user.avatar}}" width="280" height="250">
+							<div class="desc">TESTMOEDER <span>{{user.full_name}}</span></div>
+						</div>
+						<h2>Even voorstellen...</h2>
+						{{{information}}}
+					</div>
+					<div class="hr"></div>
+				</div>
+			</section>
+			{{/review}}
+
+			<div class="conclusion-block">
+				<div class="holder">
+					<div class="score">{{review.rating_overal}}</div>
+					<div class="col">
+						<h3>voordelen</h3>
+						<ul class="benefits-list">
+							{{#remarks.positive}}
+								<li>{{remark}}</li>
+							{{/remarks.positive}}
+						</ul>
+					</div>
+					<div class="col">
+						<h3>nadelen</h3>
+						<ul class="disadvantages-list">
+							{{#remarks.negative}}
+								<li>{{remark}}</li>
+							{{/remarks.negative}}
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			{{#sections}}
+			<section class="section-block">
+				<h2>{{question}}</h2>
+				{{{content}}}
+				{{^content}}
+				<div class="alert alert-info">
+					Dit wordt op dit moment nog onderzocht. Kom later terug voor een update!
+				</div>
+				{{/content}}
+
+				{{#display_images}}
+				<div class="photo-block">
+					<h3>Foto’s</h3>
+					<ul class="photos-list">
+						{{#images}}
+						<li>
+							<a class="fresco" data-fresco-group="product_images" data-fresco-options="ui: 'inside'" href="{{path}}">
+								<img alt="image description" src="{{thumb}}" width="134" height="126">
+							</a>
+						</li>
+						{{/images}}
+					</ul>
+				</div>
+				{{/display_images}}
+
+				{{#display_videos}}
+				<div class="video-block">
+					<h3>Videos</h3>
+					<div class="holder">
+						<iframe id="video_container" width="750" height="450" src="{{first_video.embed}}" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<ul class="video-list">
+						{{#videos}}
+						<li>
+							<a onclick="load_video.in_container('#video_container', '{{embed}}');return false;" href="{{path}}">
+								<img alt="{{title}}" src="{{thumb}}" width="120" height="90">
+							</a>
+						</li>
+						{{/videos}}
+					</ul>
+				</div>
+				{{/display_videos}}
+			</section>
+			{{/sections}}
+
+			<div class="review-results">
+				<h3>Scores</h3>
+				<div class="holder">
+					<ul class="listing">
+						{{#ratings}}
+						<li>
+							<span class="title">{{rating_title}}</span>
+							<div class="scale">
+								<div class="range" style="width: {{rating_perc}}%;"></div>
+								<div class="rating">{{rating}}</div>
+							</div>
+						</li>
+						{{/ratings}}
+					</ul>
+					<div class="total-score">
+						<h3>Totale score</h3>
+						<div class="amount">{{review.rating_overal}}</div>
+					</div>
+				</div>
+			</div>
+			{{> widget_share_buttons}}
+			{{#user}}
+			<div class="blogger">
+				<div class="photo">
+					<a class="photo-wrap" href="/lid/{{slug}}"><b><img alt="{{full_name}}" src="{{avatar}}" width="140" height="120"></b></a>
+				</div>
+				<h3><a href="/lid/{{slug}}">{{full_name}}</a></h3>
+				<div class="info">
+					<!--<a href="#" class="comments">953 reacties</a>-->
+					<!--<a href="#" class="followers">700 volgers</a>-->
+				</div>
+				<p>{{biography}}</p>
+				<a href="#" data-follow-id="{{id}}" class="btn follow check_follow">Volgen</a>
+			</div>
+			{{/user}}
+			{{> widget_newsletter_large}}
+		</div>
+		<div class="col-sm-4">
+            {{#is_desktop}}
+            <div class="side-holder">
+                {{> widget_social}}
+                {{> widget_top_sidebar_banner}}
+                {{> widget_newsletter}}
+                {{& widgets}}
+                {{> widget_facebook}}
+            </div>
+            {{/is_desktop}}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<header class="heading-box">
+	<h1>Suggesties om te volgen</h1>
+</header>
+<div class="blog-list">
+	{{#suggestions}}
+	 {{> blog_following_suggestions}}
+	{{/suggestions}}
+	{{^suggestions}}
+	<div class="alert alert-info">Er zijn nog geen suggesties gevonden om te volgen, vul je profiel aan voor betere suggesties.</div>
+	{{/suggestions}}
+</div>
+<!--<a href="#" class="load-more">Meer berichten laden</a>-->

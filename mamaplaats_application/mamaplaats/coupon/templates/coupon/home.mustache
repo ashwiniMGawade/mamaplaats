@@ -1,0 +1,122 @@
+<div id="inner">
+	<div class="promo-box">
+		<h1>Voordeel met Mamaplaats</h1>
+		<h4>Iedere week nieuwe acties en kortingen online</h4>
+		<ul class="logos-list">
+			{{#coupon_partners}}
+			<li>
+				<a href="{{url}}">
+					<img alt="{{text}}" src="{{image}}" width="130" height="65">
+					<img class="over" alt="{{text}}" src="{{image}}" width="130" height="65">
+				</a>
+			</li>
+			{{/coupon_partners}}
+		</ul>
+	</div>
+	<div class="row">
+		<div class="col-sm-8">
+			<div id="slideshow" class="carousel slide" data-ride="carousel">
+				<a class="btn-prev" href="#slideshow" data-slide="prev">Previous</a>
+				<div class="holder carousel-inner">
+					{{#coupon_slides}}
+					<div class="item {{#active}}active{{/active}}">
+						<a target="_blank" href="{{url}}"><img alt="{{title}}" src="{{image}}" width="750" height="340"></a>
+					</div>
+					{{/coupon_slides}}
+				</div>
+				<a class="btn-next" href="#slideshow" data-slide="next">Next</a>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="inner-sidebar">
+				{{> widget_newsletter_box}}
+				{{> widget_social}}
+			</div>
+		</div>
+	</div>
+	<div class="row popular">
+		<div class="col-sm-8">
+			<div class="popular-categories-box">
+				<div class="heading-box">
+					<h2>Kortingscodes</h2>
+					<h4>Vind kortingscodes, aanbiedingen en gratis acties voor moeder en kind!</h4>
+				</div>
+				<div class="listing">
+					<div class="col">
+						<ul class="tabset">
+							{{#popular_categories}}
+							<li {{#active}}class="active"{{/active}}>
+								<a class="item" href="#category_{{id}}">
+									<span class="icon coupon-icon-{{icon}}"></span>
+									<div class="description">
+										<h3>{{name}}</h3>
+										<p>{{coupon_offer_count}} codes beschikbaar</p>
+									</div>
+								</a>
+							</li>
+							{{/popular_categories}}
+						</ul>
+						<a class="view-all" href="/korting/categorien">Bekijk alle categorieën</a>
+					</div>
+					<div class="col">
+						{{#popular_categories}}
+						<div id="category_{{id}}">
+							<div class="popular-listing">
+								<ul>
+									{{#coupons}}
+									<li>
+										<a class="item" href="/korting/winkel/{{coupon_shop_slug}}#show_offer_{{id}}">
+											<img class="photo" alt="{{coupon_shop_name}}" src="{{image}}" width="58" height="58">
+											<div class="description">
+												<h3>{{coupon_shop_name}}</h3>
+												<p>{{description}}</p>
+											</div>
+										</a>
+									</li>
+									{{/coupons}}
+								</ul>
+								<a class="view-all" href="/korting/nieuwste">Bekijk alle acties</a>
+							</div>
+						</div>
+						{{/popular_categories}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="inner-sidebar">
+				{{& widgets}}
+			</div>
+		</div>
+	</div>
+	<!--<div class="row banner">
+		<div class="col-sm-4">
+			<div class="ad-box">
+				<a href="#"><img alt="image description" src="/assets/images/ad06.jpg" width="365" height="248"></a>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="ad-box">
+				<div class="title"><span>Goedgekeurd door</span><br><strong>mamaplaats</strong></div>
+				<div class="content">
+					<p>Al onze korting codes zijn getest en werken. Als ze dat niet doen, trakteren wij!.</p>
+					<a href="#">Meer weten?</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="inner-sidebar">
+				<div class="ad-box">
+					<a href="#"><img alt="image description" src="/assets/images/ad07.jpg" width="344" height="248"></a>
+				</div>
+			</div>
+		</div>
+	</div>-->
+	<div class="row newsletter">
+		<div class="col-sm-8">
+
+		</div>
+		<div class="col-sm-4">
+		</div>
+	</div>
+</div>

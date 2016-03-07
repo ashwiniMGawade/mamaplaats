@@ -1,0 +1,157 @@
+<div id="account">
+	<section class="registration-block">
+		<header class="heading-box">
+			{{> widget_social}}
+			<h1>Welkom! je bent geregistreerd</h1>
+		</header>
+		<div class="col-set">
+			<div class="col-3 activatation-block">
+				{{#user}}
+				<form class="validate-form" action="" method="post">
+					{{#success}}
+						<div class="alert alert-success alert-margin">
+                            Je account is geregistreerd.
+							<br /><br />
+							<ul class="unstyled">
+								<li><a href="/user/blog/index?visit=first">Schrijf meteen je eigen blog</a></li>
+								<li><a href="/win">Ga naar de winacties</a></li>
+							</ul>
+						</div>
+						{{#show_pixel}}
+						<!-- Affiliate4You tracking code / http://www.affiliate4you.nl -->
+						    {{#advertiser_id}}
+						        <img src="https://leads.affiliate4you.nl/?campagne={{advertiser_id}}&orderbedrag=1.00&ordernummer={{user_id}}&klantnaam={{email}}" width="1" height="1">
+						    {{/advertiser_id}}
+						{{/show_pixel}}
+					{{/success}}
+					{{^success}}
+						{{> messages}}
+						<h3>Vul je gegevens in om je registratie compleet te maken!</h3>
+						<div class="form-row">
+							<div class="column w5">
+								<div class="form-item">
+									<label>Ben je zwanger?</label>
+									<div class="select-wrap">
+										<select id="is_pregnant">
+											<option value="1" {{#is_pregnant}}selected{{/is_pregnant}}>Ja</option>
+											<option value="0" {{^is_pregnant}}selected{{/is_pregnant}}>Nee</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div id="pregnancy_date" class="column w2">
+								<label for="i1">Uitgerekend op</label>
+								<div class="wrap">
+									<div class="column w3">
+										<div class="form-item">
+											<input id="i1" type="text" name="pregnancy_due_date[day]" placeholder="DD" value="{{pregnancy_due_date.day}}">
+										</div>
+									</div>
+									<div class="column w3">
+										<div class="form-item">
+											<input type="text" name="pregnancy_due_date[month]" placeholder="MM" value="{{pregnancy_due_date.month}}">
+										</div>
+									</div>
+									<div class="column w3">
+										<div class="form-item">
+											<div class="select-wrap">
+												<select name="pregnancy_due_date[year]">
+													{{#pregnancy_years}}
+													<option value="{{text}}">{{text}}</option>
+													{{/pregnancy_years}}
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-sep"></div>
+						<div class="form-row alt">
+							<div class="column w4">
+								<div class="form-item">
+									<label>Heb je kinderen?</label>
+									<div class="select-wrap">
+										<select id="has_children">
+											<option value="1" {{#has_children}}selected{{/has_children}}>ja</option>
+											<option value="0" {{^has_children}}selected{{/has_children}}>nee</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="children_list" data-bind="foreach: children">
+							<div class="form-row alt">
+								<div class="column w6">
+									<div class="form-item">
+										<label for="i2">Voornaam</label>
+										<input type="hidden" data-bind="value: id, attr:{name:'children['+$index()+'][id]'}">
+										<input id="i2" type="text" data-bind="value: first_name, attr:{name:'children['+$index()+'][first_name]'}" placeholder="Voornaam">
+									</div>
+								</div>
+								<div class="column w2">
+									<label for="i3">Geboortedatum</label>
+									<div class="wrap">
+										<div class="column w3">
+											<div class="form-item">
+												<input id="i3" data-bind="value: birthdate.day, attr:{name:'children['+$index()+'][birthdate][day]'}" type="text" placeholder="DD">
+											</div>
+										</div>
+										<div class="column w3">
+											<div class="form-item">
+												<input type="text" data-bind="value: birthdate.month, attr:{name:'children['+$index()+'][birthdate][month]'}" placeholder="MM">
+											</div>
+										</div>
+										<div class="column w3">
+											<div class="form-item">
+												<div class="select-wrap">
+													<select data-bind="value: birthdate.year, attr:{name:'children['+$index()+'][birthdate][year]'}">
+														{{#child_years}}
+														<option value="{{text}}">{{text}}</option>
+														{{/child_years}}
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="column w5">
+									<div class="form-item">
+										<label>Geslacht</label>
+										<div class="select-wrap">
+											<select data-bind="value: gender, attr:{name:'children['+$index()+'][gender]'}">
+												{{#child_genders}}
+												<option value="{{value}}" {{#selected}}selected="selected"{{/selected}}>{{text}}</option>
+												{{/child_genders}}
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="children_list add-row">
+							<a data-bind="click: addChild" href="#">kind toevoegen</a>
+						</div>
+						<div class="form-sep"></div>
+						<div class="set">
+							<button class="btn">registreer nu!</button>
+                            <a href="#" id="skip">Skip</a>
+						</div>
+					{{/success}}
+				</form>
+				{{/user}}
+			</div>
+		</div>
+	</section>
+</div>
+<script type="text/javascript">var initial_children = {{{children}}};</script>
+<script type="text/javascript" src="/assets/js/mamaplaats/ko.user_children.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#skip').click(function (e) {
+            e.preventDefault();
+            $(".validate-form").submit();
+        });
+    })
+</script>

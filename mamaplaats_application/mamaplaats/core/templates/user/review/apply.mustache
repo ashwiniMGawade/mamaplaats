@@ -1,0 +1,102 @@
+<div class="data-form apply">
+    {{#referrer}}
+        <div class="alert alert-success">
+            Je bent succesvol geregistreerd. Let op: je bent nog niet ingeschreven voor het testpanel, vul hiervoor onderstaand formulier in.
+        </div>
+    {{/referrer}}
+	<form class="form-inline" action="" method="post">
+	<fieldset>
+		<header class="heading-box">
+			<h1>Inschrijven voor {{review_product.title}}</h1>
+		</header>
+		<div class="media blog-item">
+            <div class="media-object">
+                <img src="{{review_product.image_url}}">
+            </div>
+            <div class="media-body">
+            	<p>{{{review_product.description}}}</p>
+            </div>
+		</div>
+	</fieldset>
+	{{#register_success}}
+	<div class="alert alert-success">
+		Je bent succesvol ingeschreven bij het bovenstaande product review.<br /><br />
+		De redactie van Mamaplaats zal binnenkort de testmoeders bekend maken.<br/><br/>
+		De status hiervan kan je bij <a href="/user/review-products/suggestions">Reviews</a> inzien.
+	</div>
+	{{/register_success}}
+
+	{{^register_success}}
+	<fieldset>
+		<header class="heading-box">
+			<h1>Inschrijven</h1>
+		</header>
+
+		{{#get_messages}}
+		<div class="alert alert-{{type}}">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			{{#messages}}{{& message}}<br />{{/messages}}
+		</div>
+		{{/get_messages}}
+
+		<div class="form-item">
+			<label for="answer_phone">Telefoonnummer</label>
+			<input type="text" name="answer_phone" id="answer_phone" placeholder="Telefoonnummer" value="{{review.answer_phone}}">
+		</div>
+
+		<div class="form-item">
+			<label for="answer_address">Adres</label>
+			<input type="text" name="answer_address" id="answer_address" placeholder="Adres" value="{{review.answer_address}}">
+		</div>
+
+		<div class="form-item">
+			<label for="answer_zip">Postcode</label>
+			<input type="text" name="answer_zip" id="answer_zip" placeholder="Postcode" value="{{review.answer_zip}}">
+		</div>
+
+		<div class="form-item">
+			<label for="answer_place">Plaats</label>
+			<input type="text" name="answer_place" id="answer_place" placeholder="Plaats" value="{{review.answer_place}}">
+		</div>
+
+		<div class="form-item">
+			<label for="answer_reason">Waarom wil je testmoeder voor dit product worden?</label>
+			<textarea name="answer_reason" id="answer_reason">{{review.answer_reason}}</textarea>
+		</div>
+
+		{{#review_product.question_extra1}}
+		<div class="form-item">
+			<label for="answer_extra1">{{review_product.question_extra1}}</label>
+			<textarea name="answer_extra1" id="answer_extra1">{{review.answer_extra1}}</textarea>
+		</div>
+		{{/review_product.question_extra1}}
+
+		{{#review_product.question_extra2}}
+		<div class="form-item">
+			<label for="answer_extra2">{{review_product.question_extra2}}</label>
+			<textarea name="answer_extra2" id="answer_extra2">{{review.answer_extra2}}</textarea>
+		</div>
+		{{/review_product.question_extra2}}
+
+		{{#review_product.question_extra3}}
+		<div class="form-item">
+			<label for="answer_extra3">{{review_product.question_extra3}}</label>
+			<textarea name="answer_extra3" id="answer_extra3">{{review.answer_extra3}}</textarea>
+		</div>
+		{{/review_product.question_extra3}}
+
+		{{#show_access_phone}}
+        <label class="checkbox">
+            <input name="phone_access" value="0" type="hidden">
+            <input name="phone_access" class="tos" value="1" id="phone_access" type="checkbox"> Ja, HelloFresh mag mij telefonisch benaderen.
+        </label>
+        <br /><br />
+		{{/show_access_phone}}
+
+		<div class="form-item">
+			<button class="btn" type="submit">Insturen</button>
+		</div>
+	</fieldset>
+	{{/register_success}}
+	</form>
+</div>

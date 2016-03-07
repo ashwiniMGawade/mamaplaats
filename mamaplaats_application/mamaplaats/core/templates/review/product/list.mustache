@@ -1,0 +1,40 @@
+<div class="row">
+	{{> pregnancy_calander}}
+</div>
+<div id="review">
+	<section class="blog-masonry">
+        <div class="clearfix"></div>
+		<header class="heading-box">
+            <!--<div class="float-new-blog">-->
+                {{> widget_social}}
+            <!--</div>-->
+            <h1>Reviews van onze testmoeders</h1>
+		</header>
+		<div class="grid-box">
+			{{#products}}
+			<article class="item">
+				<figure class="photo">
+					<a class="photo-wrap" href="/review/product/{{slug}}">
+						{{#average_rating}}<span class="stempel"><span>{{average_rating}}</span></span>{{/average_rating}}
+						<b><img alt="{{title}}" src="{{image_url}}" width="260" height="242"></b>
+					</a>
+				</figure>
+				<h4><a href="/review/product/{{slug}}">{{title}}</a></h4>
+				<p>{{description}}</p>
+			</article>
+			{{/products}}
+		</div>
+        <div class="col-md-6 col-md-offset-3">
+            <a href="#" onclick="return load_more.review_product(15)" class="load-more">Laad meer berichten</a>
+        </div>
+	</section>
+	<div class="info-block">
+		<div class="row">
+			<div class="col-sm-8">
+				{{> widget_newsletter_large}}
+			</div>
+			<div class="col-sm-4">
+			</div>
+		</div>
+	</div>
+</div>

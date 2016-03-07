@@ -1,0 +1,6 @@
+{{# has_messages}}
+<div class="alert alert-{{type}}">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	{{#messages}}{{& message}}<br />{{/messages}}
+</div>
+{{/ has_messages}}

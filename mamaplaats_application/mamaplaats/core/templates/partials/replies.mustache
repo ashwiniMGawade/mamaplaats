@@ -1,0 +1,24 @@
+{{#children}}
+<li>
+	<div id="comment_{{id}}" class="comment {{#is_author}}my{{/is_author}}">
+		<div class="head">
+			<h4>
+				<img alt="{{author_name}}" src="{{author_avatar}}" width="32" height="32">
+				{{author_name}} <span> <time datetime="{{date}}">{{date}}</time></span>
+				{{#is_author}}<a class="author" href="#">Auteur</a>{{/is_author}}
+			</h4>
+		</div>
+		<div class="content">
+			<span class="num">{{number}}</span>
+			<p>{{content}}</p>
+		</div>
+		<div class="reply">
+			<a onclick="return comment_form.move('{{id}}')" href="#">Reply</a>
+			<div id="comment_{{id}}"></div>
+		</div>
+	</div>
+	<ul class="children">
+		{{>replies}}
+	</ul>
+</li>
+{{/children}}

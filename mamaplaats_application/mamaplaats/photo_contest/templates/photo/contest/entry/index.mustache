@@ -1,0 +1,36 @@
+<div class="content photocontest">
+	{{#entry}}
+	<div class="top-text">Stem op deze foto!</div>
+	{{#limited}}
+	<ul class="message succ">
+		<li>
+			Deze foto is nog niet voor het publiek zichtbaar totdat de fotowedstrijd van start gaat.
+			Zodra de wedstrijd start ontvangt iedereen een email bericht.
+		</li>
+	</ul>
+	{{/limited}}
+	<div class="single-photo">
+		<img src="{{photo_url}}" alt="{{title}}" />
+		<div class="single-photo-info">
+			<h1>{{title}}</h1>
+			<p><span>Omschrijving:</span> {{description}}</p>
+			<div class="photo-author"><span>Naam:</span> {{username}}</div>
+			<div class="photo-votes"><span>Stemmen:</span> {{amount_votes}}</div>
+			<!--<div class="photo-date"><span>Datum:</span> {{upload_date}}</div>-->
+
+			{{^limited}}
+			<div class="photo-share">
+				<span>Deel met je vrienden:</span>
+				<a href="{{basepath}}fotowedstrijd/deel/foto/{{id}}" class="email"></a>
+				<a href="#" class="twitter" onclick="share_media('twr', '{{single_url}}', '{{share_text}}', 'mamaplaats'); return false;"></a>
+				<a href="#" class="facebook" onclick="share_media('fb', '{{single_url}}', '{{share_text}}', '{{photo_url}}'); return false;"></a>
+				<a href="#" class="hyves" onclick="share_media('hvs', '{{single_url}}', '{{share_text}}'); return false;"></a>
+			</div>
+			<div class="photo-vote-box">
+				{{^vote_hidden}}<a href="{{basepath}}fotowedstrijd/stem/foto/{{id}}" class="photo-vote {{#voted}}voted{{/voted}}"></a>{{/vote_hidden}}
+			</div>
+			{{/limited}}
+		</div>
+	</div>
+	{{/entry}}
+</div>

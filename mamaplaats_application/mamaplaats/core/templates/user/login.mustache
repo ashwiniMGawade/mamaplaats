@@ -1,0 +1,25 @@
+<div id="account">
+	<section class="login-block">
+		<header class="heading-box">
+			<h1>Log in bij Mamaplaats</h1>
+		</header>
+		<form class="validate-form" action="" method="POST">
+			<h3>Inloggen</h3>
+			{{> messages}}
+			<div class="form-item">
+				<label for="username">Email adres:</label>
+				<input class="required" id="username" name="username" type="text" placeholder="Gebruikersnaam of Email" value="{{fields.username}}" tabindex="1">
+			</div>
+			<div class="form-item">
+				<a class="link" href="/user/forgot-password">Wachtwoord vergeten</a>
+				<label for="password">Wachtwoord</label>
+				<input class="required" id="i2" name="password" type="password" placeholder="Vul hier je wachtwoord in" tabindex="2">
+				<input type="hidden" value="1" name="remember_me">
+			</div>
+			<div class="set">
+				<button class="btn" tabindex="3">Login</button>
+				<a href="/guest/register">Account aanmaken</a>
+			</div>
+		</form>
+	</section>
+</div>

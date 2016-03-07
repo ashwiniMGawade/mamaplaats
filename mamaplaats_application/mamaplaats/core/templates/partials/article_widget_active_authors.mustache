@@ -1,0 +1,16 @@
+<article class="item">
+	<div class="our-bloggers">
+		<div class="heading-box">
+			<h3>Mamaplaats bloggers! <a href="/leden">Alle Bloggers</a></h3>
+		</div>
+		<ul>
+			{{#active_authors}}
+			<li>
+				<a class="photo-wrap" href="/lid/{{slug}}">
+					<b><img alt="{{full_name}}" src="{{avatar}}" width="50" height="50"></b>
+				</a>
+			</li>
+			{{/active_authors}}
+		</ul>
+	</div>
+</article>

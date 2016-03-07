@@ -1,0 +1,19 @@
+<div class="content photocontest full">
+	<div class="contest-list">
+		{{#contests}}
+		<div class="contest-single">
+			<div class="contest-info">
+				<div class="contest-image"><a href="{{basepath}}fotowedstrijd/{{id}}/bekijk"><img src="{{example_photo}}" /></a></div>
+				<h2>{{title}}</h2>
+				<div class="contest-description">{{description}}</div>
+				{{#rewards}}
+				<div class="contest-winner"><span class="winner-title">{{title}}:</span> {{winner}}</div>
+				{{/rewards}}
+			</div>
+			<div class="contest-button">
+				<a class="button-view" href="{{basepath}}fotowedstrijd/{{id}}/bekijk">Lees Meer</a>
+			</div>
+		</div>
+		{{/contests}}
+	</div>
+</div>

@@ -1,0 +1,78 @@
+<div id="profile">
+	<div class="row">
+		<div class="col-sm-3 blog-sidebar">
+			<div class="profile-side-holder">
+				<div class="side-menu-holder">
+					<a href="#" class="opener">Side menu</a>
+                    <div class="side-menu">
+						{{#user}}
+                        <div class="avatar-holder clearfix">
+                            <div class="img-holder pull-left">
+                                <img src="{{avatar}}" alt="{{full_name}}" width="70" height="70" class="img-circle">
+                            </div>
+                            <div class="text-holder">
+                                <div class="holder">
+									<span class="name">{{full_name}}</span>
+									<span class="info">Mama blogger</span>
+								</div>
+                            </div>
+                        </div>
+						{{/user}}
+                        <a class="btn" href="/user/blog/index" role="button">Blog bericht schrijven</a>
+						{{#menu}}
+                        <nav class="ad-menu">
+                            <strong class="title">{{text}}</strong>
+                            <div class="list-group">
+								{{#sub_menu}}
+                                    <a href="{{path}}" class="list-group-item {{#active}}active{{/active}}">
+                                    {{text}}
+                                    {{#count}}
+                                    <span class="amount">({{count}})</span>
+                                    {{/count}}
+                                    </a>
+								{{/sub_menu}}
+                            </div>
+                        </nav>
+						{{/menu}}
+                    </div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-9 col-sm-12">
+			{{{content}}}
+		</div>
+	</div>
+</div>
+
+{{#show_profile_progress}}
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog profile-popup-container">
+			<div class="modal-content profile-popup">
+				<div class="modal-body">
+                    <button type="button" class="close" id="close-modal-popup"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h2>TIP: Wil je meedoen aan testpanels en winacties? Zorg dan dat je profiel compleet is.</h2>
+					<span class="text">Profiel status {{{profile_progress_percentage}}}</span>
+					<div class="progress meter">
+                        <div class="progress-bar progress-bar-success range" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{{profile_progress_percentage}}}">
+                            <span class="text">{{{profile_progress_percentage}}}</span>
+                        </div>
+					</div>
+					<div class="complete-profile-btn">
+                        <a href="/user/profile" class="black-btn-large">Profiel aanvullen</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var profile_progress_percentage = "{{{profile_progress_percentage}}}";
+			var progress_value = profile_progress_percentage.replace("%",'');
+			if(progress_value < 100)
+			{
+				$('#myModal').modal('show');
+			}
+		})
+	</script>
+{{/show_profile_progress}}

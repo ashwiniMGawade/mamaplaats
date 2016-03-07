@@ -1,0 +1,36 @@
+<section class="featured-section-blocks">
+	<div class="row">
+		{{#blocks}}
+		<div class="col-sm-5">
+			<figure class="item{{#one.show_mobile}} show-mobile{{/one.show_mobile}}">
+				<a href="{{one.url}}" class="photo-wrap">
+					<b><img alt="{{one.title}}" src="{{one.image}}?cache={{version}}" width="450" height="288"></b>
+					<span class="caption">{{one.title}}</span>
+				</a>
+			</figure>
+		</div>
+		<div class="col-sm-3">
+			<figure class="item small{{#two.show_mobile}} show-mobile{{/two.show_mobile}}">
+				<a href="{{two.url}}" class="photo-wrap">
+					<b><img alt="{{two.title}}" src="{{two.image}}?cache={{version}}" width="271" height="129"></b>
+					<span class="caption">{{two.title}}</span>
+				</a>
+			</figure>
+			<figure class="item small{{#three.show_mobile}} show-mobile{{/three.show_mobile}}">
+				<a href="{{three.url}}" class="photo-wrap">
+					<b><img alt="{{three.title}}" src="{{three.image}}?cache={{version}}" width="271" height="129"></b>
+					<span class="caption">{{three.title}}</span>
+				</a>
+			</figure>
+		</div>
+		<div class="col-sm-4">
+			<figure class="item{{#four.show_mobile}} show-mobile{{/four.show_mobile}}">
+				<a href="{{four.url}}" class="photo-wrap">
+					<b><img alt="{{four.title}}" src="{{four.image}}?cache={{version}}" width="347" height="288"></b>
+					<span class="caption">{{four.title}}</span>
+				</a>
+			</figure>
+		</div>
+		{{/blocks}}
+	</div>
+</section>

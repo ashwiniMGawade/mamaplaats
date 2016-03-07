@@ -1,0 +1,43 @@
+<div class="content photocontest">
+	<h1>Deel deze foto met je vrienden</h1>
+	{{#entry}}
+	<div class="contest-photo">
+		<a href="{{single_url}}" title="{{title}}"><img src="{{photo_url}}" alt="{{title}}" /></a>
+		<div class="contest-info">
+			<div class="contest-author"><span>Door:</span> {{username}}</div>
+			<div class="contest-votes"><span>Stemmen:</span> {{amount_votes}}</div>
+		</div>
+	</div>
+	{{/entry}}
+	<div class="clear"></div>
+	<br />
+	{{#errors}}
+	<ul class="message err">
+		{{#messages}}
+		<li>{{error}}</li>
+		{{/messages}}
+	</ul>
+	{{/errors}}
+	{{#success}}
+	<ul class="message succ">
+		<li>Je berichtje is naar je vriend(in) gestuurd</li>
+	</ul>
+	{{/success}}
+	{{^success}}
+	<form action="" method="post" enctype="multipart/form-data">
+		<div class="photo-form">
+			<label for="message_sender">Je naam <small>Vul hier je naam in</small></label>
+			<input id="message_sender" class="text" type="text" name="name_sender" value="{{form.name_sender}}" />
+			<br /><br />
+			<label for="message_receiver">Naam Vriend(in) <small>Vul hier de naam in van je vriend(in)</small></label>
+			<input id="message_receiver" class="text" type="text" name="name_friend" value="{{form.name_receiver}}" />
+			<label for="message_email">Email Vriend(in) <small>Vul hier de email in van je vriend(in)</small></label>
+			<input id="message_email" class="text" type="text" name="email_friend" value="{{form.email}}" />
+			<br /><br />
+			<label for="message_description">Bericht aan je Vriend(in) <small>Vul hier je bericht in</small></label>
+			<textarea id="message_description" class="textarea" name="description">{{form.description}}</textarea>
+			<input class="button" type="submit" value="Verstuur Bericht" />
+		</div>
+	</form>
+	{{/success}}
+</div>

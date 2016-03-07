@@ -1,0 +1,84 @@
+.wrapper input[type='text'] {
+border: 1px solid #149bdf;
+padding: 5px 10px;
+font-size: 13px;
+color: #1e1e1e;
+width: 350px;
+margin-bottom: 20px;
+}
+
+.wrapper label {
+display: inline-block;
+width: 100px;
+font-size: 14px;
+margin-right: 10px;
+}
+
+.wrapper input[type='file'] {
+    margin-bottom: 10px;
+}
+
+.wrapper .preview-img {
+    border: 1px solid;
+    border-radius: 5px;
+    display: block;
+    height: 120px;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    padding: 2px;
+    width: 120px;
+}
+.wrapper .preview-img img{
+    max-height: 100%;
+    max-width: 100%;
+}
+.manage-banner-wrap ul {
+    width: 650px;
+}
+
+.manage-banner-wrap .title {
+    overflow: hidden;
+    background: #ccc;
+    padding: 5px 10px
+}
+
+.manage-banner-wrap .img-title {
+    float: left; width: 265px
+}
+
+.manage-banner-wrap .img-action {
+    float: left; width: 100px
+}
+
+.manage-banner-wrap .img-details {
+    overflow: hidden;
+}
+
+.manage-banner-wrap .banner-title {
+    float: left; width: 254px; margin: 0 10px
+}
+
+.manage-banner-wrap .banner-slug {
+    float: left; width: 254px; margin-right:10px
+}
+
+.manage-banner-wrap .banner-action {
+    float: left; width: 100px
+}
+
+.form-errors {
+    background:#fcd1d1;
+    border: 1px solid #fc9f9f;
+    border-radius: 5px;
+    padding: 10px;
+}
+.show {
+    display:inline;
+}
+.hide {
+    display:none;
+}
+
+#double_opt {
+    margin-bottom: 20px;
+}

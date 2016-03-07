@@ -1,0 +1,34 @@
+<div id="two-cols">
+	<div class="row">
+		<div class="col-sm-8">
+			{{#page}}
+			<section class="detail-block">
+				<header class="heading-box">
+					<h1>{{title}}</h1>
+					<div class="meta">
+						<span class="author">Door: <a href="/lid/{{author.slug}}">{{author.full_name}}</a></span>
+						<span class="sep">•</span> <time datetime="{{created}}">{{created_formatted}}</time>
+					</div>
+				</header>
+				<p class="scaled-image">
+					<img width="750" height="488" src="{{thumbnail}}" alt="{{title}}">
+				</p>
+				{{{content}}}<br><br>
+			</section>
+			{{/page}}
+
+			{{> widget_share_buttons}}
+			{{> widget_newsletter_large}}
+		</div>
+		<div class="col-sm-4">
+            {{#is_desktop}}
+            <div class="side-holder">
+                {{> widget_social}}
+                {{> widget_top_sidebar_banner}}
+                {{> widget_newsletter}}
+                {{> widget_facebook}}
+            </div>
+            {{/is_desktop}}
+		</div>
+	</div>
+</div>
