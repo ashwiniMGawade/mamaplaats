@@ -1,0 +1,638 @@
+/* header */
+#couponclub .row-fluid .header{
+	background-image:url(/kohana/assets/img/template/header.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+	height:108px;
+}
+
+#couponclub .row-fluid .header.long{
+	background-image:url(/kohana/assets/img/template/header_long.png);
+}
+
+#couponclub .row-fluid .header.big{
+	background-image:url(/kohana/assets/img/template/header_big_grey.png);
+	height:142px;
+}
+
+#couponclub .row-fluid .header.big > .span8{
+	width:785px;
+}
+
+#couponclub .row-fluid .header.big > .span4{
+	width:260px;
+	margin-left:0;
+}
+
+#couponclub .row-fluid .header h1{
+	font-family: 'BertholdAkzidenzGroteskBERg';
+	font-size: 31px;
+	line-height: 30px;
+	font-weight: normal;
+	color: #fff;
+	margin: 15px 0 0 21px;
+}
+
+#couponclub .row-fluid .header h2{
+	font-family: 'market-regularregular';
+	font-weight: normal;
+	color: #fff;
+	font-size: 27px;
+	margin: 2px 0 0 18px;
+	line-height: 28px;
+}
+
+#couponclub .row-fluid .header .coupon-header-ad{
+	margin:8px 0 0 0;
+	width:250px;
+	height:115px;
+}
+
+#couponclub .row-fluid .coupon-menu{
+	margin:25px 0 0 20px;
+}
+
+#couponclub .row-fluid .coupon-menu .nav-tabs{
+	border-bottom: none;
+}
+
+#couponclub .row-fluid .coupon-menu .dropdown-menu::before {
+	position: absolute;
+	top: -7px;
+	left: 9px;
+	display: inline-block;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #ccc;
+	border-left: 7px solid transparent;
+	border-bottom-color: rgba(0, 0, 0, 0.2);
+	content: '';
+}
+
+#couponclub .row-fluid .coupon-menu .dropdown-menu::after {
+	position: absolute;
+	top: -6px;
+	left: 10px;
+	display: inline-block;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #ffffff;
+	border-left: 6px solid transparent;
+	content: '';
+}
+
+#couponclub .row-fluid .coupon-menu .nav-tabs>li>a{
+	color:#fff;
+	font-weight:bold;
+	background:#000;
+	border-color:#000;
+}
+
+#couponclub .row-fluid .coupon-menu .nav-tabs>li>a.pink{
+	background:#FD539B;
+	border-color:#FD539B;
+}
+
+#couponclub .row-fluid .coupon-menu .nav-tabs>li.active>a,
+#couponclub .row-fluid .coupon-menu .nav-tabs>li>a:hover,
+#couponclub .row-fluid .coupon-menu .nav-tabs>li>a:focus{
+	color:#000;
+	background:#fff;
+	border-color:#fff;
+}
+
+#couponclub .row-fluid .coupon-menu .nav-tabs>li.active>a.pink,
+#couponclub .row-fluid .coupon-menu .nav-tabs>li>a.pink:hover,
+#couponclub .row-fluid .coupon-menu .nav-tabs>li>a.pink:focus{
+	color:#FD539B;
+}
+
+#couponclub .row-fluid .coupon-menu .dropdown-menu>.active>a,
+#couponclub .row-fluid .coupon-menu .dropdown-menu>.active>a:hover,
+#couponclub .row-fluid .coupon-menu .dropdown-menu>.active>a:focus,
+#couponclub .row-fluid .coupon-menu .dropdown-menu>li>a:hover,
+#couponclub .row-fluid .coupon-menu .dropdown-menu>li>a:focus,
+#couponclub .row-fluid .coupon-menu .dropdown-submenu:hover>a,
+#couponclub .row-fluid .coupon-menu .dropdown-submenu:focus>a{
+	background:#000;
+}
+
+#couponclub .row-fluid .coupon-menu .dropdown-menu>li>a.pink:hover,
+#couponclub .row-fluid .coupon-menu .dropdown-menu>li>a.pink:focus,
+#couponclub .row-fluid .coupon-menu .dropdown-submenu:hover>a.pink,
+#couponclub .row-fluid .coupon-menu .dropdown-submenu:focus>a.pink{
+	background:#FD539B;
+}
+
+/* general content */
+#couponclub .row-fluid.coupon-content .yellow-ribbon,
+#couponclub .row-fluid.coupon-content .black-ribbon{
+	color: #FFF;
+	background-image:url(/kohana/assets/img/template/sprite_pink.png);
+	background-position:-101px -428px;
+	background-repeat:no-repeat;
+	height: 31px;
+	width: 205px;
+	font-size: 18px;
+	font-weight: 400;
+	font-family: 'BertholdAkzidenzGroteskBERg';
+	text-shadow: #ff0d73 0 1px 0;
+	margin-left: -5px;
+	padding-top: 2px;
+	padding-left: 12px;
+	text-transform: uppercase;
+	line-height: 33px;
+	margin-top:10px;
+}
+
+#couponclub .row-fluid.coupon-content .yellow-ribbon.big{
+	background-position:0 -128px;
+}
+
+#couponclub .row-fluid.coupon-content .black-ribbon{
+	background-position: -125px -306px;
+	width: 533px;
+	text-shadow: none;
+	line-height: 28px;
+	height: 25px;
+}
+
+#couponclub .row-fluid .coupon-left-column{
+	width:222px;
+}
+
+#couponclub .row-fluid .coupon-left-column.two-set{
+	width:792px;
+}
+
+#couponclub .row-fluid .coupon-left-column ul li a{
+	font-size: 10px;
+}
+
+#couponclub .row-fluid .coupon-center-column{
+	margin:0 0 0 10px;
+	width:560px;
+}
+
+#couponclub .row-fluid .coupon-right-column{
+	margin:0 0 0 10px;
+	width:245px;
+}
+
+#couponclub .row-fluid .well {
+	padding: 0;
+	margin: 5px 0;
+}
+
+#couponclub .row-fluid .well.register-new{
+	padding: 5px;
+	margin: 5px;
+	width:780px;
+}
+
+#couponclub .row-fluid .span8 .well.register-new{
+	width:550px;
+	margin:5px 0;
+}
+
+#couponclub .span12 .well.register-new{
+	width:1045px;
+	margin:5px 0;
+}
+
+#couponclub .row-fluid .well.register-new-inner{
+	background: #FD539B;
+	font-weight: bolder;
+	padding:14px;
+	margin: 0;
+	width:750px;
+	font-size:15px;
+	color:white;
+	position:relative;
+}
+
+#couponclub .row-fluid .well.register-new-inner .span2.text-right{
+	margin-top:5px;
+}
+
+#couponclub .row-fluid .span8 .well.register-new-inner{
+	width:520px;
+}
+
+#couponclub .row-fluid .well.register-new-inner small{
+	font-size:15px;
+}
+
+#couponclub .span12 .row-fluid .well.register-new-inner{
+	width:1015px;
+}
+
+#couponclub .row-fluid .well.register-new-inner .note{
+	width:540px;
+}
+
+#couponclub .span12 .row-fluid .well.register-new-inner .note{
+	width:560px;
+}
+
+#couponclub .row-fluid .well.register-new-inner .login{
+	width:80px;
+	margin-top:5px;
+}
+
+#couponclub .row-fluid .well.register-new-inner .register{
+	width:100px;
+	margin-top:8px;
+	margin-left: 5px;
+}
+
+#couponclub .row-fluid .well.register-new-inner .register a{
+	color: black;
+	text-decoration: none;
+	font-size: 11px;
+	line-height: 12px;
+	text-decoration: underline;
+}
+
+#couponclub .row-fluid .well.register-new a{
+	color:#fff;
+	text-decoration: underline;
+}
+
+#couponclub .row-fluid .well.register-new .span4.text-right{
+	height: 40px;
+	line-height: 40px;
+}
+
+#couponclub .row-fluid .well.register-new a.btn{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:#fff;
+	text-decoration: none;
+}
+
+#couponclub .coupon-left-column ul{
+	margin:5px 0 0 0;
+	list-style: none;
+}
+
+#couponclub .coupon-right-column .banner-set{
+	margin-top:5px;
+}
+
+#couponclub .coupon-right-column .banner-set img{
+	width: 245px;
+	height: 245px;
+}
+
+#couponclub .social-icon{
+	width:16px;
+	height:16px;
+	background-position: center center;
+	background-repeat:no-repeat;
+	display:inline-block;
+}
+
+#couponclub .social-icon.facebook{
+	background-image:url(../img/social/16/facebook.png);
+}
+
+#couponclub .social-icon.twitter{
+	background-image:url(../img/social/16/twitter.png);
+}
+
+.btn-pink-mamaplaats {
+	background-color: hsl(335, 64%, 62%) !important;
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e89abb", endColorstr="#dc6093");
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#e89abb), to(#dc6093));
+	background-image: -moz-linear-gradient(top, #e89abb, #dc6093);
+	background-image: -ms-linear-gradient(top, #e89abb, #dc6093);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e89abb), color-stop(100%, #dc6093));
+	background-image: -webkit-linear-gradient(top, #e89abb, #dc6093);
+	background-image: -o-linear-gradient(top, #e89abb, #dc6093);
+	background-image: linear-gradient(#e89abb, #dc6093);
+	border-color: #dc6093 #dc6093 hsl(335, 64%, 58.5%);
+	color: #fff !important;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.23);
+	-webkit-font-smoothing: antialiased;
+}
+
+/* gratis - shopaction */
+#couponclub #gratis .coupon-left-column li,
+#couponclub #rssfeed .coupon-left-column li,
+#couponclub #shopaction .coupon-left-column li{
+	padding: 4px 0 4px 10px;
+	border-bottom: 1px dotted #ccc;
+	vertical-align: middle;
+}
+
+#couponclub #gratis .coupon-left-column li:last-child,
+#couponclub #rssfeed .coupon-left-column li:last-child,
+#couponclub #shopaction .coupon-left-column li:last-child{
+	border-bottom: 0px solid #fff;
+}
+
+#couponclub #gratis .coupon-left-column li i,
+#couponclub #rssfeed .coupon-left-column li i,
+#couponclub #shopaction .coupon-left-column li i{
+	background-image: url(/kohana/assets/img/template/sprite_pink.png);
+	background-position: -807px -49px;
+	background-repeat: no-repeat;
+	margin-right: 5px;
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	vertical-align: middle;
+}
+
+#couponclub #gratis .coupon-center-column .description,
+#couponclub #shopaction .coupon-center-column .description{
+	font-size: 10px;
+	padding: 10px 0 0 7px;
+	line-height: 15px;
+	width: 425px;
+	height:90px;
+}
+
+#couponclub #gratis .coupon-center-column .description-txt,
+#couponclub #shopaction .coupon-center-column .description-txt{
+	overflow:hidden;
+	height:45px;
+}
+
+#couponclub #gratis .coupon-center-column .img-container,
+#couponclub #shopaction .coupon-center-column .img-container{
+	width: 95px;
+}
+
+#couponclub #gratis .coupon-center-column .img-container img,
+#couponclub #shopaction .coupon-center-column .img-container img{
+	width: 95px;
+	display: inline-block;
+	height: 60px;
+	margin: 5px 5px 0 0;
+}
+
+#couponclub #gratis .coupon-center-column .btn,
+#couponclub #shopaction .coupon-center-column .btn{
+	margin-top: 4px;
+}
+
+/* rssfeed */
+#couponclub #rssfeed .description {
+	padding:10px;
+}
+
+#couponclub #rssfeed .description-txt {
+	font-size:10px;
+	line-height:15px;
+}
+
+#couponclub #rssfeed .c2a .btn{
+	margin-top: 4px;
+}
+
+/* coupons */
+#couponclub #coupons .coupon-left-column>.row-fluid{
+	height: 165px;
+	overflow: hidden;
+}
+
+#couponclub #coupons .coupon-left-column>.row-fluid.register-new{
+	height:auto;
+}
+
+#couponclub #coupons .coupon-left-column .coupon-img{
+	width: 195px;
+	overflow: hidden;
+	padding: 5px;
+}
+
+#couponclub #coupons .coupon-left-column .coupon-img img{
+	width: 180px;
+	height: 145px;
+}
+
+#couponclub #coupons .coupon-left-column .description{
+	margin-left:0px;
+	padding:10px;
+	width: 565px;
+	height: 165px;
+	overflow:hidden;
+}
+
+#couponclub #coupons .coupon-left-column .description .span8{
+	width: 435px;
+	padding-right:10px;
+}
+
+#couponclub #coupons .coupon-left-column .description .span4{
+	width: 110px;
+	margin:0;
+}
+
+#couponclub #coupons .coupon-left-column .description h4{
+	color:#fd539b;
+}
+
+#couponclub #coupons .coupon-left-column .description .txt-content{
+	height: 93px;
+	overflow: hidden;
+}
+
+#couponclub #coupons .coupon-left-column .description .description-txt{
+	font-size: 10px;
+	line-height: 14px;
+	height: 55px;
+	overflow: hidden;
+}
+
+#couponclub #coupons .coupon-left-column .description .description-btn{
+	margin-top: 5px;
+}
+
+#couponclub #coupons .coupon-left-column .description .description-btn img{
+	height:36px;
+}
+
+#couponclub #coupons .coupon-left-column .description .description-btn.registered input{
+	margin:0;
+	cursor:text;
+}
+
+#couponclub #coupons .coupon-left-column .description .description-disclaimer{
+	font-size:10px;
+}
+
+#couponclub #coupons .coupon-left-column .description .pricetag{
+	background-image:url(../img/pricetag.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	width:100px;
+	height:100px;
+	margin-top: 20px;
+	position:relative;
+}
+
+#couponclub #coupons .coupon-left-column .description .pricetag .pricetag-main,
+#couponclub #coupons .coupon-left-column .description .pricetag .pricetag-sub{
+	position: absolute;
+	color: white;
+	font-family: 'BertholdAkzidenzGroteskBERg';
+	text-align: center;
+}
+
+#couponclub #coupons .coupon-left-column .description .pricetag .pricetag-main{
+	top: 22px;
+	left: 20px;
+	width: 77px;
+	height: 77px;
+	line-height: 77px;
+	font-size: 25px;
+}
+
+#couponclub #coupons .coupon-left-column .description .pricetag .pricetag-sub{
+	top: 0px;
+	left: 0px;
+	width: 49px;
+	height: 49px;
+}
+
+#couponclub #coupons .coupon-left-column .description .pricetag .pricetag-sub td{
+	line-height: 12px;
+}
+
+/* tip & win */
+#couponclub #tipwin .coupon-left-column{
+}
+
+#couponclub #tipwin .user-info{
+	width: 210px;
+	height: 100%;
+	border-right: 1px dashed #ccc;
+}
+
+#couponclub #tipwin .user-info .user-img{
+	padding: 5px 0 0 5px;
+	width:85px;
+}
+
+#couponclub #tipwin .user-info .user-img img{
+	width: 70px;
+	height: 70px;
+}
+
+#couponclub #tipwin .user-info .user-desc{
+	font-size: 10px;
+	width: 115px;
+	margin: 0;
+	padding: 10px;
+}
+
+#couponclub #tipwin .description{
+	font-size:10px;
+	width:580px;
+	margin:0;
+}
+
+#couponclub #tipwin .description .span9{
+	width: 443px;
+	padding: 10px 0 0 10px;
+	overflow: hidden;
+}
+
+#couponclub #tipwin .description .description-txt{
+	line-height: 15px;
+	height: 45px;
+	overflow: hidden;
+}
+
+#couponclub #tipwin .description .span3{
+	width: 135px;
+	margin: 0;
+	padding-left: 10px;
+}
+
+#couponclub #tipwin .description .span3 img{
+	width: 115px;
+	height: 75px;
+}
+
+#couponclub #tipwin .tip-container{
+	height: 90px;
+}
+
+#couponclub #tipwin .c2a .span4{
+	text-align: right;
+}
+
+#couponclub #tipwin .c2a .span4 a{
+	width: 23px;
+	height: 23px;
+}
+
+#couponclub #tipwin .c2a .btn{
+	margin-top: 4px;
+}
+
+/* tip & win form */
+#couponclub .form-container{
+	position:relative;
+}
+
+#couponclub #form_success,
+#couponclub #form_error{
+	display:none;
+	margin: 5px;
+	padding: 50px;
+}
+
+#couponclub #form_error{
+	margin:0;
+	padding: 30px 10px;
+}
+
+#couponclub #new-tipwin{
+	padding-top: 25px;
+}
+
+#couponclub #new-tipwin #description{
+	width:300px;
+}
+
+#couponclub #new-tipwin .help-block{
+	font-size:10px;
+	margin-top: 0px;
+}
+
+#couponclub #new-tipwin .control-group {
+	margin-bottom:10px;
+}
+
+/* page */
+#couponclub .row-fluid.page.well{
+	padding:19px;
+}
+
+/* loader */
+#load_overlay{
+	display:none;
+	background-color:#fff;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: 1000;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+	filter: alpha(opacity=85);
+	-moz-opacity: 0.85;
+	-khtml-opacity: 0.85;
+	opacity: 0.85;
+	top:0px;
+	left:0px;
+}
+
+#load_loader{
+	width:100%;
+	height:100%;
+	background-image:url(../img/ajax-loader.gif);
+	background-repeat:no-repeat;
+	background-position:center center;
+}

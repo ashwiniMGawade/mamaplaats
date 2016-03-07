@@ -1,0 +1,4 @@
+echo "Symlink legacy wordpress paths"
+rm -rf $DEPLOY_PATH/wordpress/wp-content/avatars
+ln -s $DEPLOY_PATH/wordpress/wp-content $DEPLOY_PATH/wp-content
+ln -s $DEPLOY_PATH/wordpress/images $DEPLOY_PATH/images

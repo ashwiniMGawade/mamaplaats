@@ -1,0 +1,11 @@
+echo "Remove files that we don't want to leak to the outside"
+rm -rf $DEPLOY_PATH/.git
+rm -rf $DEPLOY_PATH/.gitignore
+rm -rf $DEPLOY_PATH/build.xml
+rm -rf $DEPLOY_PATH/Capfile
+rm -rf $DEPLOY_PATH/config
+rm -rf $DEPLOY_PATH/tests
+rm -rf $DEPLOY_PATH/specs
+rm -rf $DEPLOY_PATH/codecept.phar
+rm -rf $DEPLOY_PATH/codeception.yml
+rm -rf $DEPLOY_PATH/README.md

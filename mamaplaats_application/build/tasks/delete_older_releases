@@ -1,0 +1,2 @@
+echo "Deleting Older Releases"
+ls -1dt $RELEASES_PATH/* | tail -n +$RELEASES_KEEP |  xargs rm -rf

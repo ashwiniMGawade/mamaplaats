@@ -1,0 +1,2 @@
+echo "securing staging so that only we can view it"
+cat $DEPLOY_PATH/.auth_htaccess >> $DEPLOY_PATH/.htaccess

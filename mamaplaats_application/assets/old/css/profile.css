@@ -1,0 +1,103 @@
+/* header */
+#profile .row-fluid .header{
+	background-image: url(/kohana/assets/img/template/black_background.jpg);
+	background-repeat: repeat;
+	height: 108px;
+	border: 3px solid #FFF;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+#profile .row-fluid .header.big{
+	height:142px;
+}
+
+#profile .row-fluid .header h1{
+	font-family: 'BertholdAkzidenzGroteskBERg';
+	font-size: 31px;
+	line-height: 30px;
+	font-weight: normal;
+	color: #fff;
+	margin: 15px 0 0 21px;
+}
+
+#profile .row-fluid .header h2{
+	font-family: 'market-regularregular';
+	font-weight: normal;
+	color: #fff;
+	font-size: 27px;
+	margin: 2px 0 0 18px;
+	line-height: 28px;
+}
+
+/* profile body */
+#profile .row-fluid .well{
+	padding: 0 0 20px;
+	margin: 5px 0;
+}
+
+#profile .row-fluid .well{
+	padding: 0 0 20px;
+	margin: 5px 0;
+}
+
+/* profile body - media */
+#profile .list-avatar .media-heading{
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#profile .list-avatar .media-description{
+	font-size: 10px;
+	line-height: 12px;
+}
+
+#profile .message-users li.well{
+	padding: 10px;
+}
+
+#profile .message-users li.media.active{
+	background: #eeeeee;
+	color:black;
+}
+
+#profile .message-users li.media:hover{
+	background: #eeeeee;
+	cursor:pointer;
+	color:black;
+}
+
+#profile .message-users img.media-object{
+	width:50px;
+	height:50px;
+}
+
+#profile .message-list img.media-object{
+	width:32px;
+	height:32px;
+}
+
+#profile .message-list .media-body{
+	padding-right: 10px;
+}
+
+#profile .message-container .reply-container{
+	padding: 10px;
+}
+
+#profile .message-container .reply-container textarea{
+	width:100%;
+	height:50px;
+}
+
+#profile .new-msg textarea{
+	width:100%;
+	height:160px;
+}
+
+/* custom bootstrap */
+.label-mamaplaats,
+.badge-mamaplaats {
+	background-color: #fc529a;
+}

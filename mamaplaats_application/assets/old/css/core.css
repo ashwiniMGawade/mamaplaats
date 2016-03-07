@@ -1,0 +1,72 @@
+/* notification */
+.ui-pnotify.notification-msg .ui-pnotify-container{
+	background:#fff;
+	border:0px solid white;
+	padding:5px 0 5px 70px;
+	position: relative;
+	height:50px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	display:table;
+}
+
+.ui-pnotify.notification-msg .ui-pnotify-text{
+/*	color:#fc076f;*/
+	color:#000;
+	display:table-cell;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.ui-pnotify.notification-msg .ui-pnotify-title{
+	/*color:#fc076f;*/
+	color:#000;
+}
+
+.ui-pnotify.notification-msg .ui-pnotify-closer,
+.ui-pnotify.notification-msg .ui-pnotify-sticker {
+	position:absolute;
+	right:5px;
+	top:5px;
+	float:none;
+	margin:0;
+}
+
+.ui-pnotify.notification-msg .ui-pnotify-sticker{
+	right: 25px;
+}
+
+.ui-pnotify.notification-msg .icon{
+	margin:0;
+	width:65px;
+	position: absolute;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	background-image:url(/assets/old/img/notification-icons.png);
+	background-color:#fc529a;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-position:0px 0px;
+}
+
+.ui-pnotify.notification-msg .icon.follower{
+	background-position:0px 0px;
+}
+
+.ui-pnotify.notification-msg .icon.comment{
+	background-position:0px 0px;
+}
+
+.ui-pnotify.notification-msg .icon.msg{
+	background-position:-65px 0px;
+}
+
+span.notification-msg{
+	display:none;
+}

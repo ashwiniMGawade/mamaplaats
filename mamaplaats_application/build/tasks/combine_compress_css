@@ -1,0 +1,7 @@
+echo "Combine and Compress the CSS / LESS"
+rm -rf $DEPLOY_PATH/assets/css/style.css
+cat $DEPLOY_PATH/assets/css/bootstrap.min.css > $DEPLOY_PATH/assets/css/style.css
+cat $DEPLOY_PATH/assets/css/coupon_icons.css >> $DEPLOY_PATH/assets/css/style.css
+cat $DEPLOY_PATH/assets/js/vendor/redactor/redactor.css >> $DEPLOY_PATH/assets/css/style.css
+cat $DEPLOY_PATH/assets/js/vendor/fresco/css/fresco.css >> $DEPLOY_PATH/assets/css/style.css
+lessc -x $DEPLOY_PATH/assets/less/all.less >> $DEPLOY_PATH/assets/css/style.css

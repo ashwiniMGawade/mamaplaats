@@ -1,0 +1,98 @@
+/** Selects with CSS **/
+.select-wrap select {
+	text-transform:uppercase;
+	font-family: "Quattrocento",Georgia,Times,serif;
+	color: #3C3C3C;
+	width: 100%;
+	height: 40px;
+	padding:11px;
+	line-height: 1;
+
+	border: 0; /* Disable the borders for the wrapper */
+	border-radius: 0; /* Disable the border radius for the wrapper */
+	background: transparent; /* Disable Background For the Wrapper */
+	-webkit-appearance: none; /* Disable Arrow */
+	-moz-appearance:none; /* Disable Arrow (Doesn't work correctly because of bug */
+	appearance:none; /* Disable Arrow */
+
+	/*
+		Hack for firefox to disable to arrow it pushes the arrow a tiny bit to the side
+		then the text overflow will disable it.
+	*/
+	text-indent: 0.01px;
+	text-overflow: '';
+	/* end hack */
+}
+
+.select-wrap {
+	overflow: hidden;
+	background: url(../images/select_arrow.jpg) no-repeat right #F8F8F8;
+	border: 1px solid #E9E9E9;
+}
+
+.select-wrap select::-moz-focus-inner, .select-wrap2 select:focus {
+	border: 0;
+}
+
+.select-wrap select:focus {
+	outline: 1px solid #F8F8F8;
+	outline-offset: -2px;
+}
+/** Selects with Css **/
+
+#socialite div {
+	width: 100px;
+	float: left;
+}
+
+p.scaled-image {
+	text-align: center;
+}
+
+p.scaled-image img {
+	max-height: 488px;
+	width: auto;
+}
+
+#a4ypopup {
+	max-width:100% !important;
+	height:auto;
+	display:block;
+	position:absolute;
+	z-index: 9000;
+	background-color: #FFF;
+	padding: 5px;
+	border: 1px solid #ccc;
+	outline:0;
+}
+
+@media (max-width: 750px) {
+	#a4ypopup {
+		top:20%;
+		margin-left: 5%;
+		width: 90%;
+	}
+}
+@media (min-width: 750px) {
+	#a4ypopup {
+		top:50%;
+		left:50%;
+		margin:-255px 0 0 -325px; /* [-(height/2)px 0 0 -(width/2)px] */
+	}
+}
+
+#a4ypopup .popup_banner img {
+	max-width:100% !important;
+	height:auto;
+	display:block;
+}
+
+#a4ypopup .popup_close {
+	float: right;
+	margin: 3px 5px 0 0;
+}
+
+.custom-validation-error {
+  font-size: 14px;
+  color: red;
+}

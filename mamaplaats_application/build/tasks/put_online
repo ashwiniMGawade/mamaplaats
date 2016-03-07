@@ -1,0 +1,3 @@
+echo "Switch around the symlink to put the new version online"
+rm -f $ONLINE_PATH
+ln -s $DEPLOY_PATH $ONLINE_PATH

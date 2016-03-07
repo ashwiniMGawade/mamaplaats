@@ -1,0 +1,262 @@
+@font-face {
+	font-family: 'coupon_icons';
+	src:url('../fonts/coupon_icons.eot?o0fcty');
+	src:url('../fonts/coupon_icons.eot?#iefixo0fcty') format('embedded-opentype'),
+	url('../fonts/coupon_icons.woff?o0fcty') format('woff'),
+	url('../fonts/coupon_icons.ttf?o0fcty') format('truetype'),
+	url('../fonts/coupon_icons.svg?o0fcty#coupon_icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="coupon-icon-"], [class*=" coupon-icon-"] {
+	font-family: 'coupon_icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.coupon-icon-yoga:before {
+	content: "\e600";
+}
+.coupon-icon-wheel:before {
+	content: "\e601";
+}
+.coupon-icon-violin:before {
+	content: "\e602";
+}
+.coupon-icon-view_details:before {
+	content: "\e603";
+}
+.coupon-icon-vegetarian_food:before {
+	content: "\e604";
+}
+.coupon-icon-tv:before {
+	content: "\e605";
+}
+.coupon-icon-t-shirt:before {
+	content: "\e606";
+}
+.coupon-icon-trousers:before {
+	content: "\e607";
+}
+.coupon-icon-teddybear:before {
+	content: "\e608";
+}
+.coupon-icon-teapot:before {
+	content: "\e609";
+}
+.coupon-icon-snow:before {
+	content: "\e60a";
+}
+.coupon-icon-sleeping:before {
+	content: "\e60b";
+}
+.coupon-icon-shoe_man:before {
+	content: "\e60c";
+}
+.coupon-icon-shirt:before {
+	content: "\e60d";
+}
+.coupon-icon-sheep:before {
+	content: "\e60e";
+}
+.coupon-icon-seahorse:before {
+	content: "\e60f";
+}
+.coupon-icon-screwdriver:before {
+	content: "\e610";
+}
+.coupon-icon-scooter:before {
+	content: "\e611";
+}
+.coupon-icon-scissors:before {
+	content: "\e612";
+}
+.coupon-icon-ring:before {
+	content: "\e613";
+}
+.coupon-icon-recurring_appointment:before {
+	content: "\e614";
+}
+.coupon-icon-picture:before {
+	content: "\e615";
+}
+.coupon-icon-pawn:before {
+	content: "\e616";
+}
+.coupon-icon-pacifier:before {
+	content: "\e617";
+}
+.coupon-icon-note:before {
+	content: "\e618";
+}
+.coupon-icon-nappy:before {
+	content: "\e619";
+}
+.coupon-icon-museum:before {
+	content: "\e61a";
+}
+.coupon-icon-moneybox:before {
+	content: "\e61b";
+}
+.coupon-icon-medium_icons:before {
+	content: "\e61c";
+}
+.coupon-icon-kitchen:before {
+	content: "\e61d";
+}
+.coupon-icon-jumper:before {
+	content: "\e61e";
+}
+.coupon-icon-football2:before {
+	content: "\e61f";
+}
+.coupon-icon-flying_stork_with_bundle:before {
+	content: "\e620";
+}
+.coupon-icon-dining_room:before {
+	content: "\e621";
+}
+.coupon-icon-cooking_pot:before {
+	content: "\e622";
+}
+.coupon-icon-coctail:before {
+	content: "\e623";
+}
+.coupon-icon-coat:before {
+	content: "\e624";
+}
+.coupon-icon-close_up_mode:before {
+	content: "\e625";
+}
+.coupon-icon-christmas_ice_skate:before {
+	content: "\e626";
+}
+.coupon-icon-christmas_hat:before {
+	content: "\e627";
+}
+.coupon-icon-christmas_gift:before {
+	content: "\e628";
+}
+.coupon-icon-christmas_candy_cane:before {
+	content: "\e629";
+}
+.coupon-icon-chicken:before {
+	content: "\e62a";
+}
+.coupon-icon-champagne:before {
+	content: "\e62b";
+}
+.coupon-icon-cd:before {
+	content: "\e62c";
+}
+.coupon-icon-cat:before {
+	content: "\e62d";
+}
+.coupon-icon-carrot:before {
+	content: "\e62e";
+}
+.coupon-icon-car:before {
+	content: "\e62f";
+}
+.coupon-icon-camping_tent:before {
+	content: "\e630";
+}
+.coupon-icon-cafe:before {
+	content: "\e631";
+}
+.coupon-icon-business:before {
+	content: "\e632";
+}
+.coupon-icon-bungalow:before {
+	content: "\e633";
+}
+.coupon-icon-bunch_ingredients:before {
+	content: "\e634";
+}
+.coupon-icon-brick:before {
+	content: "\e635";
+}
+.coupon-icon-bra:before {
+	content: "\e636";
+}
+.coupon-icon-bottle:before {
+	content: "\e637";
+}
+.coupon-icon-book_stack:before {
+	content: "\e638";
+}
+.coupon-icon-books:before {
+	content: "\e639";
+}
+.coupon-icon-bobbin:before {
+	content: "\e63a";
+}
+.coupon-icon-birthday_cake:before {
+	content: "\e63b";
+}
+.coupon-icon-bill:before {
+	content: "\e63c";
+}
+.coupon-icon-bicycle:before {
+	content: "\e63d";
+}
+.coupon-icon-bib:before {
+	content: "\e63e";
+}
+.coupon-icon-berry:before {
+	content: "\e63f";
+}
+.coupon-icon-beer_glass:before {
+	content: "\e640";
+}
+.coupon-icon-bed:before {
+	content: "\e641";
+}
+.coupon-icon-bath_room:before {
+	content: "\e642";
+}
+.coupon-icon-basketball:before {
+	content: "\e643";
+}
+.coupon-icon-baseball_cap:before {
+	content: "\e644";
+}
+.coupon-icon-barcode:before {
+	content: "\e645";
+}
+.coupon-icon-barbell:before {
+	content: "\e646";
+}
+.coupon-icon-bar:before {
+	content: "\e647";
+}
+.coupon-icon-ball_point_pen:before {
+	content: "\e648";
+}
+.coupon-icon-babyroom:before {
+	content: "\e649";
+}
+.coupon-icon-baby:before {
+	content: "\e64a";
+}
+.coupon-icon-armchair:before {
+	content: "\e64b";
+}
+.coupon-icon-alto_saxophone:before {
+	content: "\e64c";
+}
+.coupon-icon-airport:before {
+	content: "\e64d";
+}
+.coupon-icon-advertising:before {
+	content: "\e64e";
+}

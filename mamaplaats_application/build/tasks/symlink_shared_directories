@@ -1,0 +1,7 @@
+echo "Symlink the shared directories to the directories in your application."
+ln -s $SHARED_PATH/logs $DEPLOY_PATH/application/logs
+ln -s $SHARED_PATH/cache $DEPLOY_PATH/application/cache
+ln -s $SHARED_PATH/uploads $DEPLOY_PATH/uploads
+
+rm -rf $DEPLOY_PATH/wordpress/wp-content/uploads
+ln -s $SHARED_PATH/wordpress/uploads $DEPLOY_PATH/wordpress/wp-content/uploads

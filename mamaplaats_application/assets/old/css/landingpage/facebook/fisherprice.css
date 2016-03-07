@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+html, body, .container, .row {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	font-family: 'Oswald', sans-serif;
+}
+
+.background {
+	background-image: url(../../../img/landingpage/facebook/facebook-beginpagina.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.background.like,
+.background.thankyou,
+.background.steps{
+	background-image: url(../../../img/landingpage/facebook/stokke-achtergrond.png);
+}
+
+.background.steps{
+	text-align:center;
+}
+
+.background.steps .note,
+.background.thankyou .note{
+	color: #FFF;
+	font-size: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.background.thankyou .note.thnx,
+.background.steps .note.step1{
+	margin:45px 0 10px;
+}
+
+.background.steps .note.step1{
+	font-size:25px;
+}
+
+.background.steps .note.step2{
+	font-size:15px;
+	line-height: 25px;
+	margin-bottom: 10px;
+}
+
+.actievoorwaarden{
+	margin-top: 5px;
+}
+
+.actievoorwaarden a{
+	color:white;
+}
+
+.background-overlay {
+	background-repeat: repeat;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.background-circle {
+	background-image: url(../../../img/landingpage/pink_circle.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 263px;
+	height: 263px;
+	overflow: hidden;
+	margin: 25px auto 0;
+}
+
+h1.header {
+	color: #FD539B;
+	font-size: 30px;
+	text-align: center;
+}
+
+#form-header {
+	text-align: center;
+	color: white;
+	margin: 50px 0 10px;
+	font-size: 15px;
+}
+
+.form-horizontal .control-group {
+	margin-bottom: 5px;
+}
+
+.form-horizontal .controls {
+	margin-left: 100px;
+}
+
+.form-horizontal .control-group.success .control-label,
+.form-horizontal .control-group.error .control-label {
+	color: white;
+}
+
+.form-horizontal .control-label {
+	width: 90px;
+	color: white;
+	font-size: 14px;
+}
+
+form .validation-check {
+	display: none;
+	width: 20px;
+	height: 20px;
+	background-image: url(../../../img/validation.png);
+	vertical-align: middle;
+}
+
+form .error .validation-check {
+	display: inline-block;
+	background-position: 0px 0px;
+}
+
+form .success .validation-check {
+	display: inline-block;
+	background-position: 22px 0px;
+}

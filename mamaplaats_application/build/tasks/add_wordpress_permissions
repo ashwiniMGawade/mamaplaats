@@ -1,0 +1,3 @@
+echo "Add permissions to the wordpress files"
+chmod 755 $DEPLOY_PATH/wordpress/wp-config.php
+chmod -R 755 $DEPLOY_PATH/wordpress/wp-content/cache

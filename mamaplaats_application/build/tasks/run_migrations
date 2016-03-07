@@ -1,0 +1,6 @@
+echo "Make sure minion uses the production file"
+rm -rf $DEPLOY_PATH/minion
+cp $DEPLOY_PATH/minion.production $DEPLOY_PATH/minion
+
+echo "Run the database migrations"
+$DEPLOY_PATH/minion migrations:run
