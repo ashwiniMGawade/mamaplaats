@@ -1,0 +1,24 @@
+<project name="Mamaplaats" default="build">
+	<target name="clean">
+		<delete dir="${basedir}/application/cache" />
+		<delete dir="${basedir}/application/logs" />
+		<delete dir="${basedir}/tests/_log" />
+		<delete dir="${basedir}/build/logs" />
+	</target>
+
+	<target name="prepare">
+		<mkdir dir="${basedir}/application/cache" />
+		<mkdir dir="${basedir}/application/logs" />
+		<mkdir dir="${basedir}/tests/_log" />
+		<mkdir dir="${basedir}/build/logs" />
+	</target>
+
+	<target name="codeception_unit">
+		<exec dir="${basedir}" executable="php" failonerror="true">
+			<arg line="codecept.phar run --xml" />
+		</exec>
+		<copy file="${basedir}/tests/_log/report.xml" todir="${basedir}/build/logs"/>
+	</target>
+
+	<target name="build" depends="clean,prepare,codeception_unit" />
+</project>

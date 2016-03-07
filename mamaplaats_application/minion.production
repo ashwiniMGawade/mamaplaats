@@ -1,0 +1,4 @@
+#!/opt/phpfcgi-5.5.9/bin/php
+<?php
+
+include __DIR__.DIRECTORY_SEPARATOR.'index.php';

@@ -1,0 +1,119 @@
+<project name="Mamaplaats New" default="build">
+    <target name="clean">
+        <delete dir="${basedir}/application/cache" failonerror="true"/>
+        <delete dir="${basedir}/application/logs" failonerror="true"/>
+        <delete dir="${basedir}/tests/_log" failonerror="true"/>
+        <delete dir="${basedir}/build/logs" failonerror="true"/>
+        <delete dir="${basedir}/build/target" failonerror="true"/>
+    </target>
+
+    <target name="prepare">
+        <mkdir dir="${basedir}/application/cache" />
+        <mkdir dir="${basedir}/application/logs" />
+        <mkdir dir="${basedir}/tests/_log" />
+        <mkdir dir="${basedir}/build/logs" />
+        <mkdir dir="${basedir}/build/target" />
+    </target>
+
+    <target name="codeception_unit">
+        <exec dir="${basedir}" executable="php" failonerror="true">
+            <arg line="codecept.phar run unit --xml" />
+        </exec>
+        <copy file="${basedir}/tests/_log/report.xml" todir="${basedir}/build/logs" failonerror="true"/>
+    </target>
+
+    <target name="Moving_Config_Files_to_right_spot">
+        <copy file="${basedir}/application/config/cache.production.php"
+              tofile="${basedir}/application/config/cache.php" failonerror="true"/>
+        <copy file="${basedir}/application/config/settings.production.php"
+              tofile="${basedir}/application/config/settings.php" failonerror="true"/>
+        <copy file="${basedir}/application/config/database.testing.php"
+              tofile="${basedir}/application/config/database.php" failonerror="true"/>
+        <copy file="${basedir}/application/bootstrap.testing.php"
+              tofile="${basedir}/application/bootstrap.php" failonerror="true"/>
+    </target>
+
+    <target name="Add_permissions_to_the_wordpress_files">
+        <chmod file="${basedir}/wordpress/wp-config.php" perm="755" failonerror="true" ></chmod>
+        <chmod perm="755" failonerror="true">
+            <fileset dir="${basedir}/wordpress/wp-content/cache">
+            </fileset>
+        </chmod>
+    </target>
+
+    <target name="Combine_and_Compress_the_CSS_LESS">
+        <touch file="${basedir}/assets/css/style.css"/>
+        <touch file="${basedir}/assets/css/style1.css"/>
+
+        <exec dir="${basedir}" executable="lessc" failonerror="true">
+            <arg line="-x ${basedir}/assets/less/all.less ${basedir}/assets/css/style1.css" />
+        </exec>
+
+        <filelist id="filelist">
+            <file name="${basedir}/assets/css/bootstrap.min.css"/>
+            <file name="${basedir}/assets/css/coupon_icons.css"/>
+            <file name="${basedir}/assets/js/vendor/redactor/redactor.css" />
+            <file name="${basedir}/assets/js/vendor/fresco/css/fresco.css" />
+            <file name="${basedir}/assets/css/style1.css"/>
+        </filelist>
+        <concat destfile="${basedir}/assets/css/style.css" append="true">
+            <filelist refid="filelist"/>
+        </concat>
+    </target>
+
+
+    <target name="Combine_and_Compress_the_js">
+        <exec dir="${basedir}" executable="uglifyjs" failonerror="true">
+            <arg line="./assets/js/jquery-1.8.3.min.js ./assets/js/bootstrap.min.js ./assets/js/bootstrap.maxlength.js ./assets/js/typeahead.bloodhound.js ./assets/js/jquery.main.js ./assets/js/resumable.js ./assets/js/vendor/redactor/redactor.min.js ./assets/js/vendor/redactor/nl.js ./assets/js/vendor/fresco/js/fresco.js ./assets/js/vendor/knockout/knockout-3.0.0.js ./assets/js/vendor/socialite/socialite.min.js ./assets/js/vendor/socialite/extensions/socialite.facebook.js ./assets/js/vendor/socialite/extensions/socialite.googleplus.js ./assets/js/vendor/socialite/extensions/socialite.twitter.js  ./assets/js/masonry.pkgd.min.js ./assets/js/imagesloaded.pkgd.min.js ./assets/js/mamaplaats/jq.reply.js ./assets/js/mamaplaats/jq.load_more.js ./assets/js/mamaplaats/jq.load_video.js ./assets/js/mamaplaats/jq.follow.js ./assets/js/mamaplaats/jq.profile.js ./assets/js/mamaplaats/jq.social.js ./assets/js/mamaplaats/jq.write_blog.js ./assets/js/mamaplaats/jq.write_review.js ./assets/js/mamaplaats/jq.search_advise.js ./assets/js/mamaplaats/jq.newsletter.js ./assets/js/mamaplaats/jq.coupon.js ./assets/js/mamaplaats/jq.conversation.js ./assets/js/mamaplaats/jq.popup.js ./assets/js/mamaplaats/jq.adfab_mobile.js ./assets/js/mamaplaats/jq.menu.js -o ./assets/js/javascript.js"/>
+        </exec>
+    </target>
+
+    <target name="secure_staging">
+        <concat destfile="${basedir}/.htaccess" append="true">
+            <filelist>
+                <file name="${basedir}/.auth_htaccess"/>
+            </filelist>
+        </concat>
+    </target>
+    <target name="copy_entire_directory_to_target_folder_for_zip">
+        <delete dir="${basedir}/target" failonerror="true"/>
+        <copy todir="${basedir}/target" failonerror="true">
+            <fileset dir="${basedir}"/>
+        </copy>
+    </target>
+
+    <target name="remove_unneeded_files">
+        <delete dir="${basedir}/target/.git" failonerror="true" />
+        <delete file="${basedir}/target/.gitignore" failonerror="true"/>
+        <delete file="${basedir}/target/build.xml" failonerror="true" />
+        <delete file="${basedir}/target/mamaplaats_ci.xml" failonerror="true" />
+        <delete file="${basedir}/target/Capfile" failonerror="true" />
+        <delete dir="${basedir}/target/config" failonerror="true" />
+        <delete dir="${basedir}/target/tests" failonerror="true"/>
+        <delete dir="${basedir}/target/specs" failonerror="true"/>
+        <delete file="${basedir}/target/codecept.phar" failonerror="true" />
+        <delete file="${basedir}/target/codeception.yml" failonerror="true"/>
+        <delete file="${basedir}/target/README.md" failonerror="true"/>
+        <delete dir="${basedir}/target/build" failonerror="true"/>
+        <delete dir="${basedir}/target/target" failonerror="true"/>
+    </target>
+
+    <target name="create_zip_file_of_the_project">
+        <delete file="${basedir}/build/target/release.tar.gz" failonerror="true"/>
+        <tar destfile="${basedir}/build/target/release.tar.gz" compression="gzip" basedir="${basedir}/target">
+        </tar>
+    </target>
+
+    <target name="build" depends="
+        clean,
+        prepare,
+        codeception_unit,
+        Moving_Config_Files_to_right_spot,
+        Add_permissions_to_the_wordpress_files,
+        Combine_and_Compress_the_CSS_LESS,
+        Combine_and_Compress_the_js,
+        secure_staging,
+        copy_entire_directory_to_target_folder_for_zip,
+        remove_unneeded_files,
+        create_zip_file_of_the_project"/>
+</project>

@@ -1,0 +1,56 @@
+<project name="Mamaplaats New" default="build">
+    <target name="clean">
+        <delete dir="${basedir}/application/cache" />
+        <delete dir="${basedir}/application/logs" />
+        <delete dir="${basedir}/tests/_log" />
+        <delete dir="${basedir}/build/logs" />
+        <delete dir="${basedir}/build/target" />
+    </target>
+
+    <target name="prepare">
+        <mkdir dir="${basedir}/application/cache" />
+        <mkdir dir="${basedir}/application/logs" />
+        <mkdir dir="${basedir}/tests/_log" />
+        <mkdir dir="${basedir}/build/logs" />
+        <mkdir dir="${basedir}/build/target" />
+    </target>
+
+    <target name="codeception_unit">
+        <exec dir="${basedir}" executable="php" failonerror="true">
+            <arg line="codecept.phar run unit --xml" />
+        </exec>
+        <copy file="${basedir}/tests/_log/report.xml" todir="${basedir}/build/logs"/>
+    </target>
+
+    <target name="Moving_Config_Files_to_right_spot">
+        <copy file="${basedir}/application/config/cache.production.php"
+              tofile="${basedir}/application/config/cache.php"/>
+        <copy file="${basedir}/application/config/settings.production.php"
+              tofile="${basedir}/application/config/settings.php"/>
+        <copy file="${basedir}/application/config/database.testing.php"
+              tofile="${basedir}/application/config/database.php"/>
+        <copy file="${basedir}/application/bootstrap.testing.php"
+              tofile="${basedir}/application/bootstrap.php"/>
+    </target>
+
+    <target name="Symlink_legacy_wordpress_paths">
+        <delete dir="${basedir}/wordpress/wp-content/avatars" failonerror="true"/>
+        <symlink link="${basedir}/wordpress/wp-content" resource="${basedir}/wp-content" failonerror="true"></symlink>
+        <symlink link="${basedir}/wordpress/images" resource="${basedir}/images" failonerror="true"></symlink>
+    </target>
+
+    <target name="Add_permissions_to_the_wordpress_files">
+        <chmod file="${basedir}/wordpress/wp-config.php" perm="755"></chmod>
+        <chmod perm="755">
+            <fileset dir="${basedir}/wordpress/wp-content/cache">
+            </fileset>
+        </chmod>
+    </target>
+
+    <target name="create_zip_file_of_the_project">
+        <zip basedir="${basedir}" destfile="${basedir}/build/target/release.zip"></zip>
+    </target>
+
+    <target name="build" depends="clean,prepare,codeception_unit,Moving_Config_Files_to_right_spot, Symlink_legacy_wordpress_paths,
+    create_zip_file_of_the_project, Add_permissions_to_the_wordpress_files" />
+</project>
