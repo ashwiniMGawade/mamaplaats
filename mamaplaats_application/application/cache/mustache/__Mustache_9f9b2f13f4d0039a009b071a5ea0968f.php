@@ -1,0 +1,760 @@
+<?php
+
+class __Mustache_9f9b2f13f4d0039a009b071a5ea0968f extends Mustache_Template
+{
+    public function renderInternal(Mustache_Context $context, $indent = '', $escape = false)
+    {
+        $buffer = '';
+
+        $buffer .= $indent . '<!-- Mamaplaats_ros_atf_leaderboard_billboard -->';
+        $buffer .= "\n";
+        $buffer .= $indent . '<div class="header-leaderboard big-banner">';
+        $buffer .= "\n";
+        if ($partial = $this->mustache->loadPartial('ah_advertisement')) {
+            $buffer .= $partial->renderInternal($context, '    ');
+        }
+        // 'header_advertisement.show_ad' section
+        $buffer .= $this->section46c629c83a97ec32e174ed307875a9b2($context, $indent, $context->findDot('header_advertisement.show_ad'));
+        $buffer .= $indent . '</div>';
+        $buffer .= "\n";
+        $buffer .= "\n";
+        $buffer .= $indent . '<nav id="mobile-nav">';
+        $buffer .= "\n";
+        $buffer .= $indent . '    <strong class="title">HOOFDNAVIGATIE</strong>';
+        $buffer .= "\n";
+        $buffer .= $indent . '	<ul>';
+        $buffer .= "\n";
+        // 'main_menu' section
+        $buffer .= $this->section8f1afe620ee601640395c700e883949f($context, $indent, $context->find('main_menu'));
+        $buffer .= $indent . '	</ul>';
+        $buffer .= "\n";
+        $buffer .= $indent . '</nav>';
+        $buffer .= "\n";
+        $buffer .= $indent . '<div id="user-menu" class="navigation visible-sm visible-xs user-menu">';
+        $buffer .= "\n";
+        if ($partial = $this->mustache->loadPartial('profile_rt_side_menu')) {
+            $buffer .= $partial->renderInternal($context, '    ');
+        }
+        $buffer .= $indent . '</div>';
+        $buffer .= "\n";
+        if ($partial = $this->mustache->loadPartial('widget_apply_adfabs_facebook')) {
+            $buffer .= $partial->renderInternal($context, '');
+        }
+        $buffer .= $indent . '<div id="page">';
+        $buffer .= "\n";
+        $buffer .= $indent . '	<div class="container" style="position: relative;">';
+        $buffer .= "\n";
+        $buffer .= $indent . '        <div id="user-menu" class="navigation user-menu">';
+        $buffer .= "\n";
+        if ($partial = $this->mustache->loadPartial('profile_rt_side_menu')) {
+            $buffer .= $partial->renderInternal($context, '            ');
+        }
+        $buffer .= $indent . '        </div>';
+        $buffer .= "\n";
+        $buffer .= $indent . '		<header id="header">';
+        $buffer .= "\n";
+        $buffer .= $indent . '			<div class="row">';
+        $buffer .= "\n";
+        $buffer .= $indent . '				<div class="main-panel">';
+        $buffer .= "\n";
+        $buffer .= $indent . '                    <a href="/" class="opener">menu</a>';
+        $buffer .= "\n";
+        $buffer .= $indent . '					<strong class="logo"><a href="/">MamaPlaats</a></strong>';
+        $buffer .= "\n";
+        $buffer .= $indent . '					<div class="quick-access">';
+        $buffer .= "\n";
+        $buffer .= $indent . '                        <div class="header-pencil item"  title="Schrijf nieuwe blog">';
+        $buffer .= "\n";
+        $buffer .= $indent . '                            <a href="/user/blog/index"><i class="glyphicon glyphicon-pencil"></i></a>';
+        $buffer .= "\n";
+        $buffer .= $indent . '                        </div>';
+        $buffer .= "\n";
+        $buffer .= $indent . '						<div class="search item">';
+        $buffer .= "\n";
+        $buffer .= $indent . '							<a href="#" class="opener">Search LInk</a>';
+        $buffer .= "\n";
+        $buffer .= $indent . '							<div class="slide">';
+        $buffer .= "\n";
+        if ($partial = $this->mustache->loadPartial('global_seach_box')) {
+            $buffer .= $partial->renderInternal($context, '                                ');
+        }
+        $buffer .= $indent . '							</div>';
+        $buffer .= "\n";
+        $buffer .= $indent . '						</div>';
+        $buffer .= "\n";
+        $buffer .= $indent . '						<div class="web item">';
+        $buffer .= "\n";
+        // 'logged_in' inverted section
+        $value = $context->find('logged_in');
+        if (empty($value)) {
+            
+            $buffer .= $indent . '							<a href="/user/login" class="linker">Web Link</a>';
+            $buffer .= "\n";
+        }
+        // 'logged_in' section
+        $buffer .= $this->section033cdcf4825e1d85b0d413858694fffd($context, $indent, $context->find('logged_in'));
+        $buffer .= $indent . '						</div>';
+        $buffer .= "\n";
+        $buffer .= $indent . '                        <div class="login item">';
+        $buffer .= "\n";
+        $buffer .= $indent . '                            <a href="#" class="opener ';
+        // 'logged_in' section
+        $buffer .= $this->section0e696164f7135758cf1e5d17e592fc1f($context, $indent, $context->find('logged_in'));
+        $buffer .= ' ';
+        // 'logged_in' inverted section
+        $value = $context->find('logged_in');
+        if (empty($value)) {
+            
+            $buffer .= 'redirect-to-login';
+        }
+        $buffer .= '">User Link</a>';
+        $buffer .= "\n";
+        $buffer .= $indent . '                        </div>';
+        $buffer .= "\n";
+        $buffer .= $indent . '					</div>';
+        $buffer .= "\n";
+        $buffer .= $indent . '					<nav role="navigation">';
+        $buffer .= "\n";
+        $buffer .= $indent . '						<ul class="main-nav">';
+        $buffer .= "\n";
+        // 'main_menu' section
+        $buffer .= $this->sectionE0c11deb4d218694987e6a9bc00a935e($context, $indent, $context->find('main_menu'));
+        $buffer .= $indent . '						</ul>';
+        $buffer .= "\n";
+        $buffer .= $indent . '					</nav>';
+        $buffer .= "\n";
+        $buffer .= $indent . '				</div>';
+        $buffer .= "\n";
+        $buffer .= $indent . '			</div>';
+        $buffer .= "\n";
+        $buffer .= $indent . '			<div class="row">';
+        $buffer .= "\n";
+        // 'main_menu' section
+        $buffer .= $this->section516e3a1330de2bf6412af4e20f22d1e1($context, $indent, $context->find('main_menu'));
+        $buffer .= "\n";
+        $buffer .= $indent . '				<div class="sub-panel" id="main-sub-menu">';
+        $buffer .= "\n";
+        // 'main_menu' section
+        $buffer .= $this->section64ba7ecb1cb20b57431e152f4a2b196a($context, $indent, $context->find('main_menu'));
+        if ($partial = $this->mustache->loadPartial('global_seach_box')) {
+            $buffer .= $partial->renderInternal($context, '                     ');
+        }
+        $buffer .= $indent . '				</div>';
+        $buffer .= "\n";
+        $buffer .= $indent . '			</div>';
+        $buffer .= "\n";
+        $buffer .= $indent . '		</header> <!-- end #header -->';
+        $buffer .= "\n";
+        $buffer .= $indent . '	</div>';
+        $buffer .= "\n";
+        $buffer .= "\n";
+        $buffer .= $indent . '	<div class="container">';
+
+        if ($escape) {
+            return call_user_func($this->mustache->getEscape(), $buffer);
+        } else {
+            return $buffer;
+        }
+    }
+
+    private function section46c629c83a97ec32e174ed307875a9b2(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = '
+		{{{header_advertisement.text}}}
+	';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= $indent . '		';
+                $value = $context->findDot('header_advertisement.text');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= $value;
+                $buffer .= "\n";
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function section39fafbade5b4daabdb3367e1272d1046(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = 'class="active"';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= 'class="active"';
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function sectionC1b5926b3510dbc8960d1d9bbf1bb117(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = 'class="open-close"';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= 'class="open-close"';
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function section33a1c68290076e0b56f7bf6394e51e37(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = '
+                            <li><a {{#active}}class="active"{{/active}} href="{{path}}">{{text}}</a></li>
+                        ';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= $indent . '                            <li><a ';
+                // 'active' section
+                $buffer .= $this->section39fafbade5b4daabdb3367e1272d1046($context, $indent, $context->find('active'));
+                $buffer .= ' href="';
+                $value = $context->find('path');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '">';
+                $value = $context->find('text');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '</a></li>';
+                $buffer .= "\n";
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function section8f1afe620ee601640395c700e883949f(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = '
+			<li {{#active}}class="active"{{/active}}>
+				<a href="{{path}}" {{#sub_menu}}class="open-close"{{/sub_menu}}>{{text}}</a>
+                <div class="aside-slide">
+                    <ul>
+                        {{#sub_menu}}
+                            <li><a {{#active}}class="active"{{/active}} href="{{path}}">{{text}}</a></li>
+                        {{/sub_menu}}
+                    </ul>
+                </div>
+			</li>
+		';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= $indent . '			<li ';
+                // 'active' section
+                $buffer .= $this->section39fafbade5b4daabdb3367e1272d1046($context, $indent, $context->find('active'));
+                $buffer .= '>';
+                $buffer .= "\n";
+                $buffer .= $indent . '				<a href="';
+                $value = $context->find('path');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '" ';
+                // 'sub_menu' section
+                $buffer .= $this->sectionC1b5926b3510dbc8960d1d9bbf1bb117($context, $indent, $context->find('sub_menu'));
+                $buffer .= '>';
+                $value = $context->find('text');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '</a>';
+                $buffer .= "\n";
+                $buffer .= $indent . '                <div class="aside-slide">';
+                $buffer .= "\n";
+                $buffer .= $indent . '                    <ul>';
+                $buffer .= "\n";
+                // 'sub_menu' section
+                $buffer .= $this->section33a1c68290076e0b56f7bf6394e51e37($context, $indent, $context->find('sub_menu'));
+                $buffer .= $indent . '                    </ul>';
+                $buffer .= "\n";
+                $buffer .= $indent . '                </div>';
+                $buffer .= "\n";
+                $buffer .= $indent . '			</li>';
+                $buffer .= "\n";
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function sectionC4ea8ce0372871a23d49b6bee00104e2(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = '
+									<article class="list-item">
+										<div class="photo">
+											<a href="{{path}}" class="photo-wrap"><b><img src="{{image_path}}" width="100" height="100" alt="image description"></b></a>
+										</div>
+										<div class="description">
+											<strong class="name"><a href="{{path}}">{{content}}</a></strong>
+											<span class="date">{{date}} geleden</span>
+										</div>
+									</article>
+									';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= $indent . '									<article class="list-item">';
+                $buffer .= "\n";
+                $buffer .= $indent . '										<div class="photo">';
+                $buffer .= "\n";
+                $buffer .= $indent . '											<a href="';
+                $value = $context->find('path');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '" class="photo-wrap"><b><img src="';
+                $value = $context->find('image_path');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '" width="100" height="100" alt="image description"></b></a>';
+                $buffer .= "\n";
+                $buffer .= $indent . '										</div>';
+                $buffer .= "\n";
+                $buffer .= $indent . '										<div class="description">';
+                $buffer .= "\n";
+                $buffer .= $indent . '											<strong class="name"><a href="';
+                $value = $context->find('path');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '">';
+                $value = $context->find('content');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '</a></strong>';
+                $buffer .= "\n";
+                $buffer .= $indent . '											<span class="date">';
+                $value = $context->find('date');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= ' geleden</span>';
+                $buffer .= "\n";
+                $buffer .= $indent . '										</div>';
+                $buffer .= "\n";
+                $buffer .= $indent . '									</article>';
+                $buffer .= "\n";
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function section033cdcf4825e1d85b0d413858694fffd(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = '
+							<a href="#" class="opener">Web LInk</a>
+							<div class="slide">
+								<strong class="ti.quick-access .searchtle">Meldingen:</strong>
+								<div class="list">
+									{{#timeline}}
+									<article class="list-item">
+										<div class="photo">
+											<a href="{{path}}" class="photo-wrap"><b><img src="{{image_path}}" width="100" height="100" alt="image description"></b></a>
+										</div>
+										<div class="description">
+											<strong class="name"><a href="{{path}}">{{content}}</a></strong>
+											<span class="date">{{date}} geleden</span>
+										</div>
+									</article>
+									{{/timeline}}
+								</div>
+								<div class="link-wrap">
+									<a href="/user/profile" class="link-all">All meldingen bekijken</a>
+								</div>
+							</div>
+							';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= $indent . '							<a href="#" class="opener">Web LInk</a>';
+                $buffer .= "\n";
+                $buffer .= $indent . '							<div class="slide">';
+                $buffer .= "\n";
+                $buffer .= $indent . '								<strong class="ti.quick-access .searchtle">Meldingen:</strong>';
+                $buffer .= "\n";
+                $buffer .= $indent . '								<div class="list">';
+                $buffer .= "\n";
+                // 'timeline' section
+                $buffer .= $this->sectionC4ea8ce0372871a23d49b6bee00104e2($context, $indent, $context->find('timeline'));
+                $buffer .= $indent . '								</div>';
+                $buffer .= "\n";
+                $buffer .= $indent . '								<div class="link-wrap">';
+                $buffer .= "\n";
+                $buffer .= $indent . '									<a href="/user/profile" class="link-all">All meldingen bekijken</a>';
+                $buffer .= "\n";
+                $buffer .= $indent . '								</div>';
+                $buffer .= "\n";
+                $buffer .= $indent . '							</div>';
+                $buffer .= "\n";
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function section0e696164f7135758cf1e5d17e592fc1f(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = 'login-opener';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= 'login-opener';
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function section3ff98c1deac347d8c4a99550583d4940(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = ' active';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= ' active';
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function sectionE0c11deb4d218694987e6a9bc00a935e(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = '
+							<li id="{{text}}" class="common-nav{{#active}} active{{/active}}"><a href="{{path}}">{{text}}</a></li>
+							';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= $indent . '							<li id="';
+                $value = $context->find('text');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '" class="common-nav';
+                // 'active' section
+                $buffer .= $this->section3ff98c1deac347d8c4a99550583d4940($context, $indent, $context->find('active'));
+                $buffer .= '"><a href="';
+                $value = $context->find('path');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '">';
+                $value = $context->find('text');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '</a></li>';
+                $buffer .= "\n";
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function section382d3e29b2fe31317e3e9b16077e907c(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = '
+                                <li {{#active}}class="active"{{/active}}><a href="{{path}}" onmouseover="_gaq.push([\'_trackEvent\', \'submenu\', \'hover\', \'user hover submenu\'])">{{text}}</a></li>
+                            ';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= $indent . '                                <li ';
+                // 'active' section
+                $buffer .= $this->section39fafbade5b4daabdb3367e1272d1046($context, $indent, $context->find('active'));
+                $buffer .= '><a href="';
+                $value = $context->find('path');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '" onmouseover="_gaq.push([\'_trackEvent\', \'submenu\', \'hover\', \'user hover submenu\'])">';
+                $value = $context->find('text');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '</a></li>';
+                $buffer .= "\n";
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function section516e3a1330de2bf6412af4e20f22d1e1(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = '
+                    <div class="sub-panel subnav-over common-nav" id="{{text}}">
+                        <ul class="sub-nav tar">
+                            {{#sub_menu}}
+                                <li {{#active}}class="active"{{/active}}><a href="{{path}}" onmouseover="_gaq.push([\'_trackEvent\', \'submenu\', \'hover\', \'user hover submenu\'])">{{text}}</a></li>
+                            {{/sub_menu}}
+                        </ul>
+                        {{> global_seach_box}}
+                    </div>
+                ';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= $indent . '                    <div class="sub-panel subnav-over common-nav" id="';
+                $value = $context->find('text');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '">';
+                $buffer .= "\n";
+                $buffer .= $indent . '                        <ul class="sub-nav tar">';
+                $buffer .= "\n";
+                // 'sub_menu' section
+                $buffer .= $this->section382d3e29b2fe31317e3e9b16077e907c($context, $indent, $context->find('sub_menu'));
+                $buffer .= $indent . '                        </ul>';
+                $buffer .= "\n";
+                if ($partial = $this->mustache->loadPartial('global_seach_box')) {
+                    $buffer .= $partial->renderInternal($context, '                        ');
+                }
+                $buffer .= $indent . '                    </div>';
+                $buffer .= "\n";
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function sectionFcdb631a231fd8611a20c97673fd588a(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = '
+							<li {{#active}}class="active"{{/active}}><a href="{{path}}">{{text}}</a></li>
+							';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= $indent . '							<li ';
+                // 'active' section
+                $buffer .= $this->section39fafbade5b4daabdb3367e1272d1046($context, $indent, $context->find('active'));
+                $buffer .= '><a href="';
+                $value = $context->find('path');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '">';
+                $value = $context->find('text');
+                if (!is_string($value) && is_callable($value)) {
+                    $value = $this->mustache
+                        ->loadLambda((string) call_user_func($value))
+                        ->renderInternal($context, $indent);
+                }
+                $buffer .= call_user_func($this->mustache->getEscape(), $value);
+                $buffer .= '</a></li>';
+                $buffer .= "\n";
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function section0b8b33dff537ac08ad2a80e61a816fbd(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = '
+					<nav>
+						<ul class="sub-nav tar">
+							{{#sub_menu}}
+							<li {{#active}}class="active"{{/active}}><a href="{{path}}">{{text}}</a></li>
+							{{/sub_menu}}
+						</ul>
+					</nav>
+					';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                $buffer .= $indent . '					<nav>';
+                $buffer .= "\n";
+                $buffer .= $indent . '						<ul class="sub-nav tar">';
+                $buffer .= "\n";
+                // 'sub_menu' section
+                $buffer .= $this->sectionFcdb631a231fd8611a20c97673fd588a($context, $indent, $context->find('sub_menu'));
+                $buffer .= $indent . '						</ul>';
+                $buffer .= "\n";
+                $buffer .= $indent . '					</nav>';
+                $buffer .= "\n";
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+
+    private function section64ba7ecb1cb20b57431e152f4a2b196a(Mustache_Context $context, $indent, $value) {
+        $buffer = '';
+        if (!is_string($value) && is_callable($value)) {
+            $source = '	{{#active}}
+					<nav>
+						<ul class="sub-nav tar">
+							{{#sub_menu}}
+							<li {{#active}}class="active"{{/active}}><a href="{{path}}">{{text}}</a></li>
+							{{/sub_menu}}
+						</ul>
+					</nav>
+					{{/active}}';
+            $buffer .= $this->mustache
+                ->loadLambda((string) call_user_func($value, $source))
+                ->renderInternal($context, $indent);
+        } elseif (!empty($value)) {
+            $values = $this->isIterable($value) ? $value : array($value);
+            foreach ($values as $value) {
+                $context->push($value);
+                // 'active' section
+                $buffer .= $this->section0b8b33dff537ac08ad2a80e61a816fbd($context, $indent, $context->find('active'));
+                $context->pop();
+            }
+        }
+    
+        return $buffer;
+    }
+}
